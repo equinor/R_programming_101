@@ -13,6 +13,7 @@ Agenda
     - Console Input & Evaluation
     - Workspace & Files
     - Data Types
+    - Subsetting
 
 ***
 

@@ -46,7 +46,7 @@ Numbers
     (more on that later)
 
 
-Compound Objects
+R Objects
 ========================================================
 
 - Vector,
@@ -55,12 +55,33 @@ Compound Objects
 - Matrix,
 - Data frame, ..
 
-Vector
+Vector: the R workhorse
 ========================================================
 
-__The most basic object is a vector__
+__The most basic object is a vector.__
 
--   A vector can only contain objects of the same class
+- __Scalar__s do not really exist, actually a scalar is a vector fo 1 eleement.
+-   A vector can __only contain objects of the same class__, in other words, elements of a vector all have the same class.
+- The __size of a vector__ is __determined at its creation__, so if you wish to add or delete elements, you’ll need to reassign the vector.
+
+
+---
+
+```r
+# Scalar -> vector of 1 element
+> x <- 8
+> x
+ [1] 8
+```
+
+```r
+# Size of a vector
+> x <- c(88,5,12,13)
+# Insert 168 before the 13
+> x <- c(x[1:3],168,x[4])
+> x
+[1]  88   5  12 168  13
+```
 
 Vector: Creating vectors
 ========================================================
@@ -73,8 +94,7 @@ Using the `vector()` function to create an empty vector
  [1] 0 0 0 0 0 0 0 0 0 0
 ```
 
-Vector: Creating vectors
-========================================================
+---
 
 The `c()` function can be used to create vectors of objects.
 
@@ -88,15 +108,40 @@ The `c()` function can be used to create vectors of objects.
 > x <- c(1+0i, 2+4i)     ## complex
 ```
 
-Vector: Mixing Objects
+Vector: Length of a vector
 ========================================================
 
-A vector can contain objects of the same class. What about the following?
+The `length()` function can be used to obtain the length of a vector.
+
 
 ```r
-> y <- c(1.7, "a")   ## character
-> y <- c(TRUE, 2)    ## numeric
-> y <- c("a", TRUE)  ## character
+> x <- c(1,2,4)
+> length(x)
+[1] 3
+```
+
+```r
+# Be careful using length!
+> x <- c()
+> x
+NULL
+> length(x)
+[1] 0
+> 1:length(x)
+[1] 1 0
+```
+
+
+Vector: Mixing Objects & Implicit Coercion
+========================================================
+
+A vector contains objects of the same class. What about the following?
+
+```r
+# Mixing different class within the same vecto.r
+> y <- c(1.7, "a")   ## coerced to character
+> y <- c(TRUE, 2)    ## coerced to numeric
+> y <- c("a", TRUE)  ## coerced to character
 ```
 
 When different objects are mixed in a vector, _automatic coercion_ occurs so that every element in the vector is of the same class.
@@ -130,6 +175,27 @@ Nonsensical coercion results in `NA`s.
 [1] NA NA NA
 Warning message:
 NAs introduced by coercion
+```
+
+Vector: Recycling
+========================================================
+
+When applying an operation to two vectors that requires them to be the same length, R automatically __recycles__, or repeats, the shorter one, until it is long enough to match the longer one. A warning could be generated.
+
+```r
+# longer object length multiple of shorter object length
+> c(1,2,3) + c(1,2,3,4,5,6)
+[1] 2 4 6 5 7 9
+```
+
+
+```r
+# longer object length not multiple of shorter object length
+> c(1,2,3) + c(1,2,3,4,5,6,7)
+[1] 2 4 6 5 7 9 8
+Warning message:
+In c(1, 2, 3) + c(1, 2, 3, 4, 5, 6, 7) :
+  longer object length is not a multiple of shorter object length
 ```
 
 List
@@ -304,6 +370,43 @@ swirl()
 # Enjoy :)
 ```
 
+Vectorized Operations
+========================================================
+
+__Vectorized operation__, the operation applied to a vector is actually applied individually to each element of the vector.
+
+Many operations in R are __vectorized__ making code more efficient, concise and easier to read (but _challenging to write_).
+
+Examples of __vectorized__ functions are the +, * and > operators. This applies to many other built-in R functions.
+
+---
+
+```r
+> x <- 1:4; y <- 6:9
+> x + y
+[1] 7 9 11 13
+
+> "+"(x,y)
+[1]  7  9 11 13
+
+> x * y
+[1] 6 14 24 36
+> x / y
+[1] 0.1666667 0.2857143 0.3750000 0.4444444
+```
+
+```r
+> x <- 1:4
+> x > 2
+[1] FALSE FALSE  TRUE  TRUE
+```
+
+```r
+> sqrt(1:9)
+[1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490 2.645751 2.828427[9] 3.000000
+```
+
+
 Missing Values
 ========================================================
 
@@ -350,3 +453,52 @@ R objects can have attributes
 -   other user-defined attributes/metadata
 
 Attributes of an object can be accessed using the ```attributes()``` function.
+
+---
+
+```r
+# Vectors
+> x <- 1:3
+> names(x)
+NULL
+> names(x) <- c("foo", "bar", "norf")
+> x
+foo bar norf
+  1   2    3
+```
+
+```r
+#List
+> x <- list(a = 1, b = 2)
+> x
+$a
+[1] 1
+
+$b
+[1] 2
+```
+
+```r
+#Matrix
+> m <- matrix(1:4, nrow = 2, ncol = 2)
+> dimnames(m) <- list(c("a", "b"), c("c", "d"))
+> m
+  c d
+a 1 3
+b 2 4
+```
+
+Summary
+========================================================
+
+Data Types
+
+- Atomic classes: numeric, logical, character, integer, complex \
+
+- R objects: vectors, lists, factors, matrices and data frames
+
+- Vectorized Operations
+
+- Missing values
+
+- Attributes
