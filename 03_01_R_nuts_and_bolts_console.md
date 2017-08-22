@@ -4,27 +4,35 @@ author:
 date:
 autosize: true
 
+How To Run R
+========================================================
+
+R actually operates in two modes: _interactive_ and _batch_.
+
+- _Interactive mode_, the one typically used where you (as the user) type in a command and R display the result and so on. Note that R commands can also be stored in a file (convetion: suffix .r or .R).
+
+- _Batch mode_, it does not require interaction with the user. It is useful for pipeline, production and automated jobs.
+
+The main mode for us is __Interactive Mode__ through the R Console.
+
 Entering Input
 ========================================================
 
-At the R prompt we type expressions. The `<-` symbol is the assignment operator.
+Started a R session, in the R console at the R prompt we type expressions. The grammar of the language determines whether an expression is complete or not.
+
+- The `<-` symbol is the assignment operator.
+- The # character indicates a comment. Anything to the right of the # (including the # itself) is ignored.
 
 ```r
-> x <- 1
-> print(x)
-[1] 1
-> x
-[1] 1
-> msg <- "hello"
+> x <- 1 # complete expression
+> msg <- "hello" # complete expression
 ```
 
-The grammar of the language determines whether an expression is complete or not.
 
 ```r
-> x <-  ## Incomplete expression
+> x <-  ## Incomplete expression - you will be asked to continue in the next line (+)
++
 ```
-
-The # character indicates a comment. Anything to the right of the # (including the # itself) is ignored.
 
 Evaluation & Printing
 ========================================================
@@ -39,7 +47,7 @@ When a complete expression is entered at the prompt, it is evaluated and the res
 [1] 5
 ```
 
-The `[1]` indicates that `x` is a vector and `5` is the first element.
+Note! The `[1]` indicates that `x` is a vector and `5` is the first element.
 
 Hands-On (15 minutes)
 ========================================================

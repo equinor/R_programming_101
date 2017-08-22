@@ -5,6 +5,8 @@ output:
 ---
 # R programming 101
 
+__Why learning R?__ R is an extremely versatile open source programming language for statistics and data science. It is widely used in every field where there is data—business, industry, government, medicine, academia, and so on.
+
 ## Getting Ready
 
 ### Install R

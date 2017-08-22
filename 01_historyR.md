@@ -9,8 +9,7 @@ What is R?
 
 __R is a dialect of S.__
 
-What is S?
-========================================================
+So .... __What is S?__
 
 - S is a language that was developed in 1976 at Bell Labs (John Chambers and others).
     - An internal statistical analysis environment (implemented as Fortran libraries) used _"to turn ideas into software, quickly and faithfully"_.

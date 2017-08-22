@@ -22,7 +22,7 @@ The __Working Directory__ is where R finds all of its files for reading and for 
 ```r
 #Find the current working directory
 getwd()
-[1] "E:/APPL/workspace_r/R_programming_for_dummies"
+[1] "E:/APPL/workspace_r/R_programming_101"
 ```
 
 
