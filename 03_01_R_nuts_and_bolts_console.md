@@ -20,7 +20,7 @@ Entering Input
 
 Started a R session, in the R console at the R prompt we type expressions. The grammar of the language determines whether an expression is complete or not.
 
-- The `<-` symbol is the assignment operator.
+- The `<-` symbol is the assignment operator. `=` symbol could be used but it is discouraged cause does not work in special situation.
 - The # character indicates a comment. Anything to the right of the # (including the # itself) is ignored.
 
 ```r
@@ -48,6 +48,27 @@ When a complete expression is entered at the prompt, it is evaluated and the res
 ```
 
 Note! The `[1]` indicates that `x` is a vector and `5` is the first element.
+
+First R Session
+========================================================
+
+```r
+> x <- c(1,2,3)
+> #show the content of x
+
+> y <- c(x,4,x)
+> # show the content of y & its length
+
+> y[2:4]
+
+> data() #show the available datasets
+> #use the Nile dataset - what is it about?
+> hist(Nile)
+> #calculate the mean and standard deviation
+
+> # to quite the R Session use q()
+```
+
 
 Hands-On (15 minutes)
 ========================================================
