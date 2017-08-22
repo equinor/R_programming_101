@@ -14,19 +14,85 @@ For more details on authoring R presentations please visit <https://support.rstu
 - Bullet 3
 
 
-Useful functions: `args()`
+Getting Help
 ========================================================
 
-Use `args` on a function name in order to see what arguments the function can take.
-
+__The `help` function__ can be used to get online help.
 
 ```r
-args(list.files)
+# We want to get some more information about the args function
+help(args)
+
+# a shortcut...
+?args
+
+# working with special characters
+?"+"
+?"for"
 ```
 
+__The `example` function__ can be used to run examples provided in the help entries.
+
+```r
+help(args)
+# In most of the online help pages there is an Examples section
+# with some examples on how to use what we have been searching for
+# some examples can be run using the example function
+
+example(args)
+
+# Another example
+# 'persp' draws perspective plots of a surface over the x–y plane
+example(persp)
 ```
-function (path = ".", pattern = NULL, all.files = FALSE, full.names = FALSE, 
-    recursive = FALSE, ignore.case = FALSE, include.dirs = FALSE, 
-    no.. = FALSE) 
-NULL
+
+Getting Help (Cont'd)
+========================================================
+
+If you do not know exactly what you are looking for. `help.search` can be used to perform a Google-style search through R documentation.
+
+```r
+help.search("multivariate normal")
+
+# shortcut
+??"multivariate normal"
 ```
+
+If you want to access information related to a specific package...
+
+```r
+help(package=dplyr)
+```
+
+Some other topics...
+
+```r
+?files
+?Arithmetic
+
+# Arithmetic, Comparison, Control, Dates, Extract, files, Math, Memory, NA
+# NULL, NumericaConstants, Paren, Quotes, Startup, Syntax
+```
+
+Getting Help (Cont'd)
+========================================================
+
+There are many resources on the Internet and, because of its single-letter name, R is difficult to search for using general-purpose search engines such as Google.
+
+- Searching for more information
+
+    - The Comprehensive R Archive Network (CRAN) at http://cran.r-project.org/
+
+    - The R Project's own manuals are available from the R home page, http://www.r-project.org/. See Manuals section.
+
+    - Various R search engines are listed on the R home page. See Search section.
+
+    - The RSeek search engine quite often: http://www.rseek.org/.
+
+    - Stack Overflow
+
+    - The sos package offers highly sophisticated searching of R materials.
+
+- Asking for help
+
+    - R email lists at http://www.r-project.org/mail.html.
