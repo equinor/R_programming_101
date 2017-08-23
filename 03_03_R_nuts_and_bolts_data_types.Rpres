@@ -331,13 +331,15 @@ Vectors: Testing Vector Equality
 [1] TRUE
 ```
 
-List
+Lists
 ========================================================
 
-Lists are a special type of vector that can contain elements of different classes.
+Lists are a special type of vector (often referred as recursive vector) that can contain/ combine elements of different types (even other lists). Quite important in R, eg. (S3) classes are list with attributes.
+
+How to create a __list__...
 
 ```r
-> x <- list(1, "a", TRUE, 1 + 4i)
+> x <- list(1, "a", TRUE)
 > x
 [[1]]
 [1] 1
@@ -348,11 +350,67 @@ Lists are a special type of vector that can contain elements of different classe
 [[3]]
 [1] TRUE
 
-[[4]]
-[1] 1+4i
+> # Adding component names/ tags. name, surname, salary tags are optional
+> j <- list(name = "John", surname = "Doe", salary = 55000)
+> j
+$name
+[1] "John"
+
+$surname
+[1] "Doe"
+
+$salary
+[1] 55000
 ```
 
-Lists are quite important in R, eg. objects (OO) are list with attributes.
+Lists: Adding and Deleting List elements
+========================================================
+
+Adding Elements to a list
+
+```{r collapse = T}
+# Adding an element to a list using tags
+z <- list(a = "abc")
+z
+z$b <- "sailing"
+z
+```
+
+```{r collapse = T}
+# Adding an element to a list using index
+z <- list("abc")
+z
+z[[2]] <- "sailing"
+z
+```
+
+---
+
+Deleting Elements from a list
+
+```{r collapse = TRUE}
+# Deleting an element to a list using tags
+# Same can be done using index notation [[i]]
+# Set the element to NULL
+z <- list(a = "abc", b = TRUE)
+z
+
+# Delete the b tag from the list
+z$b <- NULL
+z
+```
+
+Lists: Getting the size of a list
+========================================================
+
+```{r collapse = TRUE}
+# Create a list of 3 elements
+z <- list(a = "abc", b = TRUE, c = 12)
+z
+
+# How to get the size of the list?
+length(z)
+```
 
 Hands-On (15 minutes)
 ========================================================
@@ -363,8 +421,6 @@ swirl()
 #.....
 # Select the "R Programming" entry
 # Select the "Vectors" entry [4]
-
-# Enjoy :)
 ```
 
 Factors
