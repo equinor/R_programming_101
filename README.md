@@ -34,6 +34,12 @@ If you are new to R, you might wonder what makes learning such a quirky language
 
 ## Getting Ready
 
+Prerequisites for the session
+
+- install R
+- install RStudio IDE (optional but preferred)
+- install 'swirl' package for hands-on activities
+
 ### Install R
 
 The first thing you need to do is to install R on your computer from the [CRAN](https://cran.r-project.org/) site. A step-by-step tutorial on how to install R for Mac and Windows can be found in the following videos
