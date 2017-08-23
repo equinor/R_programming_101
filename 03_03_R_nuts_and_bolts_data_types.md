@@ -1,4 +1,4 @@
-R nuts and bolts: Data Types
+R Nuts and Bolts: Data Types
 ========================================================
 author:
 date:
@@ -12,7 +12,7 @@ R has five basic or "atomic" classes (aka atomin modes):
 -   __character__ (Strings)
     - Ex. "Survived"
 
--   __numeric__ (default to floating point numbers)
+-   __numeric/ double__ (default to floating point numbers)
     - Ex. 3.14
 
 -   __integer__
@@ -49,66 +49,101 @@ Numbers
 R Objects
 ========================================================
 
-- Vector,
-- List,
-- Factor,
-- Matrix,
-- Data frame, ..
+- Vectors,
+- Lists,
+- Factors,
+- Matrices,
+- Data frames, ..
 
-Vector: the R workhorse
+`mode` and `typeof` can be used to understand the internal type or storage mode for an R object.
+
+
+Vectors: the R workhorse
 ========================================================
 
-__The most basic object is a vector.__
+__Vector is the fundamental data type in R.__
 
-- __Scalar__s do not really exist, actually a scalar is a vector fo 1 eleement.
--   A vector can __only contain objects of the same class__, in other words, elements of a vector all have the same class.
-- The __size of a vector__ is __determined at its creation__, so if you wish to add or delete elements, you’ll need to reassign the vector.
-
+- __Scalar__s do not really exist in R, actually a scalar is a vector of 1 element (a special vector).
+-   A vector can __only contain objects of the same atomic class__,
+    - in other words, elements of a vector are all of the same type.
+- The __size of a vector__ is __determined at its creation__,
+    - so if you wish to add or delete elements, you’ll need to reassign the vector.
 
 ---
 
 ```r
-# Scalar -> vector of 1 element
+> # Scalar -> vector of 1 element
 > x <- 8
 > x
  [1] 8
 ```
 
 ```r
-# Size of a vector
 > x <- c(88,5,12,13)
-# Insert 168 before the 13
+
+> # Insert a new element (168) in the vector
+> # just  before the 13
 > x <- c(x[1:3],168,x[4])
 > x
 [1]  88   5  12 168  13
 ```
 
-Vector: Creating vectors
+Vectors: How to create vectors
 ========================================================
 
-Using the `vector()` function to create an empty vector
+The `c()` (concatenate) function can be used to create vectors.
+
+```r
+> x <- c(0.5, 0.6)       ## numeric vector
+> x <- c(1L, 2L)         ## integer vector
+> x <- 9:29              ## integer vector
+
+> x <- c(TRUE, FALSE)    ## logical vector
+> x <- c(T, F)           ## logical vector
+
+> x <- c("a", "b", "c")  ## character vector
+
+> x <- c(1+0i, 2+4i)     ## complex vector
+```
+
+The `:` operator can be used to create `integer` vectors.
+
+```r
+> x <- 5:10
+> x
+[1]  5  6  7  8  9 10
+> typeof(x)
+[1] "integer"
+```
+
+---
+
+Using the `vector()` function to create an empty vector. It creates a vector of the given _mode_ and _length_.
+
+Note! Logical vector elements are initialized to FALSE, numeric vector elements to 0, character vector elements to ""...
 
 ```r
 > x <- vector("numeric", length = 10)
 > x
  [1] 0 0 0 0 0 0 0 0 0 0
+
+> mode(x)
+[1] "numeric"
+> length(x)
+[1] 10
 ```
 
----
-
-The `c()` function can be used to create vectors of objects.
+Other functions used for creating vectors are `seq()` and `rep()`.
 
 ```r
-> x <- c(0.5, 0.6)       ## numeric
-> x <- c(TRUE, FALSE)    ## logical
-> x <- c(T, F)           ## logical
-> x <- c("a", "b", "c")  ## character
-> x <- c(1L, 2L)         ## integer
-> x <- 9:29              ## integer
-> x <- c(1+0i, 2+4i)     ## complex
+> seq(0, 1, length.out = 11)
+ [1] 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
+
+> rep(x = 1:4, times = 2)
+[1] 1 2 3 4 1 2 3 4
 ```
 
-Vector: Length of a vector
+Vectors: Length of a vector
 ========================================================
 
 The `length()` function can be used to obtain the length of a vector.
@@ -120,44 +155,69 @@ The `length()` function can be used to obtain the length of a vector.
 [1] 3
 ```
 
+You need to be careful using length...
+
 ```r
-# Be careful using length!
-> x <- c()
+> x <- c() # Equivalent to x <- NULL
 > x
 NULL
 > length(x)
 [1] 0
+
+> # What does it happen if i want to create an index
+> # used to loop through the element of a vector
+> # for example: i in 1:length(x)
+> for(i in 1:length(x)) print(i)
+[1] 1
+[1] 0
+
 > 1:length(x)
 [1] 1 0
 ```
 
 
-Vector: Mixing Objects & Implicit Coercion
+Vectors: Implicit Coercion
 ========================================================
 
-A vector contains objects of the same class. What about the following?
+A vector contains only objects of the same (atomic) class.
+
+__What does it happen when we try to mix different types within the same vector?__
 
 ```r
-# Mixing different class within the same vecto.r
-> y <- c(1.7, "a")   ## coerced to character
-> y <- c(TRUE, 2)    ## coerced to numeric
+> # Mixing different class within the same vector
+
+> # Mixing numeric (double) with characters
+> y <- c(1.7, "a")   # coerced to character
+> typeof(y)
+[1] "character"
+
+> # Mixing boolean with numeric
+> y <- c(TRUE, 2)    # coerced to numeric (double)
+> typeof(y)
+[1] "double"
+
+> # Mixing boolean with character
 > y <- c("a", TRUE)  ## coerced to character
+> typeof(y)
+[1] "character"
 ```
 
-When different objects are mixed in a vector, _automatic coercion_ occurs so that every element in the vector is of the same class.
+When different objects are mixed in a vector, _automatic/ implicit coercion_ occurs so that every element in the vector is of the same class.
 
-Vector: Explicit Coercion
+Vectors: Explicit Coercion
 ========================================================
 
 Objects can be explicitly coerced from one class to another using the `as.*` functions, if available.
 
 ```r
 > x <- 0:6
-> class(x)
+> typeof(x)
 [1] "integer"
 
-> as.numeric(x)
-[1] 0 1 2 3 4 5 6
+> y <- as.numeric(x)
+> typeof(y)
+[1] "double"
+
 
 > as.logical(x)
 [1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
@@ -177,14 +237,53 @@ Warning message:
 NAs introduced by coercion
 ```
 
-Vector: Recycling
+Vectors: Vectorized Operations
 ========================================================
 
-When applying an operation to two vectors that requires them to be the same length, R automatically __recycles__, or repeats, the shorter one, until it is long enough to match the longer one. A warning could be generated.
+The operation/ function applied to a vector is __actually individually applied to each element__ of the vector(s).
+
+Many operations in R are __vectorized__ making code more efficient, concise and easier to read (but _challenging to write_). Examples of __vectorized__ operations/ functions are the `+`, `*` and `>` operators (this applies to many other built-in R functions).
+
+---
 
 ```r
-# longer object length multiple of shorter object length
+> x <- 1:4; y <- 6:9
+> x + y
+[1] 7 9 11 13
+
+> "+"(x,y)
+[1]  7  9 11 13
+
+> x * y
+[1] 6 14 24 36
+
+> x / y
+[1] 0.1666667 0.2857143 0.3750000 0.4444444
+```
+
+```r
+> x <- 1:4
+> x > 2
+[1] FALSE FALSE  TRUE  TRUE
+```
+
+```r
+> sqrt(1:9)
+[1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490 2.645751 2.828427[9] 3.000000
+```
+
+Vectors: Recycling
+========================================================
+
+When applying an operation to two vectors that requires them to be the same length, R automatically __recycles__ the shortest one. It repeats, the shorter one, until it is long enough to match the longer one (a warning could be generated in the process).
+
+```r
+> # longer object length multiple of shorter object length
 > c(1,2,3) + c(1,2,3,4,5,6)
+[1] 2 4 6 5 7 9
+
+> # this is what is actually happening (recycling)
+> c(1,2,3,1,2,3) + c(1,2,3,4,5,6)
 [1] 2 4 6 5 7 9
 ```
 
@@ -196,6 +295,40 @@ When applying an operation to two vectors that requires them to be the same leng
 Warning message:
 In c(1, 2, 3) + c(1, 2, 3, 4, 5, 6, 7) :
   longer object length is not a multiple of shorter object length
+
+> # this is what is actually happening (recycling)
+> c(1,2,3,1,2,3,1) + c(1,2,3,4,5,6)
+[1] 2 4 6 5 7 9 8
+```
+
+Vectors: Testing Vector Equality
+========================================================
+
+````r
+> # Testing Vector Equality Using ==
+> # remember that == is a vectorized operation
+> x <- 1:3
+> y <- c(1,3,4)
+> x == y
+[1]  TRUE FALSE FALSE
+> all(x == y)
+[1] FALSE
+
+> x <- 1:3
+> y <- c(1,2,3)
+> all(x == y)
+[1] TRUE
+
+> # Testing Vector Equality Using identical
+> # vector elements  must have same type and value (strict)
+> x <- 1:3
+> y <- c(1,2,3)
+> identical(x,y)
+[1] FALSE
+
+> y <- c(1L,2L,3L)
+> identical(x,y)
+[1] TRUE
 ```
 
 List
@@ -370,47 +503,31 @@ swirl()
 # Enjoy :)
 ```
 
-Vectorized Operations
+NULL & Missing Values
 ========================================================
 
-__Vectorized operation__, the operation applied to a vector is actually applied individually to each element of the vector.
+`NULL` is actually used to state that sth is __nonexistent__.
 
-Many operations in R are __vectorized__ making code more efficient, concise and easier to read (but _challenging to write_).
+- One use of `NULL` is to build up vectors (incrementally) in loops.
+- `is.null` is used to test if an object is `NULL`.
 
-Examples of __vectorized__ functions are the +, * and > operators. This applies to many other built-in R functions.
+```r
+> #Build up a vector of the even numbers in 1:10
+> z <- NULL
+> for(i in 1:10) if(i %% 2 == 0) z <- c(z,i)
+> z
+[1]  2  4  6  8 10
+```
+
+```r
+> z <- NULL
+> length(z)
+[1] 0
+```
 
 ---
 
-```r
-> x <- 1:4; y <- 6:9
-> x + y
-[1] 7 9 11 13
-
-> "+"(x,y)
-[1]  7  9 11 13
-
-> x * y
-[1] 6 14 24 36
-> x / y
-[1] 0.1666667 0.2857143 0.3750000 0.4444444
-```
-
-```r
-> x <- 1:4
-> x > 2
-[1] FALSE FALSE  TRUE  TRUE
-```
-
-```r
-> sqrt(1:9)
-[1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490 2.645751 2.828427[9] 3.000000
-```
-
-
-Missing Values
-========================================================
-
-__Missing values__ are denoted by `NA` or `NaN` for undefined mathematical operations.
+__Missing values__ are denoted by `NA` (NotAvailable) or `NaN` (NotANumber) for undefined mathematical operations.
 
 - `is.na()` is used to test objects if they are `NA`
 
@@ -420,12 +537,13 @@ __Missing values__ are denoted by `NA` or `NaN` for undefined mathematical opera
 
 - A `NaN` value is also `NA` but the converse is not true
 
----
 
 ```r
 > x <- c(1, 2, NA, 10, 3)
 > is.na(x)
 [1] FALSE FALSE  TRUE FALSE FALSE
+> typeof(x[3])
+[1] "double"
 
 > is.nan(x)
 [1] FALSE FALSE FALSE FALSE FALSE
@@ -457,7 +575,7 @@ Attributes of an object can be accessed using the ```attributes()``` function.
 ---
 
 ```r
-# Vectors
+# Vectors can have element names
 > x <- 1:3
 > names(x)
 NULL
