@@ -1,4 +1,4 @@
-R nuts and bolts: Workspace & Files
+R Nuts and Bolts: Workspace & Files
 ========================================================
 author:
 date:
@@ -7,16 +7,18 @@ autosize: true
 Workspace & Files
 ========================================================
 
-R provides a common set of commands for interacting with files
+R provides a common set of commands for interacting with the local environment
 
-- managing the working directory
-- managing objects in the local workspace
-- managing files in the working directory
+- The working directory
+- Managing objects in the local workspace
+- Managing files in the working directory
 
 The Working Directory
 ========================================================
 
-The __Working Directory__ is where R finds all of its files for reading and for writing on your computer. R provides some simple commands to manage the __working directory__:
+The __Working Directory__ is where R and the current session look for files when reading and writing on the local computer.
+
+__How to get the current working directory...__
 
 
 ```r
@@ -25,6 +27,7 @@ getwd()
 [1] "E:/APPL/workspace_r/R_programming_101"
 ```
 
+__How to change the current working directory...__
 
 
 ```r
@@ -32,14 +35,18 @@ getwd()
 setwd(...)
 ```
 
-Managing objects in the workspace
+Managing objects in the local workspace
 ========================================================
+
+__How to view objects/ variables created in the local environment...__
 
 
 ```r
 #View all the objects in your local workspace
 ls()
 ```
+
+__How to remove objects/ variables created in the local environment...__
 
 
 ```r
@@ -58,7 +65,7 @@ rm()
 ## rm(list = c("tmp1", "tmp2")
 ```
 
-Managing files in the working directory
+Managing files on the local computer (working directory)
 ========================================================
 
 
@@ -95,6 +102,4 @@ swirl()
 #.....
 # Select the "R Programming" entry
 # Select the "Workspace and Files" entry [2]
-
-# Enjoy :)
 ```
