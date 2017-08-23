@@ -7,18 +7,29 @@ autosize: true
 What is R?
 ========================================================
 
-__R is a dialect of S.__
+- R is an extremely versatile open source programming language for __statistics__ and __data science__.
 
-So .... __What is S?__
+- R is a descendant of S, __a dialect of S__.
+
+- R was created by Ross Ihaka and Robert Gentleman at the University of Auckland, New Zealand, and is currently developed by the R Development Core Team under the __GNU General Public License__.
+    - The project was conceived in 1992,
+    - an initial version released in 1995 and
+    - a stable beta version in 2000.
+
+---
+
+__What is S?__
 
 - S is a language that was developed in 1976 at Bell Labs (John Chambers and others).
     - An internal statistical analysis environment (implemented as Fortran libraries) used _"to turn ideas into software, quickly and faithfully"_.
 
-- In 1988 the environment was rewritten in C and began to resemble the system that we have today (Version 3).
+- In 1988 Version 3 of the language was rewritten in C and began to resemble what we have today.
 
 - In 1998 Version 4 of the S language was released and it is the version in use today.
 
 - The fundamentals of the S language itself has not changed dramatically since 1998.
+
+- TIBCO (since 2008) is the current owner of the S language and its exclusive developer.
 
 S Philosophy
 ========================================================
@@ -33,40 +44,30 @@ In "Stages in the Evolution of S", John Chambers writes:
 
 http://www.stat.bell-labs.com/S/history.html
 
-S, some Historical Notes
-========================================================
-
-- In 1993 Bell Labs gave Statistical Sciences (now Insightful Corp.) an exclusive license to develop and sell the S language.
-    - Statistical Sciences (now Insightful Corp.) sold its implementation of the S language under the product name S-PLUS.
-
-- In 1996, Bell Labs spun off into a new company named Lucent Technologies.
-
-- In 2004 Insightful purchased the S language from Lucent for \$2 million and is the current owner.
-
-- In 2008 Insightful is acquired by TIBCO for $25 million, making TIBCO the current owner of the S language and its exclusive developer.
-
 Features of R
 ========================================================
 
-- A public-domain implementation of the S language.
+- Started as a public-domain implementation of the S language.
 
 - Run on almost any standard computing platform/OS (even on the PlayStation 3)
 
 - Frequent releases (annual + bugfix releases); active development.
 
-Features of R (Cont'd)
-========================================================
-
 - Quite lean, as far as software goes; functionality is divided into modular packages
 
 - Useful for interactive work, and a powerful programming language for developing new tools (user -> programmer)
 
-- Very active and vibrant user community (Stack Overflow, ...)
+- Very active and vibrant user community (Stack Overflow, R-help mailing list, ...)
+
+- A massive set of packages for statistical modelling, machine learning, visualisation, and importing and manipulating data ([CRAN - the Comprehensive R Archive Network](https://cran.r-project.org/)).
+    - Cutting edge tools. Researchers in statistics and machine learning will often publish an R package to accompany their articles. This means immediate access to the very latest statistical techniques and implementations.
+
+- An IDE (RSTUDIO) tailored to the needs of interactive data analysis and statistical programming.
 
 Features of R (Cont'd)
 ========================================================
 
-__It is free, as free software.__ It allows the following _freedoms_:
+It is free, as __free software.__ It allows the following _freedoms_:
 
 -   The freedom to run the program, for any purpose (__freedom 0__).
 
@@ -84,6 +85,10 @@ Drawbacks of R
 -   Essentially based on 40 year old technology, but __things are quickly changing__...
 
 -   Functionality is based on consumer demand and user contributions. If no one feels like implementing your favorite method, then it's *your* job! _(Or you need to pay someone to do it)_
+
+- Much of the R code you'll see in the wild is written in haste to solve a pressing problem. As a result, code is not very elegant, fast, or easy to understand. Most users do not revise their code to address these shortcomings.
+
+- R is not a particularly fast programming language, and poorly written R code can be terribly slow. Memory, processing, ....
 
 -   Not a __silver bullet__, not ideal for all possible situations.
 
