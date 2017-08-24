@@ -28,15 +28,31 @@ Some Basic Information
 > # This is a comment
 ```
 
-- The `<-` symbol is the assignment operator.
-    - `=` symbol could be used but it is discouraged cause does not work in special situation (historical reason).
+- Variables, R does __not require variable types to be declared__.
+    - A variable can take on any available data type (at any point)
+
+    - Variable Assignment is performed using the assignment operator `<-` or `assign` function.
+        - `=` operator could be used but it is discouraged cause does not work in special situation (historical reason).
 
 ```r
 > x <- 1 # Assign 1 to x
-> msg <- "hello" # Assign "hello" to msg
+> x
+[1] 1
+> x <- "hello" # Assign "hello" to x
+> x
+[1] "hello""
+
+> assign("j", 4)
+> j
+[1] 4
 ```
 
-- The grammar of the language determines whether an expression is complete or not.
+
+
+Some Basic Information (Cont'd)
+========================================================
+
+- The grammar of the language determines whether an expression is complete or not. When a complete expression is entered at the prompt, it is evaluated/ executed.
 
 ```r
 > x <- 1 # complete expression
@@ -48,10 +64,7 @@ Some Basic Information
 +
 ```
 
-Some Basic Information (Cont'd)
-========================================================
-
-When a complete expression is entered at the prompt, it is evaluated/ executed and the result of the evaluated expression is returned. The result may be auto-printed.
+- Printing...
 
 ```r
 > x <- 5  # Assignment - nothing printed
@@ -59,16 +72,17 @@ When a complete expression is entered at the prompt, it is evaluated/ executed a
 > x       # auto-printing occurs, normally used when working in interaction mode
 [1] 5
 
-> print(x)  ## explicit printing, normally used when working with function
+> print(x)  ## explicit printing, normally used when working within function
 [1] 5
 ```
-
-Note! The `[1]` indicates that `x` is a vector and `5` is the first element.
 
 A First R Session
 ========================================================
 
 ```r
+> 5 + 3 # Use as a calculator
+[1] 8
+
 > x <- c(1,2,3) # Create a vector and assign to x
 > x # show the content of x
 
