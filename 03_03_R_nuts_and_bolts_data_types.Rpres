@@ -307,7 +307,6 @@ Vectors: How to retrieve elements of a vector (subsetting)
 ```
 my_vector[the_references]
 
-the_vector: vector we are interested in
 the_references: the indexes/ the names of the elements
     we are interested in (e.g. 1, c(1,5,..), c(T,F,T,..))
 ```
@@ -316,11 +315,9 @@ the_references: the indexes/ the names of the elements
 x <- c(10,20,30,40,50,60,70,80,90,100)
 
 # Using indexes
-# Get the 10th element
-x[10]
+x[10] # Get the 10th element
 
-# Get the 4th and 6th elements
-x[c(4,6)]
+x[c(4,6)] # Get the 4th and 6th elements
 
 # Get all elements > 50
 x[x > 50]
@@ -363,6 +360,18 @@ Vectors: Testing Vector Equality
 [1] TRUE
 ```
 
+Hands-On (20 minutes)
+========================================================
+
+```{r eval = F}
+library(swirl)
+swirl()
+#.....
+# Select the "R Programming" entry
+# Select the "Sequence of Numbers" entry [3]
+# Select the "Vectors" entry [4] (optional)
+```
+
 Lists
 ========================================================
 
@@ -403,7 +412,6 @@ Use to select one or more elements (list)
 
 the_list[the_references] -> return elements (list)
 
-the_list: list we are interested in
 the_references: the indexes/ the tag of the elements
     we are interested in e.g. 1, c(1,5,..),...
 ```
@@ -425,7 +433,6 @@ Use to select a single element
 
 the_list[[the_reference]] / thelist$tag -> return element
 
-the_list: list we are interested in
 the_reference/ tag: the index/ the tag of the element
     we are interested in e.g. 1, name,...
 ```
@@ -490,17 +497,6 @@ z
 length(z)
 ```
 
-Hands-On (15 minutes)
-========================================================
-
-```{r eval = F}
-library(swirl)
-swirl()
-#.....
-# Select the "R Programming" entry
-# Select the "Vectors" entry [4]
-```
-
 Factors
 ========================================================
 
@@ -547,6 +543,15 @@ Matrices
 
 Matrices are vectors with a _dimension_ attribute. The dimension attribute is itself an integer vector of length 2 (nrow, ncol).
 
+```{r collapse = TRUE}
+x <- seq(1:10)
+dim(x) <- c(2,5)
+x
+
+# matrix(x, nrow = 2)
+```
+
+
 ```r
 > m <- matrix(nrow = 2, ncol = 3)
 > m
@@ -564,7 +569,7 @@ $dim
 
 ---
 
-Matrices are constructed _column-wise_.
+Matrices (by default) are constructed _column-wise_.
 
 ```r
 > m <- matrix(1:6, nrow = 2, ncol = 3)
@@ -573,6 +578,13 @@ Matrices are constructed _column-wise_.
 [1,]    1    3    5
 [2,]    2    4    6
 ```
+
+```{r collapse = TRUE}
+# Default behaviour can be overwritten
+# using byrow
+matrix(1:6, nrow = 2, byrow = T)
+```
+
 
 Matrices (Cont'd)
 ========================================================
@@ -593,34 +605,92 @@ x    1    2    3
 y   10   11   12
 ```
 
+```{r collapse = T}
+z <- matrix(1:10, nrow = 2)
+rbind(z, 1)
+```
+
+
+Matrices: Getting the size of a matrix
+========================================================
+
+```{r collapse = TRUE}
+# Create a matrix
+z <- matrix(1:100, nrow = 10) # 10-by-10 Matrix
+
+# How to get the number of cells?
+# Matrix is a vector so
+length(z)
+
+# Dimension of a matrix
+dim(z)
+
+nrow(z)
+
+ncol(z)
+
+```
+
+Matrices: How to retrieve elements of a matrix (subsetting)
+========================================================
+
+```
+my_matrix[row_references, col_references]
+
+references: the indexes/ the names of the elements
+    we are interested in e.g. 1, c(1,5,..), ..
+```
+
+```{r collapse = TRUE}
+x <- matrix(seq(1:12), nrow=3)
+
+# Get the 2nd row
+x[2,]
+
+# Get the 1st col
+x[,1]
+
+# Get the 2nd and 3rd element in the 2nd row
+x[2, 2:3]
+
+# Adding colnames/ rownames
+rownames(x) <- c(paste(1:3, "_row", sep = ""))
+colnames(x) <- c(paste(1:4, "_col", sep = ""))
+x["1_row",]
+```
+
 Data Frames
 ========================================================
 
-__Data frames__ are used to store tabular data. Seen as __a special type of list where every element of the list has to have the same length__ and __each element of the list can be thought of as a column__.
+__Data frames__ are used to store tabular data.
 
-Unlike matrices, __data frames__ can store different classes of objects in each column (just like lists); matrices must have every element be the same class
+A data frame is __a special type of list where every element of the list has to have the same length__ and __each element of the list can be thought of as a column__.
 
-__Data frames__ also have a special attribute called `row.names`
+Unlike matrices, __data frames__ can store different classes of objects in each column (just like lists).
 
-__Data frames__ are usually created by calling `read.table()` or `read.csv()`
+__Data frames__ also have a special attribute called `row.names`.
+
+__Data frames__ are usually created by calling `read.table()` or `read.csv()`.
+
 
 ---
 
-```r
-> x <- data.frame(foo = 1:4, bar = c(T, T, F, F))
-> x
-  foo   bar
-1   1  TRUE
-2   2  TRUE
-3   3 FALSE
-4   4 FALSE
+```{r collapse = T}
+x <- data.frame(id = c(1001, 1002, 1003),
+                is_male = c(T, T, F))
+x
 
-> nrow(x)
-[1] 4
+dim(x)
+nrow(x)
+ncol(x)
 
-> ncol(x)
-[1] 2
+names(x) # Get the col names
+row.names(x) # Get (set) the col names
+row.names(x) <- paste("obs_", seq(nrow(x)), sep = "")
+x
 ```
+
+
 
 Hands-On (15 minutes)
 ========================================================
