@@ -7,7 +7,7 @@ autosize: true
 Atomic Classes
 ========================================================
 
-R has five basic or "atomic" classes (aka atomin modes):
+R has five basic or "atomic" classes (aka modes):
 
 -   __character__ (Strings)
     - Ex. "Survived"
@@ -28,13 +28,13 @@ R has five basic or "atomic" classes (aka atomin modes):
 Numbers
 ========================================================
 
--   Numbers in R a generally treated as numeric objects (i.e. double
+-   Numbers in R a generally treated as numeric/ double objects (i.e. double
     precision real numbers)
 
     -   If you explicitly want an integer, you need to specify the ```L```
     suffix
 
-    -   Ex: Entering ```1``` gives you a numeric object; entering ```1L```
+    -   Ex: Entering ```1``` gives you a numeric/ double object; entering ```1L```
     explicitly gives you an integer.
 
 -   There is also a special number ```Inf``` which represents infinity;
@@ -301,6 +301,45 @@ In c(1, 2, 3) + c(1, 2, 3, 4, 5, 6, 7) :
 [1] 2 4 6 5 7 9 8
 ```
 
+Vectors: How to retrieve elements of a vector (subsetting)
+========================================================
+
+```
+my_vector[the_references]
+
+the_vector: vector we are interested in
+the_references: the indexes/ the names of the elements
+    we are interested in (e.g. 1, c(1,5,..), c(T,F,T,..))
+```
+
+
+```r
+x <- c(10,20,30,40,50,60,70,80,90,100)
+
+# Using indexes
+# Get the 10th element
+x[10]
+[1] 100
+
+# Get the 4th and 6th elements
+x[c(4,6)]
+[1] 40 60
+
+# Get all elements > 50
+x[x > 50]
+[1]  60  70  80  90 100
+
+x[which(x > 50)]
+[1]  60  70  80  90 100
+
+# Using names
+names(x) <- c("a", "b", "c", "d", "e", "f", "g", "h", "i", "l")
+
+x["d"]
+ d 
+40 
+```
+
 Vectors: Testing Vector Equality
 ========================================================
 
@@ -361,6 +400,67 @@ $surname
 
 $salary
 [1] 55000
+```
+
+Lists: How to retrieve elements of a list (subsetting)
+========================================================
+
+```
+Use to select one or more elements (list)
+
+the_list[the_references] -> return elements (list)
+
+the_list: list we are interested in
+the_references: the indexes/ the tag of the elements
+    we are interested in e.g. 1, c(1,5,..),...
+```
+
+
+```r
+# Retrieving elements in a list using index
+z <- list("abc", 1, TRUE)
+z[c(2,3)]
+[[1]]
+[1] 1
+
+[[2]]
+[1] TRUE
+
+# Retrieving elements in a list using tags
+z <- list(a = "abc", b = 1, c = TRUE)
+z[c("a", "b")]
+$a
+[1] "abc"
+
+$b
+[1] 1
+```
+
+---
+
+```
+Use to select a single element
+
+the_list[[the_reference]] / thelist$tag -> return element
+
+the_list: list we are interested in
+the_reference/ tag: the index/ the tag of the element
+    we are interested in e.g. 1, name,...
+```
+
+
+```r
+# Retrieving an element in a list using index
+z <- list("abc", 1, TRUE)
+z[[1]]
+[1] "abc"
+
+# Retrieving an element in a list using tags
+z <- list(a = "abc", b = 1, c = TRUE)
+z[["c"]]
+[1] TRUE
+z$c
+[1] TRUE
 ```
 
 Lists: Adding and Deleting List elements
@@ -502,7 +602,7 @@ Levels: yes no
 Matrices
 ========================================================
 
-Matrices are vectors with a _dimension_ attribute. The dimension attribute is itself an integer vector of length 2 (nrow, ncol)
+Matrices are vectors with a _dimension_ attribute. The dimension attribute is itself an integer vector of length 2 (nrow, ncol).
 
 ```r
 > m <- matrix(nrow = 2, ncol = 3)
