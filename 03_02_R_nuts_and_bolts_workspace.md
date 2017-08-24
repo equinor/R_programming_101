@@ -9,33 +9,11 @@ Workspace & Files
 
 R provides a common set of commands for interacting with the local environment
 
+- Managing (in-memory) objects in the local workspace
 - The working directory
-- Managing objects in the local workspace
 - Managing files in the working directory
 
-The Working Directory
-========================================================
-
-The __Working Directory__ is where R and the current session look for files when reading and writing on the local computer.
-
-__How to get the current working directory...__
-
-
-```r
-#Find the current working directory
-getwd()
-[1] "E:/APPL/workspace_r/R_programming_101"
-```
-
-__How to change the current working directory...__
-
-
-```r
-#Change the working directory to a new dir
-setwd(...)
-```
-
-Managing objects in the local workspace
+Managing (in-memory) objects in the local workspace
 ========================================================
 
 __How to view objects/ variables created in the local environment...__
@@ -64,6 +42,30 @@ rm()
 ## ls()
 ## rm(list = c("tmp1", "tmp2")
 ```
+
+
+The Working Directory
+========================================================
+
+The __Working Directory__ is where R and the current session look for files when reading and writing on the local computer.
+
+__How to get the current working directory...__
+
+
+```r
+#Find the current working directory
+getwd()
+[1] "E:/APPL/workspace_r/R_programming_101"
+```
+
+__How to change the current working directory...__
+
+
+```r
+#Change the working directory to a new dir
+setwd(...)
+```
+
 
 Managing files on the local computer (working directory)
 ========================================================
