@@ -1,0 +1,104 @@
+Reading Data into R
+========================================================
+author:
+date:
+autosize: true
+
+
+Introduction
+========================================================
+
+As with everything in R, there are numerous ways to get data into R
+
+- the `datasets` package,
+    - list datasets part of the `datasets` package: `library(help = "datasets")`
+
+- other external packages, use `data()` function
+    - list datasets part of the `dplyr` package: `try(data(package = "dplyr"))`
+    - list all of the available datasets for all installed packages: `data(package = .packages(all.available = TRUE))`
+
+- reading external files (e.g. csv, tsv, excel, xml, json and more)
+
+In general, when using R with larger datasets, it’s useful to know a few things about your system.
+
+- How much memory is available?
+- What other applications are in use?
+- Are there other users logged into the same system?
+- What operating system?
+    - Is the OS 32 or 64 bit?
+
+
+
+Reading  (tabular data) CSV
+========================================================
+
+The `read.table` function is one of the most commonly used function for reading data in R (__memory__) as a `data.frame`. Optionally the `read.csv` function (actually a wrapper around `read.table` with `sep = ","` and others).
+
+<font size = "6px">
+```{r collapse = T}
+file_path <- file.path("data", "TomatoFirst.csv")
+# file_path can be an url like
+# file_path <- "http://www.jaredlander.com/data/TomatoFirst.csv"
+
+the_ds <- read.table(file = file_path, header = TRUE, sep = ",", stringsAsFactors = FALSE)
+
+format(object.size(the_ds), units = "auto")
+
+str(the_ds) #str aka structure
+```
+</font>
+
+Reading  (tabular data) CSV (Cont'd)
+========================================================
+
+__Large files__ can be __slow__ to read into memory using `read.table`, and fortunately there are alternatives available. The __two most prominent functions for reading large CSVs—and other text files__ are
+
+- `read_delim` from the [`readr` package](https://cran.r-project.org/web/packages/readr/README.html) by Hadley Wickham and
+
+- `fread` from the [`data.table` package](https://cran.r-project.org/web/packages/data.table/index.html) by Matt Dowle.
+
+Reading  (tabular data) Excel
+========================================================
+
+Unfortunately sometimes will be required to read Excel files. Fortunately the [`readxl` package](https://cran.r-project.org/web/packages/readxl/index.html) by Hadley Wickham makes reading excel files (.xls and .xlsx) easy.
+
+`readxl::read_excel()` function is used to load excel files in R (as a `tibble`). It will guess column types, by default, or you can provide them explicitly via the `col_types` argument.
+
+<font size = "6px">
+```{r collapse = T}
+#install.packages("readxl")
+library(readxl)
+
+file_path <- file.path("data", "TomatoFirst.xlsx")
+the_ds <- read_excel(path = file_path, sheet = 1)
+
+format(object.size(the_ds), units = "auto")
+
+str(the_ds) #str aka structure
+```
+</font>
+
+Reading XML
+========================================================
+
+The [`XML` package](https://cran.r-project.org/web/packages/XML/index.html) is a tool for parsing and generating XML files within R (supporting HTML, DTDs). The `xmlTreeParse()` function can be used to parse the XML file directly or from web.
+
+<font size = "6px">
+```{r collapse = T}
+#install.packages("XML")
+library(XML)
+
+file_path <- file.path("data", "simple.xml")
+# an url can be provided instead
+the_ds <- xmlTreeParse(file = file_path)
+
+format(object.size(the_ds), units = "auto")
+
+rootNode <- xmlRoot(the_ds)
+
+rootNode[[2]]
+
+rootNode[[2]][[1]]
+
+```
+</font>
