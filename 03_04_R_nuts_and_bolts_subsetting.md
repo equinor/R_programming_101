@@ -4,7 +4,7 @@ author:
 date:
 autosize: true
 
-Subsetting
+Subsetting/ Indexing
 ========================================================
 
 There are different operators that can be used to extract subsets of R objects.
