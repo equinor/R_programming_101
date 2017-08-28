@@ -29,7 +29,7 @@ In general, when using R with larger datasets, it’s useful to know a few thing
 
 
 
-Reading  (tabular data) CSV
+Reading (tabular data) CSV
 ========================================================
 
 The `read.table` function is one of the most commonly used function for reading data in R (__memory__) as a `data.frame`. Optionally the `read.csv` function (actually a wrapper around `read.table` with `sep = ","` and others).
@@ -71,7 +71,7 @@ __Large files__ can be __slow__ to read into memory using `read.table`, and fort
 
 - `fread` from the [`data.table` package](https://cran.r-project.org/web/packages/data.table/index.html) by Matt Dowle.
 
-Reading  (tabular data) Excel
+Reading (tabular data) Excel
 ========================================================
 
 Unfortunately sometimes will be required to read Excel files. Fortunately the [`readxl` package](https://cran.r-project.org/web/packages/readxl/index.html) by Hadley Wickham makes reading excel files (.xls and .xlsx) easy.
@@ -106,7 +106,7 @@ Classes 'tbl_df', 'tbl' and 'data.frame':	16 obs. of  11 variables:
 ```
 </font>
 
-Reading XML
+Reading XML/ HTML files
 ========================================================
 
 The [`XML` package](https://cran.r-project.org/web/packages/XML/index.html) is a tool for parsing and generating XML files within R (supporting HTML, DTDs). The `xmlTreeParse()` function can be used to parse the XML file directly or from web.
@@ -138,3 +138,97 @@ rootNode[[2]][[1]]
 <name>Strawberry Belgian Waffles</name>
 ```
 </font>
+
+Reading JSON files
+========================================================
+
+JSON (JavaScript Object Notation) is a popular format for data from API. JSON is stored in plain text, and well suited for nested data. A R package for reading JSON is the [`jsonlite`](https://cran.r-project.org/web/packages/jsonlite/index.html) package.
+
+>'The jsonlite package is a JSON parser/generator optimized for the web. Its main strength is that it implements a bidirectional mapping between JSON data and the most important R data types. Thereby we can convert between R objects and JSON without loss of type or information, and without the need for any manual data munging. This is ideal for interacting with web APIs, or to build pipelines where data structures seamlessly flow in and out of R using JSON.'
+
+<font size = "6px">
+
+```r
+#install.packages("jsonlite")
+library(jsonlite)
+
+# mtcars.json
+# [{"mpg":21,"cyl":6,"disp":160,"hp":110,"drat":3.9,
+#   "wt":2.62,"qsec":16.46,"vs":0,"am":1,"gear":4,
+#   "carb":4,"_row":"Mazda RX4"}, ....
+mtcars_data <- fromJSON(file.path("data", "mtcars.json"))
+
+
+head(mtcars_data,7)
+                   mpg cyl disp  hp drat    wt  qsec vs am gear carb
+Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
+Duster 360        14.3   8  360 245 3.21 3.570 15.84  0  0    3    4
+```
+</font>
+
+Reading JSON files (Cont'd)
+========================================================
+
+<font size = "6px">
+```
+# from
+#https://feeds.citibikenyc.com/stations/stations.json
+{"executionTime":"2017-08-28 04:37:11 AM",
+"stationBeanList":[{"id":72,
+                    "stationName":"W 52 St & 11 Ave",
+                    "availableDocks":30,
+                    "totalDocks":39,
+                    "latitude":40.76727216,
+                    "longitude":-73.99392888,
+                    "statusValue":"In Service",
+                    "statusKey":1,
+                    "availableBikes":9,
+                    "stAddress1":"W 52 St & 11 Ave",
+                    "stAddress2":"",
+                    "city":"",
+                    "postalCode":"",
+                    "location":"",
+                    "altitude":"",
+                    "testStation":false,
+                    "lastCommunicationTime":"2017-08-28 04:33:21 AM",
+                    "landMark":""},
+                    .....
+```
+</font>
+
+---
+
+<font size = "6px">
+
+```r
+#install.packages("jsonlite")
+library(jsonlite)
+
+jsonData <- fromJSON("http://citibikenyc.com/stations/json")
+class(jsonData)
+names(jsonData)
+
+class(jsonData$stationBeanList)
+head(jsonData$stationBeanList[,1:3])
+```
+</font>
+
+Reading from Other Sources
+========================================================
+
+### Databases
+
+Databases arguably store the vast majority of the world’s data. Most of these, whether they be PostgreSQL, MySQL, Microsoft SQL Server or Microsoft Access, can be accessed either through various drivers, typically via an ODBC connection.
+
+The most popular open-source databases have packages such as `RPostgreSQL` and `RMySQL`. Other databases without a specific package can make use of the more generic, and aptly named, `RODBC` package. Database connectivity can be difficult, so the __`DBI`__ package was written to create a uniform experience while working with different databases.
+
+---
+
+### Other statistical tools
+
+Data are sometimes locked in a proprietary format such as those from SAS, SPSS or Octave. The `foreign` package provides a number of functions similar to `read.table` to read in data from other tools.
