@@ -24,9 +24,11 @@ Some Basic Information
 
 - The # character indicates a comment. Anything to the right of the # (including the # itself) is ignored.
 
+<font size = "6px">
 ```r
 > # This is a comment
 ```
+</font>
 
 - Variables, R does __not require variable types to be declared__.
     - A variable can take on any available data type (at any point)
@@ -34,6 +36,7 @@ Some Basic Information
     - Variable Assignment is performed using the assignment operator `<-` or `assign` function.
         - `=` operator could be used but it is discouraged cause does not work in special situation (historical reason).
 
+<font size = "6px">
 ```r
 > x <- 1 # Assign 1 to x
 > x
@@ -46,7 +49,7 @@ Some Basic Information
 > j
 [1] 4
 ```
-
+</font>
 
 
 Some Basic Information (Cont'd)
@@ -54,6 +57,7 @@ Some Basic Information (Cont'd)
 
 - The grammar of the language determines whether an expression is complete or not. When a complete expression is entered at the prompt, it is evaluated/ executed.
 
+<font size = "6px">
 ```r
 > x <- 1 # complete expression
 >
@@ -63,9 +67,11 @@ Some Basic Information (Cont'd)
 > x <-  # Incomplete expression - you will be asked to continue in the next line (+)
 +
 ```
+</font>
 
 - Printing...
 
+<font size = "6px">
 ```r
 > x <- 5  # Assignment - nothing printed
 
@@ -75,10 +81,49 @@ Some Basic Information (Cont'd)
 > print(x)  ## explicit printing, normally used when working within function
 [1] 5
 ```
+</font>
+
+Operators
+========================================================
+
+__Arithmetic Operators__: these unary and binary operators perform arithmetic on numeric or complex vectors (or objects which can be coerced to them). See `?Arithmetic` for more information.
+
+<font size = "6px">
+```{r eval = F}
++ x
+- x
+x + y
+x - y
+x * y
+x / y
+x ^ y
+x %% y
+x %/% y
+```
+</font>
+
+---
+
+__Logical Operators__: these operators act on raw, logical and number-like vectors. See `?Logical` for more information.
+
+<font size = "6px">
+```{r eval = F}
+! x
+x & y #  elementwise comparisons
+x && y # only the first element of vectors
+x | y
+x || y
+xor(x, y)
+
+isTRUE(x)
+```
+</font>
+
 
 A First R Session
 ========================================================
 
+<font size = "6px">
 ```r
 > 5 + 3 # Use as a calculator
 [1] 8
@@ -101,7 +146,7 @@ A First R Session
 > mean(Nile) #calculate the mean and standard deviation
 > sd(Nile) #calculate the standard deviation
 ```
-
+</font>
 
 Hands-On (15 minutes)
 ========================================================
