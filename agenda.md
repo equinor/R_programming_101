@@ -7,19 +7,17 @@ autosize: true
 Agenda
 ========================================================
 
-- A Brief History of R
-- Design of the R System
-- R Nuts & Bolts
-    - Console Input & Evaluation
-    - Workspace & Files
-    - Data Types
-    - Subsetting
+- A Brief History of R (10 min)
+- Design of the R System (10 min)
 
 ***
 
-- Bullet 4
-- Bullet 5
-- Bullet 6
+- R Nuts & Bolts
+    - Getting Started (25 min)
+    - Workspace & Files (20 min)
+    - Data Types (60 min)
+    - Subsetting (20 min)
+    - Reading Data into R
 
 
 Reference
