@@ -123,6 +123,7 @@ Getting Help  (Cont'd)
 
 __The `help` function__ can be used to get online help.
 
+<font size = "6px">
 ```r
 # We want to get some more information about the args function
 help(args)
@@ -134,11 +135,12 @@ help(args)
 ?"+"
 ?"for"
 ```
+</font>
 
 __The `example` function__ can be used to run examples provided in the help entries.
 
+<font size = "6px">
 ```r
-help(args)
 # In most of the online help pages there is an Examples section
 # with some examples on how to use what we have been searching for
 # some examples can be run using the example function
@@ -147,29 +149,36 @@ example(args)
 
 # Another example
 # 'persp' draws perspective plots of a surface over the x–y plane
+
 example(persp)
 ```
+</font>
 
 Getting Help (Cont'd)
 ========================================================
 
 If you do not know exactly what you are looking for. `help.search` can be used to perform a Google-style search through R documentation.
 
+<font size = "6px">
 ```r
 help.search("multivariate normal")
 
 # shortcut
 ??"multivariate normal"
 ```
+</font>
 
 If you want to access information related to a specific package...
 
+<font size = "6px">
 ```r
 help(package=dplyr)
 ```
+</font>
 
 Some other topics...
 
+<font size = "6px">
 ```r
 ?files
 ?Arithmetic
@@ -177,6 +186,7 @@ Some other topics...
 # Arithmetic, Comparison, Control, Dates, Extract, files, Math, Memory, NA
 # NULL, NumericaConstants, Paren, Quotes, Startup, Syntax
 ```
+</font>
 
 The [`sos`](https://cran.r-project.org/web/packages/sos/index.html) package offers highly sophisticated searching of R materials (instaled packages).
 

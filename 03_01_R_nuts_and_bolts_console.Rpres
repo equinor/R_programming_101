@@ -9,7 +9,7 @@ How To Run R
 
 R actually can operate in two modes: an _interactive_ mode and a _batch_ mode.
 
-- _Interactive_ mode, require an interacion with the user.
+- _Interactive_ mode, require an interaction with the user.
     - A R session is started.
     - The user types in/ executes a command or a set of commands.
     - R displays the result and so on.
@@ -22,7 +22,7 @@ Note! We will run R in an __interactive__ mode through the R Console/ IDE.
 Some Basic Information
 ========================================================
 
-- The # character indicates a comment. Anything to the right of the # (including the # itself) is ignored.
+- The `#` character indicates a comment. Anything to the right of the `#` (including the `#` itself) is ignored.
 
 <font size = "6px">
 ```r
@@ -78,7 +78,7 @@ Some Basic Information (Cont'd)
 > x       # auto-printing occurs, normally used when working in interaction mode
 [1] 5
 
-> print(x)  ## explicit printing, normally used when working within function
+> print(x)  # explicit printing, normally used when working within function
 [1] 5
 ```
 </font>
@@ -120,22 +120,47 @@ isTRUE(x)
 </font>
 
 
-A First R Session
+A First R Session: Hands-On
 ========================================================
 
 <font size = "6px">
 ```r
-> 5 + 3 # Use as a calculator
-[1] 8
+ # Use as a calculator
+> 5 + 3
+> 5 %% 2
+> 5 %/% 2
 
-> x <- c(1,2,3) # Create a vector and assign to x
+# Assignments
+> x <- 5 + 2
+> x # Show the content of x
+> x <- "A string" # the type can be changed
+> x
+
+# Create a vector and assign to x
+> x <- c(1,2,3)
 > x # show the content of x
 
-> y <- c(x,4,x) # Create a new vector based on x
+# Create a new vector y based on x
+> y <- c(x,4,x)
 > print(y) # show the content of y & its length
 
-> y[2:4] # (Subsetting) Get 2nd to 4th elements of y
+# (Subsetting) Get 2nd to 4th elements of y
+> y[2:4]
+```
+</font>
 
+---
+
+<font size = "6px">
+```r
+# Logical Conditions
+> x <- TRUE
+> !x
+> y <- FALSE
+> x & y
+> x | y
+
+# Using the data available in R
 > data() # Show the available datasets (default)
 
 > ?Nile # Nile dataset - what is it about?
@@ -145,10 +170,11 @@ A First R Session
 
 > mean(Nile) #calculate the mean and standard deviation
 > sd(Nile) #calculate the standard deviation
+> quantile(Nile)
 ```
 </font>
 
-Hands-On (15 minutes)
+Hands-On (Optional)
 ========================================================
 
 ```r
