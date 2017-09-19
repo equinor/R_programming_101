@@ -7,7 +7,7 @@ autosize: true
 Atomic Classes
 ========================================================
 
-R has five basic or "atomic" classes (aka modes):
+R has five basic types or "atomic" classes (aka modes):
 
 -   __character__ (Strings)
     - Ex. "Survived"
@@ -24,9 +24,9 @@ R has five basic or "atomic" classes (aka modes):
 -   __logical__
     - Ex. TRUE/FALSE
 
+---
 
-Numbers
-========================================================
+__More on numbers__
 
 -   Numbers in R a generally treated as numeric/ double objects (i.e. double
     precision real numbers)
@@ -53,9 +53,9 @@ R Objects
 - Lists,
 - Factors,
 - Matrices,
-- Data frames, ..
+- Data frames
 
-`mode` and `typeof` can be used to understand the internal type or storage mode for an R object.
+`mode` and `typeof` functions can be used to understand the internal type or storage mode for an R object.
 
 
 Vectors: the R workhorse
@@ -64,20 +64,23 @@ Vectors: the R workhorse
 __Vector is the fundamental data type in R.__
 
 - __Scalar__s do not really exist in R, actually a scalar is a vector of 1 element (a special vector).
--   A vector can __only contain objects of the same atomic class__,
+-   A vector can __only contain objects of the same data type/ atomic class__,
     - in other words, elements of a vector are all of the same type.
 - The __size of a vector__ is __determined at its creation__,
     - so if you wish to add or delete elements, you’ll need to reassign the vector.
 
 ---
 
+<font size = "6px">
 ```r
 > # Scalar -> vector of 1 element
 > x <- 8
 > x
  [1] 8
 ```
+</font>
 
+<font size = "6px">
 ```r
 > x <- c(88,5,12,13)
 
@@ -87,16 +90,17 @@ __Vector is the fundamental data type in R.__
 > x
 [1]  88   5  12 168  13
 ```
+</font>
 
 Vectors: How to create vectors
 ========================================================
 
 The `c()` (concatenate) function can be used to create vectors.
 
+<font size = "6px">
 ```r
 > x <- c(0.5, 0.6)       ## numeric vector
 > x <- c(1L, 2L)         ## integer vector
-> x <- 9:29              ## integer vector
 
 > x <- c(TRUE, FALSE)    ## logical vector
 > x <- c(T, F)           ## logical vector
@@ -105,9 +109,11 @@ The `c()` (concatenate) function can be used to create vectors.
 
 > x <- c(1+0i, 2+4i)     ## complex vector
 ```
+</font>
 
 The `:` operator can be used to create `integer` vectors.
 
+<font size = "6px">
 ```r
 > x <- 5:10
 > x
@@ -115,6 +121,7 @@ The `:` operator can be used to create `integer` vectors.
 > typeof(x)
 [1] "integer"
 ```
+</font>
 
 ---
 
@@ -122,6 +129,7 @@ Using the `vector()` function to create an empty vector. It creates a vector of 
 
 Note! Logical vector elements are initialized to FALSE, numeric vector elements to 0, character vector elements to ""...
 
+<font size = "6px">
 ```r
 > x <- vector("numeric", length = 10)
 > x
@@ -132,9 +140,11 @@ Note! Logical vector elements are initialized to FALSE, numeric vector elements 
 > length(x)
 [1] 10
 ```
+</font>
 
 Other functions used for creating vectors are `seq()` and `rep()`.
 
+<font size = "6px">
 ```r
 > seq(0, 1, length.out = 11)
  [1] 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
@@ -142,21 +152,24 @@ Other functions used for creating vectors are `seq()` and `rep()`.
 > rep(x = 1:4, times = 2)
 [1] 1 2 3 4 1 2 3 4
 ```
+</font>
 
 Vectors: Length of a vector
 ========================================================
 
 The `length()` function can be used to obtain the length of a vector.
 
-
+<font size = "6px">
 ```r
 > x <- c(1,2,4)
 > length(x)
 [1] 3
 ```
+</font>
 
 You need to be careful using length...
 
+<font size = "6px">
 ```r
 > x <- c() # Equivalent to x <- NULL
 > x
@@ -174,33 +187,39 @@ NULL
 > 1:length(x)
 [1] 1 0
 ```
-
+</font>
 
 Vectors: Implicit Coercion
 ========================================================
 
-A vector contains only objects of the same (atomic) class.
+A vector contains only objects of the same (atomic) class/ data type.
 
 __What does it happen when we try to mix different types within the same vector?__
 
+<font size = "6px">
+
 ```r
-> # Mixing different class within the same vector
-
-> # Mixing numeric (double) with characters
-> y <- c(1.7, "a")   # coerced to character
-> typeof(y)
+# Mixing numeric (double) with characters
+y <- c(1.7, "a")   # coerced to character
+typeof(y)
 [1] "character"
-
-> # Mixing boolean with numeric
-> y <- c(TRUE, 2)    # coerced to numeric (double)
-> typeof(y)
+y
+[1] "1.7" "a"  
+# Mixing boolean with numeric
+y <- c(TRUE, FALSE, 2)    # coerced to numeric (double)
+typeof(y)
 [1] "double"
+y
+[1] 1 0 2
 
-> # Mixing boolean with character
-> y <- c("a", TRUE)  ## coerced to character
-> typeof(y)
+# Mixing boolean with character
+y <- c("a", TRUE)  ## coerced to character
+typeof(y)
 [1] "character"
+y
+[1] "a"    "TRUE"
 ```
+</font>
 
 When different objects are mixed in a vector, _automatic/ implicit coercion_ occurs so that every element in the vector is of the same class.
 
@@ -209,108 +228,138 @@ Vectors: Explicit Coercion
 
 Objects can be explicitly coerced from one class to another using the `as.*` functions, if available.
 
+<font size = "6px">
+
 ```r
-> x <- 0:6
-> typeof(x)
+x <- 0:6
+typeof(x)
 [1] "integer"
+x
+[1] 0 1 2 3 4 5 6
 
-> y <- as.numeric(x)
-> typeof(y)
+y <- as.numeric(x)
+typeof(y)
 [1] "double"
+y
+[1] 0 1 2 3 4 5 6
 
-
-> as.logical(x)
+as.logical(x)
 [1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
 
-> as.character(x)
+as.character(x)
 [1] "0" "1" "2" "3" "4" "5" "6"
 ```
+</font>
+
 ---
 
 Nonsensical coercion results in `NA`s.
 
+<font size = "6px">
+
 ```r
-> x <- c("a", "b", "c")
-> as.numeric(x)
+x <- c("a", "b", "c")
+as.numeric(x)
+Warning: NAs introduced by coercion
 [1] NA NA NA
-Warning message:
-NAs introduced by coercion
 ```
+</font>
 
 Vectors: Vectorized Operations
 ========================================================
 
-The operation/ function applied to a vector is __actually individually applied to each element__ of the vector(s).
+The operation/ function applied to a vector is __actually individually applied to each element__ of the vectors (__default behaviour__).
 
 Many operations in R are __vectorized__ making code more efficient, concise and easier to read (but _challenging to write_). Examples of __vectorized__ operations/ functions are the `+`, `*` and `>` operators (this applies to many other built-in R functions).
 
 ---
 
-```r
-> x <- 1:4; y <- 6:9
-> x + y
-[1] 7 9 11 13
+<font size = "6px">
 
-> "+"(x,y)
+```r
+x <- 1:4; y <- 6:9
+x + y
 [1]  7  9 11 13
 
-> x * y
-[1] 6 14 24 36
+"+"(x,y)
+[1]  7  9 11 13
 
-> x / y
+x * y
+[1]  6 14 24 36
+
+x / y
 [1] 0.1666667 0.2857143 0.3750000 0.4444444
 ```
+</font>
+
+<font size = "6px">
 
 ```r
-> x <- 1:4
-> x > 2
+x <- 1:4
+x > 2
 [1] FALSE FALSE  TRUE  TRUE
 ```
+</font>
+
+<font size = "6px">
 
 ```r
-> sqrt(1:9)
-[1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490 2.645751 2.828427[9] 3.000000
+sqrt(1:6)
+[1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490
 ```
+</font>
+
 
 Vectors: Recycling
 ========================================================
 
 When applying an operation to two vectors that requires them to be the same length, R automatically __recycles__ the shortest one. It repeats, the shorter one, until it is long enough to match the longer one (a warning could be generated in the process).
 
+---
+
+<font size = "6px">
+
 ```r
-> # longer object length multiple of shorter object length
-> c(1,2,3) + c(1,2,3,4,5,6)
+# longer object length multiple of shorter object length
+c(1,2,3) + c(1,2,3,4,5,6)
 [1] 2 4 6 5 7 9
 
-> # this is what is actually happening (recycling)
-> c(1,2,3,1,2,3) + c(1,2,3,4,5,6)
+# this is what is actually happening (recycling)
+c(1,2,3,1,2,3) + c(1,2,3,4,5,6)
 [1] 2 4 6 5 7 9
 ```
+</font>
 
+<font size = "6px">
 
 ```r
 # longer object length not multiple of shorter object length
-> c(1,2,3) + c(1,2,3,4,5,6,7)
-[1] 2 4 6 5 7 9 8
-Warning message:
-In c(1, 2, 3) + c(1, 2, 3, 4, 5, 6, 7) :
-  longer object length is not a multiple of shorter object length
+c(1,2) + c(1,2,3,4,5)
+Warning in c(1, 2) + c(1, 2, 3, 4, 5): longer object length is not a
+multiple of shorter object length
+[1] 2 4 4 6 6
 
-> # this is what is actually happening (recycling)
-> c(1,2,3,1,2,3,1) + c(1,2,3,4,5,6)
-[1] 2 4 6 5 7 9 8
+# this is what is actually happening (recycling)
+c(1,2,1,2,1) + c(1,2,3,4,5)
+[1] 2 4 4 6 6
 ```
+</font>
 
-Vectors: How to retrieve elements of a vector (subsetting)
+Vectors: Subsetting
 ========================================================
 
+How to retrieve elements of a vector (__subsetting__).
+
+<font size = "6px">
 ```
 my_vector[the_references]
 
 the_references: the indexes/ the names of the elements
     we are interested in (e.g. 1, c(1,5,..), c(T,F,T,..))
 ```
+</font>
 
+<font size = "6px">
 
 ```r
 x <- c(10,20,30,40,50,60,70,80,90,100)
@@ -336,38 +385,104 @@ x["d"]
  d 
 40 
 ```
+</font>
 
 Vectors: Testing Vector Equality
 ========================================================
 
-````r
-> # Testing Vector Equality Using ==
-> # remember that == is a vectorized operation
-> x <- 1:3
-> y <- c(1,3,4)
-> x == y
+<font size = "6px">
+
+```r
+# Testing Vector Equality Using ==
+# remember that == is a vectorized operation
+x <- 1:3
+y <- c(1,3,4)
+x == y
 [1]  TRUE FALSE FALSE
-> all(x == y)
+
+all(x == y)
+[1] FALSE
+FALSE
 [1] FALSE
 
-> x <- 1:3
-> y <- c(1,2,3)
-> all(x == y)
+x <- 1:3
+y <- c(1,2,3)
+all(x == y)
 [1] TRUE
 
-> # Testing Vector Equality Using identical
-> # vector elements  must have same type and value (strict)
-> x <- 1:3
-> y <- c(1,2,3)
-> identical(x,y)
+# Testing Vector Equality Using identical
+# vector elements  must have same type and value (strict)
+x <- 1:3
+y <- c(1,2,3)
+identical(x,y)
 [1] FALSE
 
-> y <- c(1L,2L,3L)
-> identical(x,y)
+y <- c(1L,2L,3L)
+identical(x,y)
 [1] TRUE
 ```
+</font>
 
-Hands-On (20 minutes)
+Hands-On (10 minutes)
+========================================================
+
+<font size = "6px">
+
+```r
+# -----------------------------------------------
+# Create a numeric vector num_vect that contains
+# the values 0.5, 1, 55, 1, -10, and 6.
+
+# Check which element in num_vect is less than 1
+# and store it in less_1
+
+# Do you expect a single logical value?
+# Print less_1
+
+# Check which element in num_vect is greater than  6
+# Check which element in num_vect is equal to 1
+
+
+# -----------------------------------------------
+# Vectorized Operation
+# Create a vector v_1 that contains 1,2,3,4,5
+# Create a vector v_2 that contains 10,20,30,40,50 (integer)
+
+# Check the data types associated to v_1 and v_2
+
+# Sum v_1 and v_2, what is the expected result
+# What is the resulting data type of v_1 + v_2
+
+# -----------------------------------------------
+# Vectorized Operation with Recycling
+# Create a vector v_1 that contains 1,2,3,4,5
+# Create a vector v_2 that contains 10
+
+# Sum v_1 and v_2, what is the expected result & why
+```
+</font>
+
+---
+
+<font size = "6px">
+
+```r
+# -----------------------------------------------
+# Create a character vector my_char that contains
+# the following words: "My", "name", "is"
+# Print the content of my_char
+# How many elements are in it?
+
+# Coerce my_char to a numeric. What do you expect?
+
+# -----------------------------------------------
+# Create a vector v_1 containing 1,2,1,2,1,2,1,2
+# 1,2 repeated 4 times
+# Subsetting: get the 2,4,6,8 elements of the vector
+```
+</font>
+
+Hands-On (Optional)
 ========================================================
 
 

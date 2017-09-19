@@ -96,4 +96,8 @@ swirl()
 #.....
 # Select the "R Programming" entry
 # Select the "Workspace and Files" entry [2]
+
+# Exit swirl and return to the R prompt (>) at any time by pressing the Esc key
+# type bye() to exit and save your progress
+# type info() for more option.
 ```

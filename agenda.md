@@ -13,11 +13,15 @@ Agenda
 ***
 
 - R Nuts & Bolts
-    - Getting Started (25 min)
+    - Getting Started (15/20 min)
     - Workspace & Files (20 min)
     - Data Types (60 min)
-    - Subsetting (20 min)
+    - Basic Operations
     - Reading Data into R
+    - Control Structures
+    - Functions
+    - Scoping Rules
+    - Plotting
 
 
 Reference
