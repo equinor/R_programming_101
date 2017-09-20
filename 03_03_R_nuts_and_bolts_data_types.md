@@ -500,13 +500,15 @@ swirl()
 Lists
 ========================================================
 
-Lists are a special type of vector (often referred as recursive vector) that can contain/ combine elements of different types (even other lists). Quite important in R, eg. (S3) classes are list with attributes.
+Lists are a special type of vector (often referred as __recursive vector__) that can contain/ combine elements of different types (even other lists). In R (S3) classes are list with attributes.
 
 How to create a __list__...
 
+<font size = "6px">
+
 ```r
-> x <- list(1, "a", TRUE)
-> x
+x <- list(1, "a", TRUE)
+x
 [[1]]
 [1] 1
 
@@ -516,9 +518,9 @@ How to create a __list__...
 [[3]]
 [1] TRUE
 
-> # Adding component names/ tags. name, surname, salary tags are optional
-> j <- list(name = "John", surname = "Doe", salary = 55000)
-> j
+# Adding component names/ tags. name, surname, salary tags are optional
+j <- list(name = "John", surname = "Doe", salary = 55000)
+j
 $name
 [1] "John"
 
@@ -528,23 +530,31 @@ $surname
 $salary
 [1] 55000
 ```
+</font>
 
-Lists: How to retrieve elements of a list (subsetting)
+Lists: Subsetting
 ========================================================
 
+<font size = "6px">
 ```
-Use to select one or more elements (list)
+Select one or more elements (list)
 
 the_list[the_references] -> return elements (list)
 
 the_references: the indexes/ the tag of the elements
     we are interested in e.g. 1, c(1,5,..),...
 ```
+</font>
 
+<font size = "6px">
 
 ```r
 # Retrieving elements in a list using index
 z <- list("abc", 1, TRUE)
+z[1]
+[[1]]
+[1] "abc"
+
 z[c(2,3)]
 [[1]]
 [1] 1
@@ -561,18 +571,22 @@ $a
 $b
 [1] 1
 ```
+</font>
 
 ---
 
+<font size = "6px">
 ```
-Use to select a single element
+Select a single element
 
 the_list[[the_reference]] / thelist$tag -> return element
 
 the_reference/ tag: the index/ the tag of the element
     we are interested in e.g. 1, name,...
 ```
+</font>
 
+<font size = "6px">
 
 ```r
 # Retrieving an element in a list using index
@@ -584,22 +598,26 @@ z[[1]]
 z <- list(a = "abc", b = 1, c = TRUE)
 z[["c"]]
 [1] TRUE
+
 z$c
 [1] TRUE
 ```
+</font>
 
-Lists: Adding and Deleting List elements
+Lists: Adding and Deleting elements to/ from a list
 ========================================================
 
 Adding Elements to a list
 
+<font size = "6px">
 
 ```r
-# Adding an element to a list using tags
 z <- list(a = "abc")
 z
 $a
 [1] "abc"
+
+# Adding an element to a list using tags
 z$b <- "sailing"
 z
 $a
@@ -607,28 +625,26 @@ $a
 
 $b
 [1] "sailing"
-```
 
-
-```r
 # Adding an element to a list using index
-z <- list("abc")
+z[[3]] <- "sailing"
 z
-[[1]]
-[1] "abc"
-z[[2]] <- "sailing"
-z
-[[1]]
+$a
 [1] "abc"
 
-[[2]]
+$b
+[1] "sailing"
+
+[[3]]
 [1] "sailing"
 ```
+</font>
 
 ---
 
 Deleting Elements from a list
 
+<font size = "6px">
 
 ```r
 # Deleting an element to a list using tags
@@ -648,10 +664,12 @@ z
 $a
 [1] "abc"
 ```
+</font>
 
 Lists: Getting the size of a list
 ========================================================
 
+<font size = "6px">
 
 ```r
 # Create a list of 3 elements
@@ -670,6 +688,52 @@ $c
 length(z)
 [1] 3
 ```
+</font>
+
+Hands-On (5 minutes)
+========================================================
+
+<font size = "6px">
+
+```r
+# -----------------------------------------------
+p <- c(2,7,8)
+q <- c("A", "B", "C")
+# Create a list with element p & q
+
+# Find the length of the list
+
+# Retrieve the 2nd element in the list
+# as a list
+# and as its original data type
+# -----------------------------------------------
+```
+</font>
+
+---
+
+<font size = "6px">
+
+```r
+# -----------------------------------------------
+age <- c(3, 34, 55, 1, 11, 18, 12)
+gender <- c("Female", "Male", "Female", "Male",
+            "Female", "Female", "Male")
+
+# Create a list "passengers" containing age and gender
+
+# Add an element in the list "is_child" (age < 12)
+# Print "passengers"
+
+# Add an element in the list "is_not_child" (age >= 12)
+# Print "passengers"
+
+# Remove element "is_child" from the list
+# Print "passengers"
+# -----------------------------------------------
+```
+</font>
+
 
 Factors
 ========================================================
