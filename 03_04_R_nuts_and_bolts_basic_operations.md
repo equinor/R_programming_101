@@ -1,10 +1,10 @@
 R Nuts and Bolts: Basic Operations
 ========================================================
-author:
-date:
+author: Pier Lorenzo Paracchini
+date: 20.09.2017
 autosize: true
 
-Subsetting
+Subsetting (Recap)
 ========================================================
 
 There are different operators that can be used to extract subsets of R objects.
@@ -15,49 +15,56 @@ There are different operators that can be used to extract subsets of R objects.
 
 - `$` is used to extract elements of a list or data frame by name; semantics are similar to that of `[[`.
 
-Subsetting a Vector
+Subsetting (Recap) - Cont'd
 ========================================================
+
+__Subsetting a Vector__
+
 <font size = "6px">
+
 ```r
-> x <- c("a", "b", "c", "c", "d", "a")
+x <- c("a", "b", "c", "c", "d", "a")
 
 # Using an index
-> x[1]
+x[1]
 [1] "a"
 
-> x[2]
+x[2]
 [1] "b"
 
-> x[1:4]
+x[1:4]
 [1] "a" "b" "c" "c"
 
 # Using a boolean condition
-> x[x > "a"]
+x[x > "a"]
 [1] "b" "c" "c" "d"
 
-> u <- x > "a"
-> u
-[1] FALSE TRUE TRUE TRUE TRUE FALSE
-> x[u]
+u <- x > "a"
+u
+[1] FALSE  TRUE  TRUE  TRUE  TRUE FALSE
+
+x[u]
 [1] "b" "c" "c" "d"
 ```
 </font>
 
-Subsetting a Matrix
-========================================================
+---
 
-Matrices can be subsetted in the usual way with (_i,j_) type indices. By default, when a single element of a matrix is retrieved, it is returned as a vector of length 1 rather than a 1 x 1 matrix. This behavior can be turned off by setting `drop = FALSE`.
+__Subsetting a Matrix__
+
+By default, when a single element of a matrix is retrieved, it is returned as a vector of length 1 rather than a 1 x 1 matrix. This behavior can be turned off by setting `drop = FALSE`.
 
 <font size = "6px">
+
 ```r
-> x <- matrix(1:6, 2, 3)
+x <- matrix(1:6, 2, 3)
 
 #Get the element in the first row, second col
-> x[1, 2]
+x[1, 2]
 [1] 3
 
 #Get the element in the second row, first col
-> x[2, 1]
+x[2, 1]
 [1] 2
 ```
 </font>
@@ -65,46 +72,43 @@ Matrices can be subsetted in the usual way with (_i,j_) type indices. By default
 Indices can also be missing, and this has a special meaning. Similarly, subsetting a single column or a single row will give you a vector, not a matrix (by default).
 
 <font size = "6px">
+
 ```r
 # Get all of the elements in the first row
-> x[1, ]
+x[1, ]
 [1] 1 3 5
 
-> x[1, , drop = FALSE]
+x[1, , drop = FALSE]
      [,1] [,2] [,3]
 [1,]    1    3    5
 
 # Get all of the elements in the second col
-> x[, 2]
+x[, 2]
 [1] 3 4
 ```
 </font>
 
-Subsetting a List
+Subsetting (Recap) - Cont'd
 ========================================================
 
-<font size = "6px">
-```r
-> x <- list(foo = 1:4, bar = 0.6, baz = "hello")
+__Subsetting a List__
 
-> x[1]
+<font size = "6px">
+
+```r
+x <- list(foo = 1:4, bar = 0.6, baz = "hello")
+
+x[1] # x["bar"]
 $foo
 [1] 1 2 3 4
 
-> x[[1]]
+x[[1]] # x[["bar"]]
 [1] 1 2 3 4
 
-> x$bar
+x$bar
 [1] 0.6
 
-> x[["bar"]]
-[1] 0.6
-
-> x["bar"]
-$bar
-[1] 0.6
-
-> x[c(1, 3)]
+x[c(1, 3)]
 $foo
 [1] 1 2 3 4
 
@@ -113,39 +117,64 @@ $baz
 ```
 </font>
 
-Subsetting a List (Cont'd)
-========================================================
-
 The `[[` operator can be used with _computed_ indices; `$` can only be used with literal names.
 
 <font size = "6px">
+
 ```r
-> x <- list(foo = 1:4, bar = 0.6, baz = "hello")
-> name <- "foo"
-> x[[name]]  ## computed index for ‘foo’
+x <- list(foo = 1:4, bar = 0.6, baz = "hello")
+name <- "foo"
+x[[name]]  ## computed index for ‘foo’
 [1] 1 2 3 4
-> x$name     ## element ‘name’ doesn’t exist!
+
+x$name     ## element ‘name’ doesn’t exist!
 NULL
-> x$foo
-[1] 1 2 3 4
 ```
 </font>
+
+---
+
 
 Partial matching of names is allowed with `[[` and `$`.
 
 <font size = "6px">
+
 ```r
-> x <- list(aardvark = 1:5)
-> x$a
+x <- list(aardvark = 1:5)
+x$a
 [1] 1 2 3 4 5
-> x[["a"]]
+
+x[["a"]]
 NULL
-> x[["a", exact = FALSE]]
+
+x[["a", exact = FALSE]]
 [1] 1 2 3 4 5
 ```
 </font>
 
-Hands-On (15 minutes)
+__Subsetting a Data Frame__
+
+<font size = "6px">
+
+```r
+df <- data.frame(x = c(1,2,3), y = c("a", "b", "c"),
+                 z = c(T,F,F), stringsAsFactors = F)
+df[1,] # First Observation
+  x y    z
+1 1 a TRUE
+
+df[,2] # 2nd feature (y)
+[1] "a" "b" "c"
+
+df[["x"]] # df[[1]] # observation x as original type
+[1] 1 2 3
+
+df$x
+[1] 1 2 3
+```
+</font>
+
+More Hands-On (Optional)
 ========================================================
 
 
@@ -164,10 +193,11 @@ Removing NAs
 A common task is to remove missing values (`NA`s).
 
 <font size = "6px">
+
 ```r
-> x <- c(1, 2, NA, 4, NA, 5)
-> bad <- is.na(x)
-> x[!bad]
+x <- c(1, 2, NA, 4, NA, 5)
+bad <- is.na(x)
+x[!bad]
 [1] 1 2 4 5
 ```
 </font>
@@ -175,30 +205,32 @@ A common task is to remove missing values (`NA`s).
 ---
 
 <font size = "6px">
-```r
-> airquality[1:6, ]
 
+```r
+airquality[1:6, ]
   Ozone Solar.R Wind Temp Month Day
 1    41     190  7.4   67     5   1
 2    36     118  8.0   72     5   2
 3    12     149 12.6   74     5   3
 4    18     313 11.5   62     5   4
-5    NA     NA  14.3   56     5   5
-6    28     NA  14.9   66     5   6
+5    NA      NA 14.3   56     5   5
+6    28      NA 14.9   66     5   6
 
-> good <- complete.cases(airquality)
+good <- complete.cases(airquality)
+#A logical vector which observations/rows have no missing values
 
-> airquality[good, ][1:6, ]
+airquality[good, ][1:6, ]
   Ozone Solar.R Wind Temp Month Day
 1    41     190  7.4   67     5   1
 2    36     118  8.0   72     5   2
 3    12     149 12.6   74     5   3
 4    18     313 11.5   62     5   4
 7    23     299  8.6   65     5   7
+8    19      99 13.8   59     5   8
 ```
 </font>
 
-Hands-On
+Hands-On (10 minutes)
 ========================================================
 
 
@@ -255,7 +287,7 @@ grep("a", c("A", "a", "b", "a", "C"), ignore.case = TRUE)
 ```
 </font>
 
-Built-in functions
+Built-in functions (Cont'd)
 ========================================================
 
 __Statistical functions__:
@@ -311,4 +343,3 @@ summary(mtcars[,1:3])
  Max.   :33.90   Max.   :8.000   Max.   :472.0  
 ```
 </font>
-

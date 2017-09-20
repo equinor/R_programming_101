@@ -1,15 +1,17 @@
 Plotting
 ========================================================
-author:
-date:
+author: Pier Lorenzo Paracchini
+date: 20.09.2017
 autosize: true
 
 Plotting System in R
 ========================================================
 
-Graphics and plotting are used for primarily two reasons: explratory data analysis (EDA) and presenting results. R provides excellent graphing capabilities through different plotting systems
+Graphics and plotting are used for primarily two reasons: explratory data analysis (EDA) and presenting results.
 
-- __Base Plotting System__, the traditional R plotting system automatically installe (`graphic` package - base R)
+R provides excellent graphing capabilities through different plotting systems
+
+- __Base Plotting System__, the traditional R plotting system automatically installed (`graphic` package - base R)
     - quite powerful and able to produce many kinds of graphics (+)
     - quite complex to use if more control over the details of graphic output is needed (-)
 
@@ -26,11 +28,11 @@ Base Plotting System: The R Graphics Package
 
 ---
 
-- Convenient, mirrors how we think of building plots and analyzing data
+- Convenient, mirrors how we think of building plots and analyzing data (+)
 
-- Can't go back once plot has started (i.e. to adjust margins); need to plan in advance
+- Can't go back once plot has started (i.e. to adjust margins); need to plan in advance (-)
 
-- Plot is just a series of R commands
+- Plot is just a series of R commands (*)
 
 
 Base Plotting System: Examples
@@ -55,8 +57,10 @@ __Scatterplot__
 <font size = "6px">
 ```{r baseScatterplot, collapse = TRUE}
 # graphics::plot(x, y, ...)
-plot(x = mtcars$wt, y = mtcars$mpg,  main = "Mpg vs. Weight",
-     xlab = "Weight (1000 lbs)", ylab = "Miles/(US) gallon")
+plot(x = mtcars$wt, y = mtcars$mpg,
+     main = "Mpg vs. Weight",
+     xlab = "Weight (1000 lbs)",
+     ylab = "Miles/(US) gallon")
 ```
 </font>
 
@@ -79,8 +83,10 @@ __Add more information...__
 <font size = "6px">
 ```{r baseScatterplotWithExtra, collapse = TRUE}
 # graphics::plot(x, y, ...)
-plot(x = mtcars$wt, y = mtcars$mpg,  main = "Mpg vs. Weight",
-     xlab = "Weight (1000 lbs)", ylab = "Miles/(US) gallon")
+plot(x = mtcars$wt, y = mtcars$mpg,
+     main = "Mpg vs. Weight",
+     xlab = "Weight (1000 lbs)",
+     ylab = "Miles/(US) gallon")
 lines(x = mtcars$wt, y = mtcars$mpg, type = "h")
 ```
 </font>
@@ -104,3 +110,34 @@ with(mtcars,{
 })
 ```
 </font>
+
+Hands-On (10 min)
+========================================================
+
+```r
+library(swirl)
+swirl()
+#.....
+# Select the "R Programming" entry
+# Select the "Base Graphics" entry [15]
+```
+
+Plotting: Advanced graphics
+========================================================
+
+__`ggplot2` graphic system__
+
+- [examples](http://www.r-graph-gallery.com/portfolio/ggplot2-package/)
+- Theory:
+    - "[Basic plotting with R and ggplot2](https://pparacch.github.io/2017/07/06/plotting_in_R_ggplot2_part_1.html)", Part 1
+    - "['ggplot2', essential concepts](https://pparacch.github.io/2017/07/14/plotting_in_R_ggplot2_part_2.html)", Part 2
+    - "[Guidelines for good plots](https://pparacch.github.io/2017/07/18/plotting_in_R_ggplot2_part_3.html)", Part 3
+    - "[How to work with maps](https://pparacch.github.io/2017/08/28/plotting_in_R_ggplot2_part_4.html)", Part 4
+
+---
+
+__Plotly R Library__
+
+Plotly's R graphing library makes interactive, publication-quality graphs online.
+
+- [Documentation & Examples](https://plot.ly/r/)

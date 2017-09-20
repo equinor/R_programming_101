@@ -1,7 +1,7 @@
 Reading Data into R
 ========================================================
-author:
-date:
+author: Pier Lorenzo Paracchini
+date: 20.09.2017
 autosize: true
 
 

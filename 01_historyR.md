@@ -1,7 +1,7 @@
 A Brief History of R
 ========================================================
-author:
-date:
+author: Pier Lorenzo Paracchini
+date: 20.09.2017
 autosize: true
 
 What is R?
@@ -60,7 +60,7 @@ Features of R
     - One if the best IDE (RStudio) available on the market.
 
 - A massive set of packages for statistical modelling, machine learning, visualisation, and importing and manipulating data ([CRAN - the Comprehensive R Archive Network](https://cran.r-project.org/)).
-    - Cutting edge tools. Researchers in statistics and machine learning will often publish an R package to accompany their articles. This means immediate access to the very latest statistical techniques and implementations(See [Bioconductor](http://bioconductor.org/), open source software for bioinformatics).
+    - Cutting edge tools. Researchers in statistics and machine learning will often publish an R package to accompany their articles. This means immediate access to the very latest statistical techniques and implementations(See [Bioconductor](http://bioconductor.org/) open source software for bioinformatics and __GitHub__).
 
 - Very active and vibrant user community ([RStudio](https://www.rstudio.com/), Stack Overflow, R-help mailing list, ...)
     - academic world & companies (IBM, Microsoft, RStudio, ...)

@@ -1,7 +1,7 @@
-Scoping Rules
+R Nuts & Bolts: Scoping rules
 ========================================================
-author:
-date:
+author: Pier Lorenzo Paracchini
+date: 20.09.2017
 autosize: true
 
 A Diversion on Binding Values to Symbol
@@ -166,11 +166,3 @@ f(3)
 
 
 When a function is _defined_ in the global environment and is subsequently _called_ from the global environment, then __the defining environment and the calling environment are the same__ and this can sometimes give the appearance of dynamic scoping.
-
-Scoping: Summary
-========================================================
-
-- Binding Values to Symbol: how?
-- Scoping Rules
-- Lexical Scoping
-    - Lexical Scoping vs. Dynamic Scoping

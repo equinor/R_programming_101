@@ -1,7 +1,7 @@
 The R Ecosystem
 ========================================================
-author:
-date:
+author: Pier Lorenzo Paracchini
+date: 20.09.2017
 autosize: true
 
 The R environment

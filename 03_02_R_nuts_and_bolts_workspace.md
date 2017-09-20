@@ -1,7 +1,7 @@
 R Nuts and Bolts: Workspace & Files
 ========================================================
-author:
-date:
+author: Pier Lorenzo Paracchini
+date: 20.09.2017
 autosize: true
 
 Workspace & Files
@@ -18,14 +18,17 @@ Managing (in-memory) objects in the local workspace
 
 __How to view objects/ variables created in the local environment...__
 
+<font size = "6px">
 
 ```r
 #View all the objects in your local workspace
 ls()
 ```
+</font>
 
 __How to remove objects/ variables created in the local environment...__
 
+<font size = "6px">
 
 ```r
 #Remove objects from your local workspace
@@ -42,7 +45,7 @@ rm()
 ## ls()
 ## rm(list = c("tmp1", "tmp2")
 ```
-
+</font>
 
 The Working Directory
 ========================================================
@@ -51,25 +54,29 @@ The __Working Directory__ is where R and the current session look for files when
 
 __How to get the current working directory...__
 
+<font size = "6px">
 
 ```r
 #Find the current working directory
 getwd()
 [1] "E:/APPL/workspace_r/R_programming_101"
 ```
+</font>
 
 __How to change the current working directory...__
 
+<font size = "6px">
 
 ```r
 #Change the working directory to a new dir
 setwd(...)
 ```
-
+</font>
 
 Managing files on the local computer (working directory)
 ========================================================
 
+<font size = "6px">
 
 ```r
 #View all dirs in your working directory (including hidden dirs)
@@ -78,7 +85,9 @@ list.dirs()
 #Create a directory in the working directory
 dir.create()
 ```
+</font>
 
+<font size = "6px">
 
 ```r
 #View all files/ dir in your working directory
@@ -93,6 +102,7 @@ file.info() #Info about a file
 
 file.path() #Build a path OS agnostic
 ```
+</font>
 
 Hands-On (15 minutes)
 ========================================================

@@ -1,7 +1,7 @@
 R Nuts and Bolts: Data Types
 ========================================================
-author:
-date:
+author: Pier Lorenzo Paracchini
+date: 20.09.2017
 autosize: true
 
 Atomic Classes
@@ -72,22 +72,24 @@ __Vector is the fundamental data type in R.__
 ---
 
 <font size = "6px">
+
 ```r
-> # Scalar -> vector of 1 element
-> x <- 8
-> x
- [1] 8
+# Scalar -> vector of 1 element
+x <- 8
+x
+[1] 8
 ```
 </font>
 
 <font size = "6px">
-```r
-> x <- c(88,5,12,13)
 
-> # Insert a new element (168) in the vector
-> # just  before the 13
-> x <- c(x[1:3],168,x[4])
-> x
+```r
+x <- c(88,5,12,13)
+
+# Insert a new element (168) in the vector
+# just  before the 13
+x <- c(x[1:3],168,x[4])
+x
 [1]  88   5  12 168  13
 ```
 </font>
@@ -98,27 +100,30 @@ Vectors: How to create vectors
 The `c()` (concatenate) function can be used to create vectors.
 
 <font size = "6px">
+
 ```r
-> x <- c(0.5, 0.6)       ## numeric vector
-> x <- c(1L, 2L)         ## integer vector
+x <- c(0.5, 0.6)       ## numeric vector
+x <- c(1L, 2L)         ## integer vector
 
-> x <- c(TRUE, FALSE)    ## logical vector
-> x <- c(T, F)           ## logical vector
+x <- c(TRUE, FALSE)    ## logical vector
+x <- c(T, F)           ## logical vector
 
-> x <- c("a", "b", "c")  ## character vector
+x <- c("a", "b", "c")  ## character vector
 
-> x <- c(1+0i, 2+4i)     ## complex vector
+x <- c(1+0i, 2+4i)     ## complex vector
 ```
 </font>
 
 The `:` operator can be used to create `integer` vectors.
 
 <font size = "6px">
+
 ```r
-> x <- 5:10
-> x
+x <- 5:10
+x
 [1]  5  6  7  8  9 10
-> typeof(x)
+
+typeof(x)
 [1] "integer"
 ```
 </font>
@@ -130,14 +135,16 @@ Using the `vector()` function to create an empty vector. It creates a vector of 
 Note! Logical vector elements are initialized to FALSE, numeric vector elements to 0, character vector elements to ""...
 
 <font size = "6px">
+
 ```r
-> x <- vector("numeric", length = 10)
-> x
+x <- vector("numeric", length = 10)
+x
  [1] 0 0 0 0 0 0 0 0 0 0
 
-> mode(x)
+mode(x)
 [1] "numeric"
-> length(x)
+
+length(x)
 [1] 10
 ```
 </font>
@@ -145,11 +152,12 @@ Note! Logical vector elements are initialized to FALSE, numeric vector elements 
 Other functions used for creating vectors are `seq()` and `rep()`.
 
 <font size = "6px">
+
 ```r
-> seq(0, 1, length.out = 11)
+seq(0, 1, length.out = 11)
  [1] 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
 
-> rep(x = 1:4, times = 2)
+rep(x = 1:4, times = 2)
 [1] 1 2 3 4 1 2 3 4
 ```
 </font>
@@ -160,9 +168,10 @@ Vectors: Length of a vector
 The `length()` function can be used to obtain the length of a vector.
 
 <font size = "6px">
+
 ```r
-> x <- c(1,2,4)
-> length(x)
+x <- c(1,2,4)
+length(x)
 [1] 3
 ```
 </font>
@@ -170,21 +179,23 @@ The `length()` function can be used to obtain the length of a vector.
 You need to be careful using length...
 
 <font size = "6px">
+
 ```r
-> x <- c() # Equivalent to x <- NULL
-> x
+x <- c() # Equivalent to x <- NULL
+x
 NULL
-> length(x)
+
+length(x)
 [1] 0
 
-> # What does it happen if i want to create an index
-> # used to loop through the element of a vector
-> # for example: i in 1:length(x)
-> for(i in 1:length(x)) print(i)
+# What does it happen if i want to create an index
+# used to loop through the element of a vector
+# for example: i in 1:length(x)
+for(i in 1:length(x)) print(i)
 [1] 1
 [1] 0
 
-> 1:length(x)
+1:length(x)
 [1] 1 0
 ```
 </font>
@@ -484,7 +495,7 @@ Hands-On (10 minutes)
 ```
 </font>
 
-Hands-On (Optional)
+More Hands-On (Optional)
 ========================================================
 
 
@@ -494,7 +505,8 @@ swirl()
 #.....
 # Select the "R Programming" entry
 # Select the "Sequence of Numbers" entry [3]
-# Select the "Vectors" entry [4] (optional)
+# Select the "Vectors" entry [4]
+# Select the "Subsetting Vectors" entry [6]
 ```
 
 Lists
@@ -746,41 +758,48 @@ Using factors with labels is _better_ than using integers because factors are se
 
 ---
 
+<font size = "6px">
+
 ```r
-> x <- factor(c("yes", "yes", "no", "yes", "no"))
-> x
-[1] yes yes no yes no
+x <- factor(c("yes", "yes", "no", "yes", "no"))
+x
+[1] yes yes no  yes no 
 Levels: no yes
 
-> table(x)
+table(x)
 x
-no yes
- 2   3
+ no yes 
+  2   3 
 
-> unclass(x)
+unclass(x)
 [1] 2 2 1 2 1
 attr(,"levels")
 [1] "no"  "yes"
 ```
+</font>
 
 Factors (Cont'd)
 ========================================================
 
 The order of the levels can be set using the `levels` argument to `factor()`.
 
+<font size = "6px">
+
 ```r
-> x <- factor(c("yes", "yes", "no", "yes", "no"),
+x <- factor(c("yes", "yes", "no", "yes", "no"),
               levels = c("yes", "no"))
-> x
-[1] yes yes no yes no
+x
+[1] yes yes no  yes no 
 Levels: yes no
 ```
+</font>
 
 Matrices
 ========================================================
 
 Matrices are vectors with a _dimension_ attribute. The dimension attribute is itself an integer vector of length 2 (nrow, ncol).
 
+<font size = "6px">
 
 ```r
 x <- seq(1:10)
@@ -792,35 +811,42 @@ x
 
 # matrix(x, nrow = 2)
 ```
+</font>
 
+<font size = "6px">
 
 ```r
-> m <- matrix(nrow = 2, ncol = 3)
-> m
+m <- matrix(nrow = 2, ncol = 3)
+m
      [,1] [,2] [,3]
 [1,]   NA   NA   NA
 [2,]   NA   NA   NA
 
-> dim(m)
+dim(m)
 [1] 2 3
 
-> attributes(m)
+attributes(m)
 $dim
 [1] 2 3
 ```
+</font>
 
 ---
 
 Matrices (by default) are constructed _column-wise_.
 
+<font size = "6px">
+
 ```r
-> m <- matrix(1:6, nrow = 2, ncol = 3)
-> m
+m <- matrix(1:6, nrow = 2, ncol = 3)
+m
      [,1] [,2] [,3]
 [1,]    1    3    5
 [2,]    2    4    6
 ```
+</font>
 
+<font size = "6px">
 
 ```r
 # Default behaviour can be overwritten
@@ -830,27 +856,33 @@ matrix(1:6, nrow = 2, byrow = T)
 [1,]    1    2    3
 [2,]    4    5    6
 ```
-
+</font>
 
 Matrices (Cont'd)
 ========================================================
 
 Matrices can be created by _column-binding_ or _row-binding_ with `cbind()` and `rbind()`.
 
+<font size = "6px">
+
 ```r
-> x <- 1:3
-> y <- 10:12
-> cbind(x, y)
+x <- 1:3
+y <- 10:12
+
+cbind(x, y)
      x  y
 [1,] 1 10
 [2,] 2 11
 [3,] 3 12
-> rbind(x, y)
+
+rbind(x, y)
   [,1] [,2] [,3]
 x    1    2    3
 y   10   11   12
 ```
+</font>
 
+<font size = "6px">
 
 ```r
 z <- matrix(1:10, nrow = 2)
@@ -860,11 +892,13 @@ rbind(z, 1)
 [2,]    2    4    6    8   10
 [3,]    1    1    1    1    1
 ```
+</font>
 
 
 Matrices: Getting the size of a matrix
 ========================================================
 
+<font size = "6px">
 
 ```r
 # Create a matrix
@@ -885,8 +919,9 @@ nrow(z)
 ncol(z)
 [1] 10
 ```
+</font>
 
-Matrices: How to retrieve elements of a matrix (subsetting)
+Matrices: Subsetting
 ========================================================
 
 ```
@@ -896,6 +931,7 @@ references: the indexes/ the names of the elements
     we are interested in e.g. 1, c(1,5,..), ..
 ```
 
+<font size = "6px">
 
 ```r
 x <- matrix(seq(1:12), nrow=3)
@@ -919,6 +955,7 @@ x["1_row",]
 1_col 2_col 3_col 4_col 
     1     4     7    10 
 ```
+</font>
 
 Data Frames
 ========================================================
@@ -936,6 +973,7 @@ __Data frames__ are usually created by calling `read.table()` or `read.csv()`.
 
 ---
 
+<font size = "6px">
 
 ```r
 x <- data.frame(id = c(1001, 1002, 1003),
@@ -964,10 +1002,88 @@ obs_1 1001    TRUE
 obs_2 1002    TRUE
 obs_3 1003   FALSE
 ```
+</font>
+
+Data Frames: Subsetting
+========================================================
+
+<font size = "6px">
+
+```r
+patient <- c("pat1", "pat2", "pat3", "pat4")
+age <- c(10, 35, 60, 20)
+gender <- c("M", "F", "F", "M")
+exam_result <- c(1, 0, 0, 1)
+
+df <- data.frame(patient = patient, age = age,
+                 gender = gender, exam_result = exam_result)
+
+df
+  patient age gender exam_result
+1    pat1  10      M           1
+2    pat2  35      F           0
+3    pat3  60      F           0
+4    pat4  20      M           1
+```
+</font>
+
+---
+
+<font size = "6px">
+
+```r
+# select a specific column/ feature e.g age
+df$age
+[1] 10 35 60 20
+
+df[,c("age")]
+[1] 10 35 60 20
+
+df[,2]
+[1] 10 35 60 20
+
+# select a specific observation/ row (all features)
+df[1,]
+  patient age gender exam_result
+1    pat1  10      M           1
+
+# select a specific observation/ row (just selected features)
+df[1,c("patient", "exam_result")]
+  patient exam_result
+1    pat1           1
+```
+</font>
 
 
+Hands-On (10 minutes)
+========================================================
 
-Hands-On (15 minutes)
+<font size = "6px">
+
+```r
+# -----------------------------------------------
+# Use the iris dataset
+df <- iris
+
+# See the structure of the dataframe using str()
+# What do u see?
+
+# Get the name of the features using names()
+
+# Get a summary of the content of the dataframe using summary()
+# Any more info?
+
+# Use the table() function on the Species feature
+# What can u see?
+
+# Select all of the obervations connected with "Setosa" Species
+
+# -----------------------------------------------
+```
+</font>
+
+
+More Hands-On (Optional)
 ========================================================
 
 
@@ -989,48 +1105,73 @@ NULL & Missing Values
 - One use of `NULL` is to build up vectors (incrementally) in loops.
 - `is.null` is used to test if an object is `NULL`.
 
-```r
-> #Build up a vector of the even numbers in 1:10
-> z <- NULL
-> for(i in 1:10) if(i %% 2 == 0) z <- c(z,i)
-> z
-[1]  2  4  6  8 10
-```
+<font size = "6px">
 
 ```r
-> z <- NULL
-> length(z)
-[1] 0
+#Build up a vector of the even numbers in 1:10
+z <- NULL
+for(i in 1:10) if(i %% 2 == 0) z <- c(z,i)
+z
+[1]  2  4  6  8 10
 ```
+</font>
+
+<font size = "6px">
+
+```r
+z <- NULL
+length(z)
+[1] 0
+
+is.null(z)
+[1] TRUE
+```
+</font>
 
 ---
 
 __Missing values__ are denoted by `NA` (NotAvailable) or `NaN` (NotANumber) for undefined mathematical operations.
 
 - `is.na()` is used to test objects if they are `NA`
-
 - `is.nan()` is used to test for `NaN`
-
 - `NA` values have a class also, so there are integer `NA`, character `NA`, etc.
-
 - A `NaN` value is also `NA` but the converse is not true
 
 
+<font size = "6px">
+
 ```r
-> x <- c(1, 2, NA, 10, 3)
-> is.na(x)
+x <- c(1, 2, NA, 10, 3)
+is.na(x)
 [1] FALSE FALSE  TRUE FALSE FALSE
-> typeof(x[3])
+
+typeof(x[3])
 [1] "double"
 
-> is.nan(x)
+is.nan(x)
 [1] FALSE FALSE FALSE FALSE FALSE
 
-> x <- c(1, 2, NaN, NA, 4)
-> is.na(x)
+x <- c(1, 2, NaN, NA, 4)
+is.na(x)
 [1] FALSE FALSE  TRUE  TRUE FALSE
-> is.nan(x)
+
+is.nan(x)
 [1] FALSE FALSE  TRUE FALSE FALSE
+```
+</font>
+
+More Hands-On (Optional)
+========================================================
+
+
+```r
+library(swirl)
+swirl()
+#.....
+# Select the "R Programming" entry
+# Select the "Missing Values" entry [5]
+
+# Enjoy :)
 ```
 
 Attributes
@@ -1052,49 +1193,44 @@ Attributes of an object can be accessed using the ```attributes()``` function.
 
 ---
 
+<font size = "6px">
+
 ```r
 # Vectors can have element names
-> x <- 1:3
-> names(x)
+x <- 1:3
+names(x)
 NULL
-> names(x) <- c("foo", "bar", "norf")
-> x
-foo bar norf
-  1   2    3
+
+names(x) <- c("foo", "bar", "norf")
+x
+ foo  bar norf 
+   1    2    3 
 ```
+</font>
+
+<font size = "6px">
 
 ```r
 #List
-> x <- list(a = 1, b = 2)
-> x
+x <- list(a = 1, b = 2)
+x
 $a
 [1] 1
 
 $b
 [1] 2
 ```
+</font>
+
+<font size = "6px">
 
 ```r
 #Matrix
-> m <- matrix(1:4, nrow = 2, ncol = 2)
-> dimnames(m) <- list(c("a", "b"), c("c", "d"))
-> m
+m <- matrix(1:4, nrow = 2, ncol = 2)
+dimnames(m) <- list(c("a", "b"), c("c", "d"))
+m
   c d
 a 1 3
 b 2 4
 ```
-
-Summary
-========================================================
-
-Data Types
-
-- Atomic classes: numeric, logical, character, integer, complex \
-
-- R objects: vectors, lists, factors, matrices and data frames
-
-- Vectorized Operations
-
-- Missing values
-
-- Attributes
+</font>

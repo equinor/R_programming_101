@@ -1,7 +1,7 @@
 R Nuts and Bolts: Getting Started
 ========================================================
-author:
-date:
+author: Pier Lorenzo Paracchini
+date: 20.09.2017
 autosize: true
 
 How To Run R
@@ -25,8 +25,9 @@ Some Basic Information
 - The `#` character indicates a comment. Anything to the right of the `#` (including the `#` itself) is ignored.
 
 <font size = "6px">
+
 ```r
-> # This is a comment
+# This is a comment
 ```
 </font>
 
@@ -37,16 +38,18 @@ Some Basic Information
         - `=` operator could be used but it is discouraged cause does not work in special situation (historical reason).
 
 <font size = "6px">
-```r
-> x <- 1 # Assign 1 to x
-> x
-[1] 1
-> x <- "hello" # Assign "hello" to x
-> x
-[1] "hello""
 
-> assign("j", 4)
-> j
+```r
+x <- 1 # Assign 1 to x
+x
+[1] 1
+
+x <- "hello" # Assign "hello" to x
+x
+[1] "hello"
+
+assign("j", 4)
+j
 [1] 4
 ```
 </font>
@@ -58,13 +61,14 @@ Some Basic Information (Cont'd)
 - The grammar of the language determines whether an expression is complete or not. When a complete expression is entered at the prompt, it is evaluated/ executed.
 
 <font size = "6px">
-```r
-> x <- 1 # complete expression
->
-```
 
 ```r
-> x <-  # Incomplete expression - you will be asked to continue in the next line (+)
+x <- 1 # complete expression
+```
+
+
+```r
+x <-  # Incomplete expression - you will be asked to continue in the next line (+)
 +
 ```
 </font>
@@ -72,13 +76,15 @@ Some Basic Information (Cont'd)
 - Printing...
 
 <font size = "6px">
-```r
-> x <- 5  # Assignment - nothing printed
 
-> x       # auto-printing occurs, normally used when working in interaction mode
+```r
+x <- 5  # Assignment - nothing printed
+
+x # auto-printing occurs, normally used when working in interaction mode
 [1] 5
 
-> print(x)  # explicit printing, normally used when working within function
+
+print(x)  # explicit printing, normally used when working within function
 [1] 5
 ```
 </font>

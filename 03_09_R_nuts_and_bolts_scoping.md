@@ -1,7 +1,7 @@
-Scoping Rules
+R Nuts & Bolts: Scoping rules
 ========================================================
-author:
-date:
+author: Pier Lorenzo Paracchini
+date: 20.09.2017
 autosize: true
 
 A Diversion on Binding Values to Symbol
@@ -140,7 +140,7 @@ ls(environment())
 
 # The environment connected with square function
 environment(square)
-<environment: 0x000000000a2777a8>
+<environment: 0x0000000009f4c378>
 ls(environment(square))
 [1] "n"   "pow"
 get("n", environment(square))
@@ -148,7 +148,7 @@ get("n", environment(square))
 
 # The environment connected with cube function
 environment(cube)
-<environment: 0x000000000a2128f0>
+<environment: 0x0000000009ee70b8>
 ls(environment(cube))
 [1] "n"   "pow"
 get("n", environment(cube))
@@ -186,11 +186,3 @@ f(3)
 
 
 When a function is _defined_ in the global environment and is subsequently _called_ from the global environment, then __the defining environment and the calling environment are the same__ and this can sometimes give the appearance of dynamic scoping.
-
-Scoping: Summary
-========================================================
-
-- Binding Values to Symbol: how?
-- Scoping Rules
-- Lexical Scoping
-    - Lexical Scoping vs. Dynamic Scoping

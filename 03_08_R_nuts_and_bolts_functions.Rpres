@@ -1,7 +1,7 @@
-Functions: Writing R functions
+R Nuts & Bolts: Writing R functions
 ========================================================
-author:
-date:
+author: Pier Lorenzo Paracchini
+date: 20.09.2017
 autosize: true
 
 Writing R functions
@@ -223,17 +223,13 @@ f(2)
 ```
 </font>
 
-Writing R functions: Summary
+Hands-On (Optional)
 ========================================================
 
-
-- Define a function
-
-- Function Arguments: formal arguments amd the `...` argument
-
-- Argument Matching: by position, by name & mixed-mode
-
-- Argument Evaluation: lazy evaluation
-
-- Return Values
-
+```r
+library(swirl)
+swirl()
+#.....
+# Select the "R Programming" entry
+# Select the "Functions" entry [9]
+```
