@@ -430,18 +430,20 @@ Hands-On (10 minutes)
 
 ```r
 # -----------------------------------------------
-# Create a numeric vector num_vect that contains
-# the values 0.5, 1, 55, 1, -10, and 6.
+# Create a numeric vector "age"
+# the age of some passengers with values
+# 3, 34, 55, 1, 11, 18, 12
 
-# Check which element in num_vect is less than 1
-# and store it in less_1
+# Create a character vector "gender"
+# the gender of the passengers with values
+# "Female", "Male", "Female", "Male", "Female", "Female", "Male"
 
+# Check which passenger is a child (less than 12)
+# and store it in a variable "is_child"
 # Do you expect a single logical value?
-# Print less_1
+# Print "is_child"
 
-# Check which element in num_vect is greater than  6
-# Check which element in num_vect is equal to 1
-
+# Check the gender of the children
 
 # -----------------------------------------------
 # Vectorized Operation
@@ -452,13 +454,6 @@ Hands-On (10 minutes)
 
 # Sum v_1 and v_2, what is the expected result
 # What is the resulting data type of v_1 + v_2
-
-# -----------------------------------------------
-# Vectorized Operation with Recycling
-# Create a vector v_1 that contains 1,2,3,4,5
-# Create a vector v_2 that contains 10
-
-# Sum v_1 and v_2, what is the expected result & why
 ```
 </font>
 
@@ -467,6 +462,13 @@ Hands-On (10 minutes)
 <font size = "6px">
 
 ```r
+# -----------------------------------------------
+# Vectorized Operation with Recycling
+# Create a vector v_1 that contains 1,2,3,4,5
+# Create a vector v_2 that contains 10
+
+# Sum v_1 and v_2, what is the expected result & why
+
 # -----------------------------------------------
 # Create a character vector my_char that contains
 # the following words: "My", "name", "is"
