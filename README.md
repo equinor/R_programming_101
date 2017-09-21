@@ -39,8 +39,8 @@ Prerequisites for the session
 
 The first thing you need to do is to install R on your computer from the [CRAN](https://cran.r-project.org/) site. A step-by-step tutorial on how to install R for Mac and Windows can be found in the following videos
 
-[Installing R on WIndows](https://www.youtube.com/watch?v=Ohnk9hcxf9M&feature=youtu.be)  
-[Installing R on Mac](https://www.youtube.com/watch?v=uxuuWXU-7UQ&feature=youtu.be)
+- [Installing R on WIndows](https://www.youtube.com/watch?v=Ohnk9hcxf9M&feature=youtu.be)[1]    
+- [Installing R on Mac](https://www.youtube.com/watch?v=uxuuWXU-7UQ&feature=youtu.be)[1]  
 
 
 ### Install RStudio IDE
@@ -49,13 +49,13 @@ There is also an integrated development environment available (free) for R that 
 
 A step-by-step tutorial on how to install it can be found in the following video
 
-[Installing RStudio](https://www.youtube.com/watch?v=bM7Sfz-LADM&feature=youtu.be)
+- [Installing RStudio](https://www.youtube.com/watch?v=bM7Sfz-LADM&feature=youtu.be)[1]
 
-A quick overview of the RStudio IDE and how to write R code in it can be found in the following [webinar](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
+A quick overview of the RStudio IDE and how to write R code in it can be found in the following [webinar](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/)[3].
 
 ### Install `swirl` and relevant interactive course
 
-`swirl` is a package used for teaching R programming and data science interactively using the R console. To install `swirl` on your computer follows the step-by-step guide provided at this [link](http://swirlstats.com/students.html).
+`swirl` is a package used for teaching R programming and data science interactively using the R console. To install `swirl` on your computer follows the step-by-step guide provided at this [link](http://swirlstats.com/students.html)[4].
 
 Start `swirl` (__Step 4__) and install the relevant interactice course (__Step 5__) with 
 
@@ -66,3 +66,12 @@ swirl()
 ```
 
 More information on how to install swirl interactive courses can be found [here](https://github.com/swirldev/swirl_courses).
+
+# References
+
+[1] "[R Programming](https://www.coursera.org/learn/r-programming)" module in the "Data Science Specialization" Coursera  
+[2] "[Mastering Software Development in R](http://rdpeng.github.io/RProgDA/)" by Roger D. Peng, Sean Cross and Brooke Anderson, 2017  
+[3] "[R Studio.com](https://www.rstudio.com/)"  
+[4] "[Learn R, in R](http://swirlstats.com/)" with swirl  
+[5] "[R for Data Science](http://r4ds.had.co.nz/)" by Garrett Grolemund and Hadley Wickham  
+[6] "[R for Everyone: Advanced Analytics and Graphics](https://www.goodreads.com/book/show/20306869-r-for-everyone)" by Jared P. Lander
