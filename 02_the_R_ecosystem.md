@@ -37,6 +37,7 @@ __Installing Packages__
 From CRAN/ local file
 
 <font size = "6px">
+
 ```r
 # Installing new packages
 ## Use the RSTUDIO IDE:
@@ -50,6 +51,7 @@ install..packages("...")
 From GitHub/ BitBucket
 
 <font size = "6px">
+
 ```r
 # Installing new packages
 
@@ -68,6 +70,7 @@ __Loading and Unloading Packages__
 A package needs to be loaded only once in a R session.
 
 <font size = "6px">
+
 ```r
 # Loading a package
 #   resilient: return TRUE if done, otherwise FALSE
@@ -82,6 +85,7 @@ packageName::function
 </font>
 
 <font size = "6px">
+
 ```r
 # unloading a package
 detach("package:packageName")
@@ -91,6 +95,7 @@ detach("package:packageName")
 __Removing Packages__
 
 <font size = "6px">
+
 ```r
 ## Use the RSTUDIO IDE - Packages tab
 
@@ -124,6 +129,7 @@ Getting Help  (Cont'd)
 __The `help` function__ can be used to get online help.
 
 <font size = "6px">
+
 ```r
 # We want to get some more information about the args function
 help(args)
@@ -140,6 +146,7 @@ help(args)
 __The `example` function__ can be used to run examples provided in the help entries.
 
 <font size = "6px">
+
 ```r
 # In most of the online help pages there is an Examples section
 # with some examples on how to use what we have been searching for
@@ -148,7 +155,7 @@ __The `example` function__ can be used to run examples provided in the help entr
 example(args)
 
 # Another example
-# 'persp' draws perspective plots of a surface over the x?y plane
+# 'persp' draws perspective plots of a surface over the x–y plane
 
 example(persp)
 ```
@@ -160,6 +167,7 @@ Getting Help (Cont'd)
 If you do not know exactly what you are looking for. `help.search` can be used to perform a Google-style search through R documentation.
 
 <font size = "6px">
+
 ```r
 help.search("multivariate normal")
 
@@ -171,6 +179,7 @@ help.search("multivariate normal")
 If you want to access information related to a specific package...
 
 <font size = "6px">
+
 ```r
 help(package=dplyr)
 ```
@@ -179,6 +188,7 @@ help(package=dplyr)
 Some other topics...
 
 <font size = "6px">
+
 ```r
 ?files
 ?Arithmetic

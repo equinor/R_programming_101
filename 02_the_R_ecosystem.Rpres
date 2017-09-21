@@ -37,7 +37,7 @@ __Installing Packages__
 From CRAN/ local file
 
 <font size = "6px">
-```r
+```{r eval = F}
 # Installing new packages
 ## Use the RSTUDIO IDE:
 #    Tools->Install Packages...
@@ -50,7 +50,7 @@ install..packages("...")
 From GitHub/ BitBucket
 
 <font size = "6px">
-```r
+```{r eval = F}
 # Installing new packages
 
 require(devtools)
@@ -68,7 +68,7 @@ __Loading and Unloading Packages__
 A package needs to be loaded only once in a R session.
 
 <font size = "6px">
-```r
+```{r eval = F}
 # Loading a package
 #   resilient: return TRUE if done, otherwise FALSE
 require(packageName)
@@ -82,7 +82,7 @@ packageName::function
 </font>
 
 <font size = "6px">
-```r
+```{r eval = F}
 # unloading a package
 detach("package:packageName")
 ```
@@ -91,7 +91,7 @@ detach("package:packageName")
 __Removing Packages__
 
 <font size = "6px">
-```r
+```{r eval = F}
 ## Use the RSTUDIO IDE - Packages tab
 
 ## Command line
@@ -124,7 +124,7 @@ Getting Help  (Cont'd)
 __The `help` function__ can be used to get online help.
 
 <font size = "6px">
-```r
+```{r eval = F}
 # We want to get some more information about the args function
 help(args)
 
@@ -140,7 +140,7 @@ help(args)
 __The `example` function__ can be used to run examples provided in the help entries.
 
 <font size = "6px">
-```r
+```{r eval = F}
 # In most of the online help pages there is an Examples section
 # with some examples on how to use what we have been searching for
 # some examples can be run using the example function
@@ -160,7 +160,7 @@ Getting Help (Cont'd)
 If you do not know exactly what you are looking for. `help.search` can be used to perform a Google-style search through R documentation.
 
 <font size = "6px">
-```r
+```{r eval = F}
 help.search("multivariate normal")
 
 # shortcut
@@ -171,7 +171,7 @@ help.search("multivariate normal")
 If you want to access information related to a specific package...
 
 <font size = "6px">
-```r
+```{r eval = F}
 help(package=dplyr)
 ```
 </font>
@@ -179,7 +179,7 @@ help(package=dplyr)
 Some other topics...
 
 <font size = "6px">
-```r
+```{r eval = F}
 ?files
 ?Arithmetic
 
