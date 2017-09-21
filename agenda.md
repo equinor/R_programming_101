@@ -35,10 +35,14 @@ Agenda
 
     - _Optionals_
         - _Control structures_
-        - _Functions_
+        - _Writing R functions_
         - _Scoping rules_
 
 Reference
 ========================================================
 
-The following course is based/ inspired from teh content of the "R programming" module of the "Data Science Specialization" by JHU, Coursera [here]().
+The following course is based/ inspired from
+
+- content of the "[R Programming](https://www.coursera.org/learn/r-programming)" module in the "Data Science Specialization" at Coursera
+- "[R for Everyone: Advanced Analytics and Graphics](https://www.goodreads.com/book/show/20306869-r-for-everyone)" by Jared P. Lander
+- "[The Art of R Programming](http://shop.oreilly.com/product/9781593273842.do)" by Norman Matloff

@@ -74,4 +74,5 @@ More information on how to install swirl interactive courses can be found [here]
 [3] "[R Studio.com](https://www.rstudio.com/)"  
 [4] "[Learn R, in R](http://swirlstats.com/)" with swirl  
 [5] "[R for Data Science](http://r4ds.had.co.nz/)" by Garrett Grolemund and Hadley Wickham  
-[6] "[R for Everyone: Advanced Analytics and Graphics](https://www.goodreads.com/book/show/20306869-r-for-everyone)" by Jared P. Lander
+[6] "[The Art of R Programming](http://shop.oreilly.com/product/9781593273842.do)" by Norman Matloff  
+[7] "[R for Everyone: Advanced Analytics and Graphics](https://www.goodreads.com/book/show/20306869-r-for-everyone)" by Jared P. Lander
