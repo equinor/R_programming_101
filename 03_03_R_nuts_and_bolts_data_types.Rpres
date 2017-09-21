@@ -8,7 +8,7 @@ font-family: 'Risque'
 
 Atomic Classes
 ========================================================
-
+<br/>
 R has five basic types or "atomic" classes (aka modes):
 
 -   __character__ (Strings)
@@ -62,7 +62,7 @@ R Objects
 
 Vectors: the R workhorse
 ========================================================
-
+<br/>
 __Vector is the fundamental data type in R.__
 
 - __Scalar__s do not really exist in R, actually a scalar is a vector of 1 element (a special vector).
@@ -94,7 +94,7 @@ x
 
 Vectors: How to create vectors
 ========================================================
-
+<br/>
 The `c()` (concatenate) function can be used to create vectors.
 
 <font size = "6px">
@@ -123,7 +123,7 @@ typeof(x)
 </font>
 
 ---
-
+<br/>
 Using the `vector()` function to create an empty vector. It creates a vector of the given _mode_ and _length_.
 
 Note! Logical vector elements are initialized to FALSE, numeric vector elements to 0, character vector elements to ""...
@@ -208,7 +208,7 @@ When different objects are mixed in a vector, _automatic/ implicit coercion_ occ
 
 Vectors: Explicit Coercion
 ========================================================
-
+<br/>
 Objects can be explicitly coerced from one class to another using the `as.*` functions, if available.
 
 <font size = "6px">
@@ -240,7 +240,7 @@ as.numeric(x)
 
 Vectors: Vectorized Operations
 ========================================================
-
+<br/>
 The operation/ function applied to a vector is __actually individually applied to each element__ of the vectors (__default behaviour__).
 
 Many operations in R are __vectorized__ making code more efficient, concise and easier to read (but _challenging to write_). Examples of __vectorized__ operations/ functions are the `+`, `*` and `>` operators (this applies to many other built-in R functions).
@@ -276,7 +276,7 @@ sqrt(1:6)
 
 Vectors: Recycling
 ========================================================
-
+<br/>
 When applying an operation to two vectors that requires them to be the same length, R automatically __recycles__ the shortest one. It repeats, the shorter one, until it is long enough to match the longer one (a warning could be generated in the process).
 
 ---
@@ -367,7 +367,7 @@ identical(x,y)
 
 Hands-On (10 minutes)
 ========================================================
-
+<br/>
 <font size = "6px">
 ```{r eval = F}
 # -----------------------------------------------
@@ -458,7 +458,7 @@ j
 
 Lists: Subsetting
 ========================================================
-
+<br/>
 <font size = "6px">
 ```
 Select one or more elements (list)
@@ -513,7 +513,7 @@ z$c
 
 Lists: Adding and Deleting elements to/ from a list
 ========================================================
-
+<br/>
 Adding Elements to a list
 
 <font size = "6px">
@@ -532,7 +532,7 @@ z
 </font>
 
 ---
-
+<br/>
 Deleting Elements from a list
 
 <font size = "6px">
@@ -565,7 +565,7 @@ length(z)
 
 Hands-On (5 minutes)
 ========================================================
-
+<br/>
 <font size = "6px">
 ```{r eval = F}
 # -----------------------------------------------
@@ -609,7 +609,7 @@ gender <- c("Female", "Male", "Female", "Male",
 
 Factors
 ========================================================
-
+<br/>
 **Factors are used to represent categorical data.**
 
 Factors can be unordered or ordered. One can think of a factor as an integer vector where each integer has a _label_.
@@ -644,7 +644,7 @@ x
 
 Matrices
 ========================================================
-
+<br/>
 Matrices are vectors with a _dimension_ attribute. The dimension attribute is itself an integer vector of length 2 (nrow, ncol).
 
 <font size = "6px">
@@ -764,7 +764,7 @@ x["1_row",]
 
 Data Frames
 ========================================================
-
+<br/>
 __Data frames__ are used to store tabular data.
 
 A data frame is __a special type of list where every element of the list has to have the same length__ and __each element of the list can be thought of as a column__.
@@ -797,7 +797,7 @@ x
 
 Data Frames: Subsetting
 ========================================================
-
+<br/>
 <font size = "6px">
 ```{r collapse = TRUE}
 patient <- c("pat1", "pat2", "pat3", "pat4")
@@ -874,7 +874,7 @@ swirl()
 
 NULL & Missing Values
 ========================================================
-
+<br/>
 `NULL` is actually used to state that sth is __nonexistent__.
 
 - One use of `NULL` is to build up vectors (incrementally) in loops.
@@ -939,7 +939,7 @@ swirl()
 
 Attributes
 ========================================================
-
+<br/>
 R objects can have attributes
 
 -   names, dimnames

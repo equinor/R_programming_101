@@ -24,7 +24,7 @@ Common structures are:
 
 `if` and `else`
 ========================================================
-
+<br/>
 <font size = "6px">
 ```r
 if(condition){
@@ -56,7 +56,7 @@ if(condition){
 </font>
 
 ---
-
+<br/>
 <font size = "6px">
 ```{r collapse = TRUE}
 x <- 5
@@ -86,7 +86,7 @@ if(x > 3){
 
 `for`
 ========================================================
-
+<br/>
 `for` loops take an iterator variable and assign it successive values from a sequence or vector. For loops are most commonly used for iterating over the elements of an object (list, vector, etc.)
 
 <font size = "6px">
@@ -114,7 +114,7 @@ for(i in seq_len(nrow(x))) {
 </font>
 
 ---
-
+<br/>
 Some examples of loops with same behaviours...
 
 <font size = "6px">
@@ -170,7 +170,7 @@ repeat{
 
 `break`, `next` and `return`
 ========================================================
-
+<br/>
 `break` is used to break the execution of a loop.
 
 <font size = "6px">
@@ -207,7 +207,7 @@ for(i in 1:10) {
 </font>
 
 ---
-
+<br/>
 `return` signals that a function should exit and return a given value.
 
 Control structures: Warning

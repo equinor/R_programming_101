@@ -19,8 +19,6 @@ R actually can operate in two modes: an _interactive_ mode and a _batch_ mode.
 - _Batch_ mode, it does not require interaction with the user.
     - It is useful for implementing __pipelines__, __production and automated jobs__, __reproducible research__.
 
-Note! We will run R in an __interactive__ mode through the R Console/ IDE.
-
 Some Basic Information
 ========================================================
 
@@ -83,7 +81,7 @@ print(x)  # explicit printing, normally used when working within function
 
 Operators
 ========================================================
-
+<br/>
 __Arithmetic Operators__: these unary and binary operators perform arithmetic on numeric or complex vectors (or objects which can be coerced to them). See `?Arithmetic` for more information.
 
 <font size = "6px">
@@ -120,7 +118,7 @@ isTRUE(x)
 
 A First R Session: Hands-On
 ========================================================
-
+<br/>
 <font size = "6px">
 ```r
  # Use as a calculator

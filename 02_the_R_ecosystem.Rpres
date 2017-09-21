@@ -8,23 +8,27 @@ font-family: 'Risque'
 
 The R environment
 ========================================================
-
+<br/>
 The R environment is divided in 2 different conceptual parts:
 
 - the _"base"_ R system, what is installed when installing R from __CRAN__, and
 - everything else.
 
-R functionality is divided into __packages__ and the _"base"_ R system contains the core functionality required to run R
+The _"base"_ R system contains the core functionality required to run R
 - the `base` package, and
 - other packages like  `utils, stats, datasets, graphics, grDevices, grid, methods, tools, parallel, compiler, splines, tcltk, stats4`
 
-More functionality can be added to the R environment installing the relevant packages.
+More functionality can be added to the R environment installing more packages.
 
 ---
 
 __What is a package?__
 
-A __package__ is essentially a __library__ designed to accomplish a task or a set of tasks. E.g. the `tidyr` package provides functionality for data tidying, the `ggplot2` package provides functionality for plotting and visualization, ...
+A __package__ is essentially
+
+- a __library__ designed to accomplish a task or a set of tasks. E.g.
+    - the `tidyr` package provides functionality for data tidying,
+    - the `ggplot2` package provides functionality for plotting and visualization, ...
 
 Packages can be found in
 - [CRAN](https://cran.r-project.org/)
@@ -33,7 +37,7 @@ Packages can be found in
 
 Package Management
 ========================================================
-
+<br/>
 __Installing Packages__
 
 From CRAN/ local file
@@ -159,7 +163,7 @@ example(persp)
 Getting Help (Cont'd)
 ========================================================
 
-If you do not know exactly what you are looking for. `help.search` can be used to perform a Google-style search through R documentation.
+If you do not know exactly what you are looking for `help.search` can be used to perform a Google-style search through R documentation.
 
 <font size = "6px">
 ```{r eval = F}

@@ -19,7 +19,7 @@ There are different operators that can be used to extract subsets of R objects.
 
 Subsetting (Recap) - Cont'd
 ========================================================
-
+<br/>
 __Subsetting a Vector__
 
 <font size = "6px">
@@ -44,7 +44,7 @@ x[u]
 </font>
 
 ---
-
+<br/>
 __Subsetting a Matrix__
 
 By default, when a single element of a matrix is retrieved, it is returned as a vector of length 1 rather than a 1 x 1 matrix. This behavior can be turned off by setting `drop = FALSE`.
@@ -77,7 +77,7 @@ x[, 2]
 
 Subsetting (Recap) - Cont'd
 ========================================================
-
+<br/>
 __Subsetting a List__
 
 <font size = "6px">
@@ -107,8 +107,7 @@ x$name     ## element ‘name’ doesn’t exist!
 </font>
 
 ---
-
-
+<br/>
 Partial matching of names is allowed with `[[` and `$`.
 
 <font size = "6px">
@@ -153,7 +152,7 @@ swirl()
 
 Removing NAs
 ========================================================
-
+<br/>
 A common task is to remove missing values (`NA`s).
 
 <font size = "6px">
@@ -190,7 +189,7 @@ swirl()
 
 Built-in functions
 ========================================================
-
+<br/>
 __Numeric functions__:
 
 - `abs(x)`, the absolute value
@@ -244,7 +243,7 @@ From "R in Action": http://www.statmethods.net/management/functions.html
 
 `str` and `summary` functions
 ========================================================
-
+<br/>
 The `str` function displays the internal structure of an R object, mostly used as a diagnostic function.
 
 <font size = "6px">

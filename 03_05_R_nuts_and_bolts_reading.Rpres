@@ -130,7 +130,7 @@ head(mtcars_data,7)
 
 Reading JSON files (Cont'd)
 ========================================================
-
+<br/>
 <font size = "4px">
 ```
 # from
@@ -159,7 +159,7 @@ Reading JSON files (Cont'd)
 </font>
 
 ---
-
+<br/>
 <font size = "6px">
 ```{r collapse = T}
 #install.packages("jsonlite")
@@ -176,7 +176,7 @@ head(jsonData$stationBeanList[,1:3])
 
 Reading from Other Sources
 ========================================================
-
+<br/>
 ### Databases
 
 Databases arguably store the vast majority of the world’s data. Most of these, whether they be PostgreSQL, MySQL, Microsoft SQL Server or Microsoft Access, can be accessed either through various drivers, typically via an ODBC connection.
@@ -184,7 +184,7 @@ Databases arguably store the vast majority of the world’s data. Most of these,
 The most popular open-source databases have packages such as `RPostgreSQL` and `RMySQL`. Other databases without a specific package can make use of the more generic, and aptly named, `RODBC` package. Database connectivity can be difficult, so the __`DBI`__ package was written to create a uniform experience while working with different databases.
 
 ---
-
+<br/>
 ### Other statistical tools
 
 Data are sometimes locked in a proprietary format such as those from SAS, SPSS or Octave. The `foreign` package provides a number of functions similar to `read.table` to read in data from other tools.

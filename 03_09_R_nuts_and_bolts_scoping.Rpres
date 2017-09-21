@@ -98,7 +98,7 @@ Searching for the value for a free variable:
 
 Lexical Scoping
 ========================================================
-
+<br/>
 Why does all this matter?
 
 - Typically, a function is defined in the global environment, so that the values of free variables are just found in the user’s workspace
@@ -142,7 +142,7 @@ get("n", environment(cube))
 
 Lexical vs. Dynamic Scoping
 ========================================================
-
+<br/>
 <font size="6px">
 ```{r collapse=T}
 y <- 10
