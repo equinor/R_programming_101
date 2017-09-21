@@ -6,6 +6,23 @@ autosize: true
 font-import: http://fonts.googleapis.com/css?family=Risque
 font-family: 'Risque'
 
+Who Am I?
+========================================================
+
+![alt text](imgs/avatar.png)
+
+***
+
+__Pier Lorenzo Paracchini__
+
+- "Software Innovation" in Stavanger, Statoil
+    - GBS IT SI SIS
+- __software "generalist"__ with a __passion__ for
+    - __people__, __technology__ and __data__
+
+Currently Working as a __data scientist__ in the data science team (since 2015). If you are curious about my [journey](https://pparacch.github.io/) in the _data science_ world ....
+
+
 Agenda
 ========================================================
 
