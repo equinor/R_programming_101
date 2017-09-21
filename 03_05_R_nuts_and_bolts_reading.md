@@ -3,6 +3,8 @@ Reading Data into R
 author: Pier Lorenzo Paracchini
 date: 20.09.2017
 autosize: true
+font-import: http://fonts.googleapis.com/css?family=Risque
+font-family: 'Risque'
 
 
 Introduction
@@ -174,7 +176,7 @@ Duster 360        14.3   8  360 245 3.21 3.570 15.84  0  0    3    4
 Reading JSON files (Cont'd)
 ========================================================
 
-<font size = "6px">
+<font size = "4px">
 ```
 # from
 #https://feeds.citibikenyc.com/stations/stations.json
@@ -211,10 +213,20 @@ library(jsonlite)
 
 jsonData <- fromJSON("http://citibikenyc.com/stations/json")
 class(jsonData)
+[1] "list"
 names(jsonData)
+[1] "executionTime"   "stationBeanList"
 
 class(jsonData$stationBeanList)
+[1] "data.frame"
 head(jsonData$stationBeanList[,1:3])
+   id                   stationName availableDocks
+1  72              W 52 St & 11 Ave             27
+2  79      Franklin St & W Broadway             29
+3  82        St James Pl & Pearl St              6
+4  83 Atlantic Ave & Fort Greene Pl             34
+5 116               W 17 St & 8 Ave             37
+6 119      Park Ave & St Edwards St              8
 ```
 </font>
 

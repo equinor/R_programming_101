@@ -3,6 +3,8 @@ R Nuts and Bolts: Getting Started
 author: Pier Lorenzo Paracchini
 date: 20.09.2017
 autosize: true
+font-import: http://fonts.googleapis.com/css?family=Risque
+font-family: 'Risque'
 
 How To Run R
 ========================================================

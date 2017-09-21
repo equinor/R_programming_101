@@ -3,6 +3,8 @@ R Nuts & Bolts: Scoping rules
 author: Pier Lorenzo Paracchini
 date: 20.09.2017
 autosize: true
+font-import: http://fonts.googleapis.com/css?family=Risque
+font-family: 'Risque'
 
 A Diversion on Binding Values to Symbol
 ========================================================
@@ -140,7 +142,7 @@ ls(environment())
 
 # The environment connected with square function
 environment(square)
-<environment: 0x0000000009f4c378>
+<environment: 0x0000000009f4b868>
 ls(environment(square))
 [1] "n"   "pow"
 get("n", environment(square))
@@ -148,7 +150,7 @@ get("n", environment(square))
 
 # The environment connected with cube function
 environment(cube)
-<environment: 0x0000000009ee70b8>
+<environment: 0x0000000009ee4540>
 ls(environment(cube))
 [1] "n"   "pow"
 get("n", environment(cube))

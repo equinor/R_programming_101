@@ -3,6 +3,8 @@ R Nuts and Bolts: Basic Operations
 author: Pier Lorenzo Paracchini
 date: 20.09.2017
 autosize: true
+font-import: http://fonts.googleapis.com/css?family=Risque
+font-family: 'Risque'
 
 Subsetting (Recap)
 ========================================================
