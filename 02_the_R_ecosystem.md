@@ -39,10 +39,10 @@ From CRAN/ local file
 <font size = "6px">
 ```r
 # Installing new packages
-# 1. Use the RSTUDIO IDE:
+## Use the RSTUDIO IDE:
 #    Tools->Install Packages...
 
-# 2. Use command line
+## Use command line
 install..packages("...")
 ```
 </font>
@@ -92,9 +92,9 @@ __Removing Packages__
 
 <font size = "6px">
 ```r
-# 1. Use the RSTUDIO IDE - Packages tab
+## Use the RSTUDIO IDE - Packages tab
 
-# 2. Command line
+## Command line
 remove.packages(...)
 ```
 </font>
@@ -148,7 +148,7 @@ __The `example` function__ can be used to run examples provided in the help entr
 example(args)
 
 # Another example
-# 'persp' draws perspective plots of a surface over the x–y plane
+# 'persp' draws perspective plots of a surface over the x?y plane
 
 example(persp)
 ```
