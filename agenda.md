@@ -9,7 +9,9 @@ font-family: 'Risque'
 Who Am I?
 ========================================================
 
-![alt text](imgs/avatar.png)
+<div align="center">
+<img src="imgs/avatar.png" height=400, width=400>
+</div>
 
 ***
 
