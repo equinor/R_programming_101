@@ -22,6 +22,13 @@ __Pier Lorenzo Paracchini__
 
 Currently Working as a __data scientist__ in the data science team (since 2015). If you are curious about my [journey](https://pparacch.github.io/) in the _data science_ world ....
 
+__Note__ the following course is based/ inspired from
+
+- "[R Programming](https://www.coursera.org/learn/r-programming)" module - "Data Science Specialization", Coursera
+- "[The Art of R Programming](http://shop.oreilly.com/product/9781593273842.do)" by Norman Matloff
+- "[R for Everyone](https://www.goodreads.com/book/show/20306869-r-for-everyone)" by Jared P. Lander
+
+
 
 Agenda
 ========================================================
@@ -56,12 +63,3 @@ Agenda
         - _Control structures_
         - _Writing R functions_
         - _Scoping rules_
-
-Reference
-========================================================
-
-The following course is based/ inspired from
-
-- content of the "[R Programming](https://www.coursera.org/learn/r-programming)" module in the "Data Science Specialization" at Coursera
-- "[R for Everyone: Advanced Analytics and Graphics](https://www.goodreads.com/book/show/20306869-r-for-everyone)" by Jared P. Lander
-- "[The Art of R Programming](http://shop.oreilly.com/product/9781593273842.do)" by Norman Matloff
