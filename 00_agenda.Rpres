@@ -9,9 +9,9 @@ font-family: 'Risque'
 Who Am I?
 ========================================================
 <br/>
-<div align="center">
-<img src="imgs/avatar.png" height=400, width=400>
-</div>
+
+![](imgs/avatar.png)
+
 
 ***
 
@@ -35,6 +35,7 @@ __Note__ the following course is based/ inspired from
 Agenda
 ========================================================
 <br/>
+
 - __A Brief History of R__ (10 min)
 - __Design of the R System__ (10 min)
 - __R Nuts & Bolts__
