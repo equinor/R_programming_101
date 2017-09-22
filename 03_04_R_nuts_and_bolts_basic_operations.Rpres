@@ -43,7 +43,7 @@ x[u]
 ```
 </font>
 
----
+***
 <br/>
 __Subsetting a Matrix__
 
@@ -106,7 +106,7 @@ x$name     ## element ‘name’ doesn’t exist!
 ```
 </font>
 
----
+***
 <br/>
 Partial matching of names is allowed with `[[` and `$`.
 
@@ -163,7 +163,7 @@ x[!bad]
 ```
 </font>
 
----
+***
 
 <font size = "6px">
 ```{r collapse = T}
@@ -200,7 +200,7 @@ __Numeric functions__:
 - `round(x, digits = n)`, round(3.475, 2) is 3.48
 - ...
 
----
+***
 
 __Character functions__:
 
@@ -252,7 +252,7 @@ str(mtcars)
 ```
 </font>
 
----
+***
 
 The `summary` function is a generic function used to produce summaries/ basic statistics for the provided R object.
 

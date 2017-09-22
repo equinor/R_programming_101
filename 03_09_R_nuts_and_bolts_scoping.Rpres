@@ -106,7 +106,7 @@ Why does all this matter?
 - However, in R you can have functions defined _inside other functions_
     - In this case the environment in which a function is defined is the body of another function!
 
----
+***
 
 <font size="6px">
 ```{r collapse = T}
@@ -161,7 +161,7 @@ f(3)
 ```
 </font>
 
----
+***
 
 - With __lexical scoping__ the value of `y` in the function `g` is looked up in the environment in which the function was defined, in this case the global environment, so the value of `y` is 10.
 - With __dynamic scoping__, the value of `y` is looked up in the environment from which the function was _called_ (sometimes referred to as the _calling environment_ or __parent frame__). So the value of `y` would be 2.

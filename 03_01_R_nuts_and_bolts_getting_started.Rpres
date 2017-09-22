@@ -57,11 +57,13 @@ Some Basic Information (Cont'd)
 
 <font size = "6px">
 ```{r collapse = T}
-x <- 1 # complete expression
+# complete expression
+x <- 1
 ```
 
 ```{r eval = F}
-x <-  # Incomplete expression - you will be asked to continue in the next line (+)
+# Incomplete expression - you will be asked to continue in the next line (+)
+x <-
 +
 ```
 </font>
@@ -98,7 +100,7 @@ x %/% y
 ```
 </font>
 
----
+***
 
 __Logical Operators__: these operators act on raw, logical and number-like vectors. See `?Logical` for more information.
 
@@ -145,7 +147,7 @@ A First R Session: Hands-On
 ```
 </font>
 
----
+***
 
 <font size = "6px">
 ```r

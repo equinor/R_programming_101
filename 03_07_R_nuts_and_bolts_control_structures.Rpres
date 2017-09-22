@@ -55,7 +55,7 @@ if(condition){
 ```
 </font>
 
----
+***
 <br/>
 <font size = "6px">
 ```{r collapse = TRUE}
@@ -113,7 +113,7 @@ for(i in seq_len(nrow(x))) {
 ```
 </font>
 
----
+***
 <br/>
 Some examples of loops with same behaviours...
 
@@ -206,7 +206,7 @@ for(i in 1:10) {
 ```
 </font>
 
----
+***
 <br/>
 `return` signals that a function should exit and return a given value.
 
@@ -214,7 +214,9 @@ Control structures: Warning
 ========================================================
 
 
-When starting to use R, people use loops whenever they need to iterate over elements of a `vector`, `list` or `data.frame`. __Not a good practice__, use __vectorization__ or `apply` family of functions.
+When starting to use R, people use loops whenever they need to iterate over elements of a `vector`, `list` or `data.frame`.
+
+- __Looping is not a good practice__, use __vectorization__ or __`apply`__ family of functions.
 
 Hands-On (Optional)
 ========================================================

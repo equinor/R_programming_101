@@ -20,7 +20,7 @@ The _"base"_ R system contains the core functionality required to run R
 
 More functionality can be added to the R environment installing more packages.
 
----
+***
 
 __What is a package?__
 
@@ -67,7 +67,7 @@ install_github(repo = "", username = "...")
 ```
 </font>
 
----
+***
 
 __Loading and Unloading Packages__
 

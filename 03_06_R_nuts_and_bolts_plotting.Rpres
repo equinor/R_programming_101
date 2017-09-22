@@ -28,7 +28,7 @@ Base Plotting System: The R Graphics Package
 - Add a plot function (or similar)
 - Use annotation functions to add/modify what's on the canvas (`text`, `lines`, `points`, `axis`)
 
----
+***
 <br/>
 - Convenient, mirrors how we think of building plots and analyzing data (+)
 
@@ -52,7 +52,7 @@ hist(mtcars$mpg,
 ```
 </font>
 
----
+***
 <br/>
 __Scatterplot__
 
@@ -78,7 +78,7 @@ boxplot(mtcars$mpg, ylab = "Miles/(US) gallon")
 ```
 </font>
 
----
+***
 <br/>
 __Add more information...__
 
@@ -136,7 +136,7 @@ __`ggplot2` graphic system__
     - "[Guidelines for good plots](https://pparacch.github.io/2017/07/18/plotting_in_R_ggplot2_part_3.html)", Part 3
     - "[How to work with maps](https://pparacch.github.io/2017/08/28/plotting_in_R_ggplot2_part_4.html)", Part 4
 
----
+***
 <br/>
 __Plotly R Library__
 

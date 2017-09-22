@@ -26,7 +26,7 @@ R has five basic types or "atomic" classes (aka modes):
 -   __logical__
     - Ex. TRUE/FALSE
 
----
+***
 
 __More on numbers__
 
@@ -71,7 +71,7 @@ __Vector is the fundamental data type in R.__
 - The __size of a vector__ is __determined at its creation__,
     - so if you wish to add or delete elements, you’ll need to reassign the vector.
 
----
+***
 
 <font size = "6px">
 ```{r collapse = T}
@@ -122,7 +122,7 @@ typeof(x)
 ```
 </font>
 
----
+***
 <br/>
 Using the `vector()` function to create an empty vector. It creates a vector of the given _mode_ and _length_.
 
@@ -227,7 +227,7 @@ as.character(x)
 ```
 </font>
 
----
+***
 
 Nonsensical coercion results in `NA`s.
 
@@ -245,7 +245,7 @@ The operation/ function applied to a vector is __actually individually applied t
 
 Many operations in R are __vectorized__ making code more efficient, concise and easier to read (but _challenging to write_). Examples of __vectorized__ operations/ functions are the `+`, `*` and `>` operators (this applies to many other built-in R functions).
 
----
+***
 
 <font size = "6px">
 ```{r collapse = T}
@@ -279,7 +279,7 @@ Vectors: Recycling
 <br/>
 When applying an operation to two vectors that requires them to be the same length, R automatically __recycles__ the shortest one. It repeats, the shorter one, until it is long enough to match the longer one (a warning could be generated in the process).
 
----
+***
 
 <font size = "6px">
 ```{r collapse = T}
@@ -399,7 +399,7 @@ Hands-On (10 minutes)
 ```
 </font>
 
----
+***
 
 <font size = "6px">
 ```{r eval = F}

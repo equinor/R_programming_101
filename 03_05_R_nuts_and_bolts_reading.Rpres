@@ -53,7 +53,7 @@ str(the_ds) #str aka structure
 Reading  (tabular data) CSV (Cont'd)
 ========================================================
 
-__Large files__ can be __slow__ to read into memory using `read.table`, and fortunately there are alternatives available. The __two most prominent functions for reading large CSVs—and other text files__ are
+__Large files__ can be __slow__ to read into memory using `read.table`, and fortunately there are alternatives available. The __two most prominent functions for reading large CSVs and other text files__ are
 
 - `read_delim` from the [`readr` package](https://cran.r-project.org/web/packages/readr/README.html) by Hadley Wickham and
 
@@ -158,7 +158,7 @@ Reading JSON files (Cont'd)
 ```
 </font>
 
----
+***
 <br/>
 <font size = "6px">
 ```{r collapse = T}
@@ -183,7 +183,7 @@ Databases arguably store the vast majority of the world’s data. Most of these,
 
 The most popular open-source databases have packages such as `RPostgreSQL` and `RMySQL`. Other databases without a specific package can make use of the more generic, and aptly named, `RODBC` package. Database connectivity can be difficult, so the __`DBI`__ package was written to create a uniform experience while working with different databases.
 
----
+***
 <br/>
 ### Other statistical tools
 

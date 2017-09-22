@@ -33,7 +33,7 @@ f <- function(<arguments>){
 
 
 
----
+***
 <br/>
 __"Hello, You!"__ example
 
@@ -61,7 +61,7 @@ Functions can have named arguments which could have _default values_.
 - Not every function call in R makes use of all of the formal arguments
     - some arguments may be missing or might have default values
 
----
+***
 <br/>
 <font size = "6px">
 ```r
@@ -105,7 +105,7 @@ f(arg2 = 2, 1,3)
 ```
 </font>
 
----
+***
 <br/>
 It is possible to __mix positional matching with matching by name__.
 
@@ -133,7 +133,7 @@ Argument Evaluation: Lazy Evaluation
 <br/>
 Arguments to functions are evaluated __lazily__, only if needed.
 
----
+***
 <br/>
 This function never actually uses the argument `b`, so calling `f(2)` will not produce an error because the 2 gets positionally matched to `a`.
 
