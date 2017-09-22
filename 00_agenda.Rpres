@@ -2,16 +2,15 @@ R programming 101
 ========================================================
 author: Pier Lorenzo Paracchini
 date: 20.09.2017
-autosize: true
+width: 1440
+height: 900
 font-import: http://fonts.googleapis.com/css?family=Risque
 font-family: 'Risque'
 
 Who Am I?
 ========================================================
 <br/>
-
 ![](imgs/avatar.png)
-
 
 ***
 
@@ -21,16 +20,17 @@ __Pier Lorenzo Paracchini__
     - GBS IT SI SIS
 - __software "generalist"__ with a __passion__ for
     - __people__, __technology__ and __data__
+- Currently working on data science related tasks (since 2015)
+- ["An amazing journey in Data Science"](https://pparacch.github.io/) blog
 
-Currently Working in the data science team (since 2015). If you are curious about my [journey](https://pparacch.github.io/) in the _data science_ world ....
+Credits
+========================================================
 
-__Note__ the following course is based/ inspired from
+The following course is based/ inspired on the content of
 
 - "[R Programming](https://www.coursera.org/learn/r-programming)" module - "Data Science Specialization", Coursera
 - "[The Art of R Programming](http://shop.oreilly.com/product/9781593273842.do)" by Norman Matloff
 - "[R for Everyone](https://www.goodreads.com/book/show/20306869-r-for-everyone)" by Jared P. Lander
-
-
 
 Agenda
 ========================================================
@@ -42,17 +42,13 @@ Agenda
     - Getting Started (15/20 min)
     - Workspace & Files (20 min)
     - Data Types (60 min)
-        - Basic Types & R Objects
-        - Vectors
-        - Lists
-        - Factors
-        - Matrices
-        - Data Frames
+        - Basic Types
+        - R Objects
         - NULL & Missing Values
         - Attributes
 
 ***
-
+<br/>
 - __R Nuts & Bolts__ (Cont'd)
     - Basic Operations (20 min)
         - Subsetting (Recap)

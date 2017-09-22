@@ -1,11 +1,6 @@
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
+# Ignore everything
+*
 
-*.md
-*.html
-!README.md
-
-03_06_R_nuts_and_bolts_plotting-figure/
-
+#Except Rpres
+!*.Rpres
+!presentations/*

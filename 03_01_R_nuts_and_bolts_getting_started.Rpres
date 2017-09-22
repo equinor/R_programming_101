@@ -2,41 +2,46 @@ R Nuts and Bolts: Getting Started
 ========================================================
 author: Pier Lorenzo Paracchini
 date: 20.09.2017
-autosize: true
+width: 1440
+height: 900
 font-import: http://fonts.googleapis.com/css?family=Risque
 font-family: 'Risque'
 
 How To Run R
 ========================================================
 
-R actually can operate in two modes: an _interactive_ mode and a _batch_ mode.
+R actually can operate in two modes:
+- an _interactive_ mode and
+- a _batch_ mode.
 
-- _Interactive_ mode, require an interaction with the user.
-    - A R session is started.
-    - The user types in/ executes a command or a set of commands.
-    - R displays the result and so on.
+The _interactive_ mode  requires an interaction with the user:
+- a R session is started,
+- the user types in/ executes a command or a set of commands,
+- R displays the result and so on.
 
-- _Batch_ mode, it does not require interaction with the user.
-    - It is useful for implementing __pipelines__, __production and automated jobs__, __reproducible research__.
+The _batch_ mode does not require interaction with the user
+- Useful for implementing
+    - __pipelines__,
+    - __production and automated jobs__ and
+    - __reproducible research__.
 
 Some Basic Information
 ========================================================
 
-- The `#` character indicates a comment. Anything to the right of the `#` (including the `#` itself) is ignored.
+The `#` character indicates a __comment__. Anything to the right of the `#` (including the `#` itself) is ignored.
 
-<font size = "6px">
+<font size = "5px">
 ```{r collapse = T}
 # This is a comment
 ```
 </font>
 
-- Variables, R does __not require variable types to be declared__.
-    - A variable can take on any available data type (at any point)
+__Variables__: R does __not require variable types to be declared__.
+- A variable can take on any available data type (at any point)
+- Variable assignment is performed using the assignment operator `<-` or `assign` function.
+    - the `=` operator is discouraged cause does not work in special situation (historical reason).
 
-    - Variable Assignment is performed using the assignment operator `<-` or `assign` function.
-        - `=` operator could be used but it is discouraged cause does not work in special situation (historical reason).
-
-<font size = "6px">
+<font size = "5px">
 ```{r collapse = T}
 x <- 1 # Assign 1 to x
 x
@@ -53,9 +58,10 @@ j
 Some Basic Information (Cont'd)
 ========================================================
 
-- The grammar of the language determines whether an expression is complete or not. When a complete expression is entered at the prompt, it is evaluated/ executed.
+The __grammar of the language__ determines whether an expression is complete or not.
+- When a complete expression is entered at the prompt, it is evaluated/ executed.
 
-<font size = "6px">
+<font size = "5px">
 ```{r collapse = T}
 # complete expression
 x <- 1
@@ -68,25 +74,24 @@ x <-
 ```
 </font>
 
-- Printing...
+__Printing__...
 
-<font size = "6px">
+<font size = "5px">
 ```{r collapse = T}
 x <- 5  # Assignment - nothing printed
-
 x # auto-printing occurs, normally used when working in interaction mode
-
 
 print(x)  # explicit printing, normally used when working within function
 ```
 </font>
 
-Operators
+Operators: Arithmetic operators
 ========================================================
-<br/>
-__Arithmetic Operators__: these unary and binary operators perform arithmetic on numeric or complex vectors (or objects which can be coerced to them). See `?Arithmetic` for more information.
 
-<font size = "6px">
+These unary and binary operators perform arithmetic on numeric or complex vectors (or objects which can be coerced to them).
+- See `?Arithmetic` for more information.
+
+<font size = "5px">
 ```{r eval = F}
 + x
 - x
@@ -100,11 +105,13 @@ x %/% y
 ```
 </font>
 
-***
+Operators: Logical operators
+========================================================
 
-__Logical Operators__: these operators act on raw, logical and number-like vectors. See `?Logical` for more information.
+These operators act on raw, logical and number-like vectors.
+- See `?Logical` for more information.
 
-<font size = "6px">
+<font size = "5px">
 ```{r eval = F}
 ! x
 x & y #  elementwise comparisons
@@ -120,8 +127,8 @@ isTRUE(x)
 
 A First R Session: Hands-On
 ========================================================
-<br/>
-<font size = "6px">
+
+<font size = "5px">
 ```r
  # Use as a calculator
 > 5 + 3
@@ -147,9 +154,10 @@ A First R Session: Hands-On
 ```
 </font>
 
-***
+A First R Session: Hands-On (Cont'd)
+========================================================
 
-<font size = "6px">
+<font size = "5px">
 ```r
 # Logical Conditions
 > x <- TRUE

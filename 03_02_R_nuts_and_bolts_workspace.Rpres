@@ -2,7 +2,8 @@ R Nuts and Bolts: Workspace & Files
 ========================================================
 author: Pier Lorenzo Paracchini
 date: 20.09.2017
-autosize: true
+width: 1440
+height: 900
 font-import: http://fonts.googleapis.com/css?family=Risque
 font-family: 'Risque'
 
@@ -20,7 +21,7 @@ Managing (in-memory) objects in the local workspace
 
 __How to view objects/ variables created in the local environment...__
 
-<font size = "6px">
+<font size = "5px">
 ```{r eval = F}
 #View all the objects in your local workspace
 ls()
@@ -29,7 +30,7 @@ ls()
 
 __How to remove objects/ variables created in the local environment...__
 
-<font size = "6px">
+<font size = "5px">
 ```{r eval = F}
 #Remove objects from your local workspace
 rm()
@@ -54,7 +55,7 @@ The __Working Directory__ is where R and the current session look for files when
 
 __How to get the current working directory...__
 
-<font size = "6px">
+<font size = "5px">
 ```{r collapse = T}
 #Find the current working directory
 getwd()
@@ -63,7 +64,7 @@ getwd()
 
 __How to change the current working directory...__
 
-<font size = "6px">
+<font size = "5px">
 ```{r eval = F}
 #Change the working directory to a new dir
 setwd(...)
@@ -73,7 +74,7 @@ setwd(...)
 Managing files on the local computer (working directory)
 ========================================================
 
-<font size = "6px">
+<font size = "5px">
 ```{r eval = F}
 #View all dirs in your working directory (including hidden dirs)
 list.dirs()
@@ -83,7 +84,7 @@ dir.create()
 ```
 </font>
 
-<font size = "6px">
+<font size = "5px">
 ```{r eval = F}
 #View all files/ dir in your working directory
 list.files()
@@ -109,7 +110,8 @@ swirl()
 # Select the "R Programming" entry
 # Select the "Workspace and Files" entry [2]
 
-# Exit swirl and return to the R prompt (>) at any time by pressing the Esc key
+# Exit swirl and return to the R prompt (>)
+#    at any time by pressing the Esc key
 # type bye() to exit and save your progress
 # type info() for more option.
 ```
