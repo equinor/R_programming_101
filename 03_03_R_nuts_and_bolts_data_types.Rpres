@@ -69,7 +69,7 @@ __Vector is the fundamental data type in R.__
 -   A vector can __only contain objects of the same data type/ atomic class__,
     - in other words, elements of a vector are all of the same type.
 - The __size of a vector__ is __determined at its creation__,
-    - so if you wish to add or delete elements, you’ll need to reassign the vector.
+    - so if you wish to add or delete elements, you'll need to reassign the vector.
 
 ***
 

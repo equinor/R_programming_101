@@ -165,7 +165,7 @@ Reading JSON files (Cont'd)
 #install.packages("jsonlite")
 library(jsonlite)
 
-jsonData <- fromJSON("http://citibikenyc.com/stations/json")
+jsonData <- fromJSON(file.path("data", "stations.json"))
 class(jsonData)
 names(jsonData)
 
