@@ -41,7 +41,7 @@ Agenda
 - __The R Ecosystem__ (10 min)
 - __R Nuts & Bolts__
     - Getting Started (15/20 min)
-    - Workspace & Files (20 min)
+    - Workspace & the Working Directory (20 min)
     - Data Types (60 min)
     - Basic Operations (20 min)
     - Reading data into R (10 min)

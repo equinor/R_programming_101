@@ -1,4 +1,4 @@
-R Nuts and Bolts: Workspace & Files
+R Nuts and Bolts: Workspace & the Working Directory
 ========================================================
 author: Pier Lorenzo Paracchini
 date: 20.09.2017
@@ -7,19 +7,20 @@ height: 900
 font-import: http://fonts.googleapis.com/css?family=Risque
 font-family: 'Risque'
 
-Workspace & Files
+Workspace & the Working Directory
 ========================================================
 
-R provides a common set of commands for interacting with the local environment
-
-- Managing (in-memory) objects in the local workspace
+- The local Workspace
 - The working directory
-- Managing files in the working directory
 
-Managing (in-memory) objects in the local workspace
+Local Workspace
 ========================================================
 
-__How to view objects/ variables created in the local environment...__
+Every time an expression is run in the R session, the local workspace may be affected e.g.
+- when assigning a variable `x <- 1` or creating a function
+- when loading a package
+
+__How to view objects/ variables created in the local workspace...__
 
 <font size = "5px">
 ```{r eval = F}
@@ -51,13 +52,13 @@ rm()
 The Working Directory
 ========================================================
 
-The __Working Directory__ is where R and the current session look for files when reading and writing on the local computer.
+The __Working Directory__ is where R and the current session look for files when interaction on the local computer (IO).
 
 __How to get the current working directory...__
 
 <font size = "5px">
 ```{r collapse = T}
-#Find the current working directory
+# Find the current working directory
 getwd()
 ```
 </font>
@@ -66,12 +67,12 @@ __How to change the current working directory...__
 
 <font size = "5px">
 ```{r eval = F}
-#Change the working directory to a new dir
+# Change the working directory to a new dir
 setwd(...)
 ```
 </font>
 
-Managing files on the local computer (working directory)
+Interacting with the local computer
 ========================================================
 
 <font size = "5px">

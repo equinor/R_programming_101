@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>R Nuts and Bolts: Workspace & Files</title>
+  <title>R Nuts and Bolts: Workspace & the Working Directory</title>
     
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -785,7 +785,7 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="linear" data-transition-speed="default">
-<h1>R Nuts and Bolts: Workspace &amp; Files</h1><p>Pier Lorenzo Paracchini<br/>20.09.2017</p>
+<h1>R Nuts and Bolts: Workspace &amp; the Working Directory</h1><p>Pier Lorenzo Paracchini<br/>20.09.2017</p>
 
 <div class="slideContent" >
 
@@ -793,23 +793,27 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
-<h3>Workspace &amp; Files</h3>
+<h3>Workspace &amp; the Working Directory</h3>
 <div class="slideContent" >
-<p>R provides a common set of commands for interacting with the local environment</p>
-
 <ul>
-<li>Managing (in-memory) objects in the local workspace</li>
+<li>The local Workspace</li>
 <li>The working directory</li>
-<li>Managing files in the working directory</li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
-<h3>Managing (in-memory) objects in the local workspace</h3>
+<h3>Local Workspace</h3>
 <div class="slideContent" >
-<p><strong>How to view objects/ variables created in the local environment&hellip;</strong></p>
+<p>Every time an expression is run in the R session, the local workspace may be affected e.g.</p>
+
+<ul>
+<li>when assigning a variable <code>x &lt;- 1</code> or creating a function</li>
+<li>when loading a package</li>
+</ul>
+
+<p><strong>How to view objects/ variables created in the local workspace&hellip;</strong></p>
 
 <p><font size = "5px"></p>
 
@@ -846,13 +850,13 @@ rm()
 <section data-transition="linear" data-transition-speed="default">
 <h3>The Working Directory</h3>
 <div class="slideContent" >
-<p>The <strong>Working Directory</strong> is where R and the current session look for files when reading and writing on the local computer.</p>
+<p>The <strong>Working Directory</strong> is where R and the current session look for files when interaction on the local computer (IO).</p>
 
 <p><strong>How to get the current working directory&hellip;</strong></p>
 
 <p><font size = "5px"></p>
 
-<pre><code class="r">#Find the current working directory
+<pre><code class="r"># Find the current working directory
 getwd()
 [1] &quot;/Users/thePierLo/github/repos/R_programming_101&quot;
 </code></pre>
@@ -863,7 +867,7 @@ getwd()
 
 <p><font size = "5px"></p>
 
-<pre><code class="r">#Change the working directory to a new dir
+<pre><code class="r"># Change the working directory to a new dir
 setwd(...)
 </code></pre>
 
@@ -873,7 +877,7 @@ setwd(...)
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
-<h3>Managing files on the local computer (working directory)</h3>
+<h3>Interacting with the local computer</h3>
 <div class="slideContent" >
 <p><font size = "5px"></p>
 

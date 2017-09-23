@@ -77,7 +77,7 @@ __Note!__ Optimized for Google Chrome.
 
 __Nuts & Bolts__  
 [Getting Started](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_01_R_nuts_and_bolts_getting_started.html)  
-[Workspace](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_02_R_nuts_and_bolts_workspace.html)  
+[Workspace & the Working Directory](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_02_R_nuts_and_bolts_workspace.html)  
 [Data Types](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_03_R_nuts_and_bolts_data_types.html)  
 [Basic Operations](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_04_R_nuts_and_bolts_basic_operations.html)  
 [Reading Data](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_05_R_nuts_and_bolts_reading.html)  
