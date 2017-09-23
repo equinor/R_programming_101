@@ -25,7 +25,7 @@ The _batch mode_ does not require interaction with the user and it is useful for
 Some Basic Information
 ========================================================
 
-- __Commnet__: the `#` character indicates a __comment__. Anything to the right of the `#` (including the `#` itself) is ignored.
+- __Comment__: the `#` character indicates a __comment__. Anything to the right of the `#` (including the `#` itself) is ignored.
 
 <font size = "5px">
 ```{r collapse = T}
