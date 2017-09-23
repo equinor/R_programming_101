@@ -11,24 +11,21 @@ How To Run R
 ========================================================
 
 R actually can operate in two modes:
-- an _interactive_ mode and
-- a _batch_ mode.
+- _interactive mode_ and
+- _batch mode_.
 
-The _interactive_ mode  requires an interaction with the user:
+The _interactive mode_  requires an interaction with the user:
 - a R session is started,
 - the user types in/ executes a command or a set of commands,
 - R displays the result and so on.
 
-The _batch_ mode does not require interaction with the user
-- Useful for implementing
-    - __pipelines__,
-    - __production and automated jobs__ and
-    - __reproducible research__.
+The _batch mode_ does not require interaction with the user and it is useful for
+- __pipelines__, __production and automated jobs__ and __reproducible research__.
 
 Some Basic Information
 ========================================================
 
-The `#` character indicates a __comment__. Anything to the right of the `#` (including the `#` itself) is ignored.
+- __Commnet__: the `#` character indicates a __comment__. Anything to the right of the `#` (including the `#` itself) is ignored.
 
 <font size = "5px">
 ```{r collapse = T}
@@ -58,8 +55,8 @@ j
 Some Basic Information (Cont'd)
 ========================================================
 
-The __grammar of the language__ determines whether an expression is complete or not.
-- When a complete expression is entered at the prompt, it is evaluated/ executed.
+__Complete expressions__, the __grammar of the language__ determines whether an expression is complete or not.
+- When a __complete expression__ is entered at the prompt, it is evaluated/ executed.
 
 <font size = "5px">
 ```{r collapse = T}
@@ -74,7 +71,7 @@ x <-
 ```
 </font>
 
-__Printing__...
+__Printing__, auto-printing vs. explicit printing
 
 <font size = "5px">
 ```{r collapse = T}
@@ -130,26 +127,31 @@ A First R Session: Hands-On
 
 <font size = "5px">
 ```r
- # Use as a calculator
+# Exe1: Use as a calculator
+# Perform some basic calculation
 > 5 + 3
 > 5 %% 2
 > 5 %/% 2
 
-# Assignments
+# Exe2: Assignments & Printing
+# Perform some assignments
 > x <- 5 + 2
 > x # Show the content of x
 > x <- "A string" # the type can be changed
 > x
 
+# Exe3: Assignments & Printing
 # Create a vector and assign to x
 > x <- c(1,2,3)
 > x # show the content of x
-
 # Create a new vector y based on x
 > y <- c(x,4,x)
-> print(y) # show the content of y & its length
+# show the content of y & its length
+> print(y)
+> length(y)
 
-# (Subsetting) Get 2nd to 4th elements of y
+# Exe4: Subsetting
+# Get 2nd to 4th elements of y
 > y[2:4]
 ```
 </font>
@@ -159,14 +161,15 @@ A First R Session: Hands-On (Cont'd)
 
 <font size = "5px">
 ```r
-# Logical Conditions
+# Exe5: Logical Conditions
 > x <- TRUE
 > !x
 > y <- FALSE
 > x & y
 > x | y
 
-# Using the data available in R
+# Exe6: Explore the data available in R
+# Perform some visualization and statistics
 > data() # Show the available datasets (default)
 
 > ?Nile # Nile dataset - what is it about?

@@ -798,11 +798,11 @@ hljs.initHighlightingOnLoad();
 <p>R actually can operate in two modes:</p>
 
 <ul>
-<li>an <em>interactive</em> mode and</li>
-<li>a <em>batch</em> mode.</li>
+<li><em>interactive mode</em> and</li>
+<li><em>batch mode</em>.</li>
 </ul>
 
-<p>The <em>interactive</em> mode  requires an interaction with the user:</p>
+<p>The <em>interactive mode</em>  requires an interaction with the user:</p>
 
 <ul>
 <li>a R session is started,</li>
@@ -810,16 +810,10 @@ hljs.initHighlightingOnLoad();
 <li>R displays the result and so on.</li>
 </ul>
 
-<p>The <em>batch</em> mode does not require interaction with the user</p>
+<p>The <em>batch mode</em> does not require interaction with the user and it is useful for</p>
 
 <ul>
-<li>Useful for implementing
-
-<ul>
-<li><strong>pipelines</strong>,</li>
-<li><strong>production and automated jobs</strong> and</li>
-<li><strong>reproducible research</strong>.</li>
-</ul></li>
+<li><strong>pipelines</strong>, <strong>production and automated jobs</strong> and <strong>reproducible research</strong>.</li>
 </ul>
 
 </div>
@@ -828,7 +822,9 @@ hljs.initHighlightingOnLoad();
 <section data-transition="linear" data-transition-speed="default">
 <h3>Some Basic Information</h3>
 <div class="slideContent" >
-<p>The <code>#</code> character indicates a <strong>comment</strong>. Anything to the right of the <code>#</code> (including the <code>#</code> itself) is ignored.</p>
+<ul>
+<li><strong>Commnet</strong>: the <code>#</code> character indicates a <strong>comment</strong>. Anything to the right of the <code>#</code> (including the <code>#</code> itself) is ignored.</li>
+</ul>
 
 <p><font size = "5px"></p>
 
@@ -871,10 +867,10 @@ j
 <section data-transition="linear" data-transition-speed="default">
 <h3>Some Basic Information (Cont&#x27;d)</h3>
 <div class="slideContent" >
-<p>The <strong>grammar of the language</strong> determines whether an expression is complete or not.</p>
+<p><strong>Complete expressions</strong>, the <strong>grammar of the language</strong> determines whether an expression is complete or not.</p>
 
 <ul>
-<li>When a complete expression is entered at the prompt, it is evaluated/ executed.</li>
+<li>When a <strong>complete expression</strong> is entered at the prompt, it is evaluated/ executed.</li>
 </ul>
 
 <p><font size = "5px"></p>
@@ -890,7 +886,7 @@ x &lt;-
 
 <p></font></p>
 
-<p><strong>Printing</strong>&hellip;</p>
+<p><strong>Printing</strong>, auto-printing vs. explicit printing</p>
 
 <p><font size = "5px"></p>
 
@@ -965,26 +961,31 @@ isTRUE(x)
 <div class="slideContent" >
 <p><font size = "5px"></p>
 
-<pre><code class="r"> # Use as a calculator
+<pre><code class="r"># Exe1: Use as a calculator
+# Perform some basic calculation
 &gt; 5 + 3
 &gt; 5 %% 2
 &gt; 5 %/% 2
 
-# Assignments
+# Exe2: Assignments &amp; Printing
+# Perform some assignments
 &gt; x &lt;- 5 + 2
 &gt; x # Show the content of x
 &gt; x &lt;- &quot;A string&quot; # the type can be changed
 &gt; x
 
+# Exe3: Assignments &amp; Printing
 # Create a vector and assign to x
 &gt; x &lt;- c(1,2,3)
 &gt; x # show the content of x
-
 # Create a new vector y based on x
 &gt; y &lt;- c(x,4,x)
-&gt; print(y) # show the content of y &amp; its length
+# show the content of y &amp; its length
+&gt; print(y)
+&gt; length(y)
 
-# (Subsetting) Get 2nd to 4th elements of y
+# Exe4: Subsetting
+# Get 2nd to 4th elements of y
 &gt; y[2:4]
 </code></pre>
 
@@ -998,14 +999,15 @@ isTRUE(x)
 <div class="slideContent" >
 <p><font size = "5px"></p>
 
-<pre><code class="r"># Logical Conditions
+<pre><code class="r"># Exe5: Logical Conditions
 &gt; x &lt;- TRUE
 &gt; !x
 &gt; y &lt;- FALSE
 &gt; x &amp; y
 &gt; x | y
 
-# Using the data available in R
+# Exe6: Explore the data available in R
+# Perform some visualization and statistics
 &gt; data() # Show the available datasets (default)
 
 &gt; ?Nile # Nile dataset - what is it about?
