@@ -930,9 +930,8 @@ function(x) { x * x }
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Lexical Scoping</h3>
-<div class="column column1 slideContent" >
-<p><br/>
-Why does all this matter?</p>
+<div class="slideContent" >
+<p>Why does all this matter?</p>
 
 <ul>
 <li>Typically, a function is defined in the global environment, so that the values of free variables are just found in the user’s workspace
@@ -947,12 +946,12 @@ Why does all this matter?</p>
 </ul></li>
 </ul>
 
-
 </div>
 
-<div class="column column2 slideContent" >
-
-
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Lexical Scoping: Example</h3>
+<div class="slideContent" >
 <p><font size="5px"></p>
 
 <pre><code class="r"># Create a function that returns another function
@@ -979,7 +978,7 @@ ls(environment())
 
 # The environment connected with square function
 environment(square)
-&lt;environment: 0x7fcff2bfe0d8&gt;
+&lt;environment: 0x7fe22aa53ca0&gt;
 ls(environment(square))
 [1] &quot;n&quot;   &quot;pow&quot;
 get(&quot;n&quot;, environment(square))
@@ -987,7 +986,7 @@ get(&quot;n&quot;, environment(square))
 
 # The environment connected with cube function
 environment(cube)
-&lt;environment: 0x7fcff1d1eed0&gt;
+&lt;environment: 0x7fe22a9eae60&gt;
 ls(environment(cube))
 [1] &quot;n&quot;   &quot;pow&quot;
 get(&quot;n&quot;, environment(cube))
@@ -1001,9 +1000,8 @@ get(&quot;n&quot;, environment(cube))
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Lexical vs. Dynamic Scoping</h3>
-<div class="column column1 slideContent" >
-<p><br/>
-<font size="5px"></p>
+<div class="slideContent" >
+<p><font size="5px"></p>
 
 <pre><code class="r">y &lt;- 10
 
@@ -1022,12 +1020,6 @@ f(3)
 </code></pre>
 
 <p></font></p>
-
-
-</div>
-
-<div class="column column2 slideContent" >
-
 
 <ul>
 <li>With <strong>lexical scoping</strong> the value of <code>y</code> in the function <code>g</code> is looked up in the environment in which the function was defined, in this case the global environment, so the value of <code>y</code> is 10.</li>
