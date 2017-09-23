@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>A Brief History of R</title>
+  <title>Introducing R</title>
     
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -785,7 +785,7 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="linear" data-transition-speed="default">
-<h1>A Brief History of R</h1><p>Pier Lorenzo Paracchini<br/>20.09.2017</p>
+<h1>Introducing R</h1><p>Pier Lorenzo Paracchini<br/>20.09.2017</p>
 
 <div class="slideContent" >
 
@@ -799,8 +799,7 @@ hljs.initHighlightingOnLoad();
 <li><p>An open source programming language mainly used for</p>
 
 <ul>
-<li><strong>statistics</strong> and</li>
-<li><strong>data science</strong>.</li>
+<li><strong>statistics</strong> and <strong>data science</strong>.</li>
 </ul></li>
 <li><p>A descendant of S &lt;- <strong>a dialect of S</strong></p>
 
@@ -864,28 +863,36 @@ language and system aspects would become more important.&rdquo;</p>
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
-<h3>Features of R</h3>
+<h3>Why R?</h3>
 <div class="slideContent" >
 <ul>
-<li><p><strong>Open source</strong> programming language/ environment for <strong>statistical computing</strong></p></li>
-<li><p>Run on almost any standard computing platform/OS (even on the PlayStation 3)</p></li>
-<li><p>Frequent releases (annual + bugfix releases)</p></li>
-<li><p>Quite <strong>lean</strong> -&gt; functionality is divided into modular packages</p></li>
+<li><p><strong>Open source</strong> programming language &amp; environment for</p>
+
+<ul>
+<li><strong>statistical computing/ data science</strong>.</li>
+</ul></li>
+<li><p>Run on almost any standard computing platform/OS (even on the PlayStation 3).</p></li>
+<li><p>Quite active development with frequent releases (annual + bugfix releases).</p></li>
+<li><p>Quite <strong>lean</strong> -&gt; functionality is divided into <strong>modular packages</strong>.</p></li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
-<h3>Features of R (Cont&#x27;d)</h3>
+<h3>Why R? (Cont&#x27;d)</h3>
 <div class="slideContent" >
 <ul>
-<li><p>Useful for <strong>interactive work</strong>, and a <strong>powerful programming language</strong> for developing new tools (user -&gt; programmer)</p></li>
-<li><p>Has massive set of packages for <strong>statistical modelling</strong>, <strong>machine learning</strong>, <strong>visualisation</strong>, and <strong>data wrangling</strong></p></li>
-<li><p>A <strong>very active and vibrant user community</strong> (, Stack Overflow, R-help mailing list, &hellip;)</p>
+<li><p>Great for <strong>interactive work</strong>, and a <strong>powerful programming language</strong> for developing new tools.</p>
 
 <ul>
-<li>academic world (researchers)</li>
+<li>shifting from <em>user</em> to <em>programmer</em></li>
+</ul></li>
+<li><p>Has a massive set of packages for <strong>statistical modelling/ data science</strong>, <strong>visualisation</strong>, and <strong>data wrangling</strong>.</p></li>
+<li><p>A <strong>very active and vibrant user community</strong> (Stack Overflow, R-help mailing list, &hellip;)</p>
+
+<ul>
+<li>academic world and governments</li>
 <li>companies (IBM, Microsoft, <a href="https://www.rstudio.com/">RStudio</a>, &hellip;)</li>
 <li><a href="https://community.rstudio.com/">RStudio Community</a>, Stack Overflow, R mailing lists</li>
 </ul></li>
@@ -895,15 +902,15 @@ language and system aspects would become more important.&rdquo;</p>
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
-<h3>Features of R (Cont&#x27;d)</h3>
+<h3>Why R? (Cont&#x27;d)</h3>
 <div class="slideContent" >
-<p>It is free, as <strong>free software.</strong> It allows the following <em>freedoms</em>:</p>
+<p>It is free, as <strong>free software.</strong> Being free allows the following <em>freedoms</em>:</p>
 
 <ul>
-<li><p>The freedom to run the program, for any purpose (<strong>freedom 0</strong>).</p></li>
-<li><p>The freedom to study how the program works, and adapt it to your needs (<strong>freedom 1</strong>).</p></li>
-<li><p>The freedom to redistribute copies so you can help your neighbor (<strong>freedom 2</strong>).</p></li>
-<li><p>The freedom to improve the program, and release your improvements to the public, so that the whole community benefits (<strong>freedom 3</strong>).</p></li>
+<li><p>the freedom to run the program, for any purpose (<strong>freedom 0</strong>),</p></li>
+<li><p>the freedom to study how the program works, and adapt it to your needs (<strong>freedom 1</strong>),</p></li>
+<li><p>the freedom to redistribute copies so you can help your neighbor (<strong>freedom 2</strong>),</p></li>
+<li><p>the freedom to improve the program, and release your improvements to the public, so that the whole community benefits (<strong>freedom 3</strong>).</p></li>
 </ul>
 
 <p><a href="https://www.r-project.org/Licenses/">https://www.r-project.org/Licenses/</a>, <a href="http://www.fsf.org">http://www.fsf.org</a></p>
@@ -912,7 +919,7 @@ language and system aspects would become more important.&rdquo;</p>
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
-<h3>Drawbacks of R</h3>
+<h3>Which are the drawbacks of R?</h3>
 <div class="slideContent" >
 <ul>
 <li><p>Based on <strong>40 year old technology</strong>, but <strong>things are quickly changing</strong>&hellip;</p>
@@ -936,7 +943,8 @@ language and system aspects would become more important.&rdquo;</p>
 <li>but <strong>things are changing</strong>, more and more software developers are joining and&hellip;
 
 <ul>
-<li>unit testing (<code>testthat</code> package), continuous building/ integration/ deployment (<a href="https://travis-ci.org/">travis CI</a>)</li>
+<li>unit testing (<code>testthat</code> package),</li>
+<li>continuous building/ integration/ deployment (<a href="https://travis-ci.org/">travis CI</a>)</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -945,14 +953,18 @@ language and system aspects would become more important.&rdquo;</p>
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
-<h3>Drawbacks of R (Cont&#x27;d)</h3>
+<h3>Which are the drawbacks of R? (Cont&#x27;d)</h3>
 <div class="slideContent" >
 <ul>
-<li><p>R is not a particularly fast programming language, and <strong>poorly written R code can be terribly slow</strong></p>
+<li><p>R is not a particularly fast programming language,</p>
+
+<ul>
+<li><strong>poorly written R code can be terribly slow</strong>
 
 <ul>
 <li>memory footprint,</li>
 <li>processing time.</li>
+</ul></li>
 </ul></li>
 <li><p><strong>Not a silver bullet</strong> -&gt; not ideal for all possible situations.</p></li>
 </ul>

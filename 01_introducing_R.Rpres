@@ -1,4 +1,4 @@
-A Brief History of R
+Introducing R
 ========================================================
 author: Pier Lorenzo Paracchini
 date: 20.09.2017
@@ -11,8 +11,7 @@ What is R?
 ========================================================
 
 - An open source programming language mainly used for
-    - __statistics__ and
-    - __data science__.
+    - __statistics__ and __data science__.
 
 - A descendant of S <- __a dialect of S__
     - written primarily in C, fortran and R.
@@ -51,46 +50,48 @@ In "Stages in the Evolution of S", John Chambers writes:
 
 http://www.stat.bell-labs.com/S/history.html
 
-Features of R
+Why R?
 ========================================================
 
-- __Open source__ programming language/ environment for __statistical computing__
+- __Open source__ programming language & environment for
+    - __statistical computing/ data science__.
 
-- Run on almost any standard computing platform/OS (even on the PlayStation 3)
+- Run on almost any standard computing platform/OS (even on the PlayStation 3).
 
-- Frequent releases (annual + bugfix releases)
+- Quite active development with frequent releases (annual + bugfix releases).
 
-- Quite __lean__ -> functionality is divided into modular packages
+- Quite __lean__ -> functionality is divided into __modular packages__.
 
-Features of R (Cont'd)
+Why R? (Cont'd)
 ========================================================
 
-- Useful for __interactive work__, and a __powerful programming language__ for developing new tools (user -> programmer)
+- Great for __interactive work__, and a __powerful programming language__ for developing new tools.
+    - shifting from _user_ to _programmer_
 
-- Has massive set of packages for __statistical modelling__, __machine learning__, __visualisation__, and __data wrangling__
+- Has a massive set of packages for __statistical modelling/ data science__, __visualisation__, and __data wrangling__.
 
-- A __very active and vibrant user community__ (, Stack Overflow, R-help mailing list, ...)
-    - academic world (researchers)
+- A __very active and vibrant user community__ (Stack Overflow, R-help mailing list, ...)
+    - academic world and governments
     - companies (IBM, Microsoft, [RStudio](https://www.rstudio.com/), ...)
     - [RStudio Community](https://community.rstudio.com/), Stack Overflow, R mailing lists
 
 
-Features of R (Cont'd)
+Why R? (Cont'd)
 ========================================================
 
-It is free, as __free software.__ It allows the following _freedoms_:
+It is free, as __free software.__ Being free allows the following _freedoms_:
 
--   The freedom to run the program, for any purpose (__freedom 0__).
+-   the freedom to run the program, for any purpose (__freedom 0__),
 
--   The freedom to study how the program works, and adapt it to your needs (__freedom 1__).
+-   the freedom to study how the program works, and adapt it to your needs (__freedom 1__),
 
--   The freedom to redistribute copies so you can help your neighbor (__freedom 2__).
+-   the freedom to redistribute copies so you can help your neighbor (__freedom 2__),
 
--   The freedom to improve the program, and release your improvements to the public, so that the whole community benefits (__freedom 3__).
+-   the freedom to improve the program, and release your improvements to the public, so that the whole community benefits (__freedom 3__).
 
 https://www.r-project.org/Licenses/, http://www.fsf.org
 
-Drawbacks of R
+Which are the drawbacks of R?
 ========================================================
 
 - Based on __40 year old technology__, but __things are quickly changing__...
@@ -103,14 +104,16 @@ Drawbacks of R
 
 - Much of the R code you'll see in the wild is __written in haste__ to solve a pressing problem
     - but __things are changing__, more and more software developers are joining and...
-        - unit testing (`testthat` package), continuous building/ integration/ deployment ([travis CI](https://travis-ci.org/))
+        - unit testing (`testthat` package),
+        - continuous building/ integration/ deployment ([travis CI](https://travis-ci.org/))
 
-Drawbacks of R (Cont'd)
+Which are the drawbacks of R? (Cont'd)
 ========================================================
 
-- R is not a particularly fast programming language, and __poorly written R code can be terribly slow__
-    - memory footprint,
-    - processing time.
+- R is not a particularly fast programming language,
+    - __poorly written R code can be terribly slow__
+        - memory footprint,
+        - processing time.
 
 -   __Not a silver bullet__ -> not ideal for all possible situations.
 
