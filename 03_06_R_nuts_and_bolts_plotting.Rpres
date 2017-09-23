@@ -24,24 +24,21 @@ R provides excellent graphing capabilities through different plotting systems
 
 Base Plotting System: The R Graphics Package
 ========================================================
-<br/>
+
+The __process__:
 - Start with blank canvas and build up from there
 - Add a plot function (or similar)
 - Use annotation functions to add/modify what's on the canvas (`text`, `lines`, `points`, `axis`)
 
-***
-<br/>
+Some characteristics...
+
 - Convenient, mirrors how we think of building plots and analyzing data (+)
-
 - Can't go back once plot has started (i.e. to adjust margins); need to plan in advance (-)
+- Plot is just a series of R commands
 
-- Plot is just a series of R commands (*)
 
-
-Base Plotting System: Examples
+Base Plotting System: Histogram
 ========================================================
-<br/>
-__Histogram__
 
 <font size = "5px">
 ```{r baseHistogram, collapse = TRUE}
@@ -53,9 +50,8 @@ hist(mtcars$mpg,
 ```
 </font>
 
-***
-<br/>
-__Scatterplot__
+Base Plotting System: Scatterplot
+========================================================
 
 <font size = "5px">
 ```{r baseScatterplot, collapse = TRUE}
@@ -67,10 +63,8 @@ plot(x = mtcars$wt, y = mtcars$mpg,
 ```
 </font>
 
-Base Plotting System: Examples
+Base Plotting System: Boxplot
 ========================================================
-<br/>
-__Boxplots__
 
 <font size = "5px">
 ```{r baseBoxplot, collapse = TRUE}
@@ -79,9 +73,8 @@ boxplot(mtcars$mpg, ylab = "Miles/(US) gallon")
 ```
 </font>
 
-***
-<br/>
-__Add more information...__
+Base Plotting System: Scatterplot Ext'd
+========================================================
 
 <font size = "5px">
 ```{r baseScatterplotWithExtra, collapse = TRUE}
@@ -95,7 +88,7 @@ lines(x = mtcars$wt, y = mtcars$mpg, type = "h")
 </font>
 
 
-Base Plotting System: Examples
+Base Plotting System: Example
 ========================================================
 
 __Add more capability with more commands...__
