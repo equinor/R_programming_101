@@ -2,7 +2,8 @@ R Nuts & Bolts: Scoping rules
 ========================================================
 author: Pier Lorenzo Paracchini
 date: 20.09.2017
-autosize: true
+width: 1440
+height: 900
 font-import: http://fonts.googleapis.com/css?family=Risque
 font-family: 'Risque'
 
@@ -11,7 +12,7 @@ A Diversion on Binding Values to Symbol
 
 How does R know which value to assign to which symbol? When I type
 
-<font size = "6px">
+<font size = "5px">
 ```{r collapse = TRUE}
 lm <- function(x) { x * x }
 
@@ -33,7 +34,7 @@ When R tries to bind a value to a symbol, it searches through a series of `envir
 
 The search list can be found by using the `search` function.
 
-<font size = "6px">
+<font size = "5px">
 ```{r collapse = TRUE}
 search()
 ```
@@ -63,7 +64,7 @@ Lexical Scoping
 
 Consider the following function. This function has 2 formal arguments `x` and `y`. In the body of the function there is another symbol `z`. In this case `z` is called a _free variable_.
 
-<font size="6px">
+<font size="5px">
 ```r
 f <- function(x, y) {
         x^2 + y / z
@@ -108,7 +109,7 @@ Why does all this matter?
 
 ***
 
-<font size="6px">
+<font size="5px">
 ```{r collapse = T}
 # Create a function that returns another function
 make.power <- function(n) {
@@ -143,7 +144,7 @@ get("n", environment(cube))
 Lexical vs. Dynamic Scoping
 ========================================================
 <br/>
-<font size="6px">
+<font size="5px">
 ```{r collapse=T}
 y <- 10
 
