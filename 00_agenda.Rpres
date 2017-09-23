@@ -9,10 +9,8 @@ font-family: 'Risque'
 
 Who Am I?
 ========================================================
-<br/>
-![](imgs/avatar.png)
 
-***
+<img src="imgs/avatar.png" alt="My avatar" style="float:right;width:400px;">
 
 __Pier Lorenzo Paracchini__
 
@@ -23,18 +21,19 @@ __Pier Lorenzo Paracchini__
 - Currently working on data science related tasks (since 2015)
 - ["An amazing journey in Data Science"](https://pparacch.github.io/) blog
 
-Credits
+Some Credits
 ========================================================
 
 The following course is based/ inspired on the content of
 
-- "[R Programming](https://www.coursera.org/learn/r-programming)" module - "Data Science Specialization", Coursera
+- "[R Programming](https://www.coursera.org/learn/r-programming)" module - "Data Science Specialization" by Johns Hopkins University, Coursera
 - "[The Art of R Programming](http://shop.oreilly.com/product/9781593273842.do)" by Norman Matloff
 - "[R for Everyone](https://www.goodreads.com/book/show/20306869-r-for-everyone)" by Jared P. Lander
 
 Agenda
 ========================================================
-<br/>
+
+<img src="imgs/Rlogo.png" alt="R Logo" style="float:right;width:600px;">
 
 - __A Brief History of R__ (10 min)
 - __Design of the R System__ (10 min)
@@ -42,19 +41,7 @@ Agenda
     - Getting Started (15/20 min)
     - Workspace & Files (20 min)
     - Data Types (60 min)
-        - Basic Types
-        - R Objects
-        - NULL & Missing Values
-        - Attributes
-
-***
-<br/>
-- __R Nuts & Bolts__ (Cont'd)
     - Basic Operations (20 min)
-        - Subsetting (Recap)
-        - Removing NAs
-        - Built-in functions
-        - `str` & `summary` functions
     - Reading data into R (10 min)
     - Basic plotting (20 min)
 
