@@ -53,31 +53,29 @@ R Objects
 - Matrices,
 - Data frames
 
-The `mode` and `typeof` functions can be used to understand the internal basic type of an R object.
+The `mode` and `typeof` functions can be used to
+- understand the internal basic type of an R object.
 
 
 Vectors: the R workhorse
 ========================================================
-<br/>
-__Vector__ is the fundamental data type in R.
 
-- __Scalar__s do not really exist in R,
-    - actually a scalar is a vector of 1 element (a special vector).
--   A vector can __only contain objects of the same basic type__,
-    - in other words, elements of a vector are all of the same type.
-- The __size of a vector__ is __determined at its creation__,
-    - if you wish to add or delete elements,
-        - you'll need to reassign the vector.
-
-***
+- __Vector__s are the fundamental data type in R.
+    - __Scalar__s do not really exist in R,
 
 <font size = "5px">
 ```{r collapse = T}
-# Scalar -> vector of 1 element
+# A scalar is a vector of 1 element
 x <- 8
 x
 ```
 </font>
+
+- A vector can __only contain objects of the same basic type__,
+
+- The __size of a vector__ is __determined at its creation__,
+    - if you wish to add or delete elements, then you'll need to reassign the vector.
+
 
 <font size = "5px">
 ```{r collapse = T}
@@ -92,49 +90,49 @@ x
 
 Vectors: How to create vectors
 ========================================================
-<br/>
-The `c()` (concatenate) function can be used to create vectors.
+
+- The `c()` (concatenate) function can be used to create vectors.
 
 <font size = "5px">
 ```{r collapse = T}
 x <- c(0.5, 0.6)       ## numeric vector
+typeof(x)
+
 x <- c(1L, 2L)         ## integer vector
+typeof(x)
 
 x <- c(TRUE, FALSE)    ## logical vector
-x <- c(T, F)           ## logical vector
+typeof(x)
 
 x <- c("a", "b", "c")  ## character vector
-
-x <- c(1+0i, 2+4i)     ## complex vector
+typeof(x)
 ```
 </font>
 
-The `:` operator can be used to create `integer` vectors.
+- The `:` operator can be used to create `integer` vectors.
 
 <font size = "5px">
 ```{r collapse = T}
 x <- 5:10
 x
-
 typeof(x)
 ```
 </font>
 
-***
-<br/>
-Using the `vector()` function to create an empty vector of the given _mode_ and _length_.
-- Logical vector elements are initialized to FALSE,
-- numeric vector elements to 0,
-- character vector elements to ""...
+Vectors: How to create vectors (Cont'd)
+========================================================
+
+- Using the `vector()` function to create an empty vector of the given _mode_ and _length_
+    - logical vector elements are initialized to FALSE,
+    - numeric vector elements to 0,
+    - character vector elements to ""
 
 <font size = "5px">
 ```{r collapse = T}
 x <- vector("numeric", length = 10)
 x
 
-mode(x)
-
-length(x)
+typeof(x)
 ```
 </font>
 
@@ -197,7 +195,6 @@ When different objects are mixed in a vector, _automatic/ implicit coercion_ occ
 
 Vectors: Explicit Coercion
 ========================================================
-<br/>
 Objects can be explicitly coerced from one class to another using the `as.*` functions, if available.
 
 <font size = "5px">
@@ -216,8 +213,6 @@ as.character(x)
 ```
 </font>
 
-***
-
 Nonsensical coercion results in `NA`s.
 
 <font size = "5px">
@@ -229,12 +224,8 @@ as.numeric(x)
 
 Vectors: Vectorized Operations
 ========================================================
-<br/>
-The operation/ function applied to a vector is __actually individually applied to each element__ of the vectors (__default behaviour__).
 
-Many operations in R are __vectorized__ making code more efficient, concise and easier to read (but _challenging to write_). Examples of __vectorized__ operations/ functions are the `+`, `*` and `>` operators (this applies to many other built-in R functions).
-
-***
+The operation/ function applied to a vector is __actually individually applied to each element__ of the vectors (__default behaviour__). Many operations in R are __vectorized__ making code more efficient, concise and easier to read (but _challenging to write_). See examples below...
 
 <font size = "5px">
 ```{r collapse = T}
@@ -265,10 +256,8 @@ sqrt(1:6)
 
 Vectors: Recycling
 ========================================================
-<br/>
-When applying an operation to two vectors that requires them to be the same length, R automatically __recycles__ the shortest one. It repeats, the shorter one, until it is long enough to match the longer one (a warning could be generated in the process).
 
-***
+When applying an operation to two vectors that requires them to be the same length, R automatically __recycles__ the shortest one. It repeats, the shorter one, until it is long enough to match the longer one (a warning could be generated in the process). See examples below...
 
 <font size = "5px">
 ```{r collapse = T}
@@ -388,7 +377,8 @@ Hands-On (10 minutes)
 ```
 </font>
 
-***
+Hands-On (Cont'd)
+========================================================
 
 <font size = "5px">
 ```{r eval = F}
@@ -447,12 +437,12 @@ j
 
 Lists: Subsetting
 ========================================================
-<br/>
+
+__Select one or more elements in the list...__
+
 <font size = "5px">
 ```
-Select one or more elements (list)
-
-the_list[the_references] -> return elements (list)
+the_list[the_references] -> return elements (as a list)
 
 the_references: the indexes/ the tag of the elements
     we are interested in e.g. 1, c(1,5,..),...
@@ -473,13 +463,14 @@ z[c("a", "b")]
 ```
 </font>
 
----
+Lists: Subsetting (Cont'd)
+========================================================
+
+__Select a single element in the list...__
 
 <font size = "5px">
 ```
-Select a single element
-
-the_list[[the_reference]] / thelist$tag -> return element
+the_list[[the_reference]] / thelist$tag -> return the element
 
 the_reference/ tag: the index/ the tag of the element
     we are interested in e.g. 1, name,...
@@ -500,10 +491,8 @@ z$c
 ```
 </font>
 
-Lists: Adding and Deleting elements to/ from a list
+Lists: Adding elements to a list
 ========================================================
-<br/>
-Adding Elements to a list
 
 <font size = "5px">
 ```{r collapse = T}
@@ -520,15 +509,25 @@ z
 ```
 </font>
 
----
-<br/>
-Deleting Elements from a list
+Lists: Deleting elements from a list
+========================================================
 
 <font size = "5px">
 ```{r collapse = TRUE}
-# Deleting an element to a list using tags
+# Deleting elements from a list using tags
+z <- list(a = "abc", b = TRUE, c = 10)
+z
+
+z[c(1,2)] <- NULL
+z
+```
+</font>
+
+
+<font size = "5px">
+```{r collapse = TRUE}
+# Deleting elements from a list using tags
 # Same can be done using index notation [[i]]
-# Set the element to NULL
 z <- list(a = "abc", b = TRUE)
 z
 
@@ -554,10 +553,9 @@ length(z)
 
 Hands-On (5 minutes)
 ========================================================
-<br/>
 <font size = "5px">
 ```{r eval = F}
-# -----------------------------------------------
+# --------------------------------
 p <- c(2,7,8)
 q <- c("A", "B", "C")
 # Create a list with element p & q
@@ -567,16 +565,8 @@ q <- c("A", "B", "C")
 # Retrieve the 2nd element in the list
 # as a list
 # and as its original data type
-# -----------------------------------------------
 
-```
-</font>
-
----
-
-<font size = "5px">
-```{r eval = F}
-# -----------------------------------------------
+# --------------------------------
 age <- c(3, 34, 55, 1, 11, 18, 12)
 gender <- c("Female", "Male", "Female", "Male",
             "Female", "Female", "Male")
@@ -591,23 +581,20 @@ gender <- c("Female", "Male", "Female", "Male",
 
 # Remove element "is_child" from the list
 # Print "passengers"
-# -----------------------------------------------
+# --------------------------------
 ```
 </font>
 
 
 Factors
 ========================================================
-<br/>
-__Factors__ are used to represent __categorical data__. One can think of a factor as an integer vector where each integer has a _label_.
 
-Factors can be __unordered__ or __ordered__.
+__Factors__ are used to represent __categorical data__. One can think of a factor as an integer vector where each integer has a _label_.
+- Factors can be __unordered__ or __ordered__.
 
 Using factors with labels is _better_ than using integers because
 - factors are self-describing;
     - having a variable that has values “Male” and “Female” is better than a variable that has values 1 and 2.
-
----
 
 <font size = "5px">
 ```{r collapse = TRUE}
@@ -635,7 +622,7 @@ x
 
 Matrices
 ========================================================
-<br/>
+
 Matrices are vectors with a _dimension_ attribute. The dimension attribute is itself an integer vector of length 2 (nrow, ncol).
 
 <font size = "5px">
@@ -659,7 +646,8 @@ attributes(m)
 ```
 </font>
 
----
+Matrices (Cont'd)
+========================================================
 
 Matrices (by default) are constructed _column-wise_.
 
@@ -755,19 +743,17 @@ x["1_row",]
 
 Data Frames
 ========================================================
-<br/>
+
 __Data frames__ are used to store __tabular data__. A data frame is __a special type of list__ where
 - each element of the list can be thought of as a __column__
 - every element of the list has to have the __same length__ .
 
-Unlike matrices, __data frames__ can store __different classes of objects in each column__ (just like lists).
+Unlike matrices and like list, __data frames__ can store __different classes of objects in each column__.
 
-__Data frames__ also have a special attribute called `row.names`.
+__Data frames__ are usually created by reading some tabular data into R e.g. using `read.table()` or `read.csv()`.
 
-__Data frames__ are usually created by calling `read.table()` or `read.csv()`.
-
-
----
+Data Frames (Cont'd)
+========================================================
 
 <font size = "5px">
 ```{r collapse = T}
@@ -788,7 +774,6 @@ x
 
 Data Frames: Subsetting
 ========================================================
-<br/>
 <font size = "5px">
 ```{r collapse = TRUE}
 patient <- c("pat1", "pat2", "pat3", "pat4")
@@ -798,12 +783,9 @@ exam_result <- c(1, 0, 0, 1)
 
 df <- data.frame(patient = patient, age = age,
                  gender = gender, exam_result = exam_result)
-
 df
 ```
 </font>
-
----
 
 <font size = "5px">
 ```{r collapse = TRUE}
@@ -863,11 +845,9 @@ swirl()
 # Enjoy :)
 ```
 
-NULL & Missing Values
+NULL
 ========================================================
-left: 40%
 
-<br/>
 `NULL` is actually used to state that sth is __nonexistent__.
 
 - One use of `NULL` is to build up vectors (incrementally) in loops.
@@ -891,7 +871,9 @@ is.null(z)
 ```
 </font>
 
----
+Missing Values
+========================================================
+
 
 __Missing values__ are denoted by `NA` (NotAvailable) or `NaN` (NotANumber).
 - `NA` values have a basic type also (integer `NA`, character `NA`, etc.)
@@ -928,22 +910,23 @@ swirl()
 
 Attributes
 ========================================================
-<br/>
+
 R objects can have attributes
 
 -   names, dimnames
+
+-   length
 
 -   dimensions (e.g. matrices, arrays)
 
 -   class
 
--   length
-
 -   other user-defined attributes/metadata
 
 Attributes of an object can be accessed using the ```attributes()``` function.
 
----
+Attributes (Cont'd)
+========================================================
 
 <font size = "5px">
 ```{r collapse = T}
@@ -952,14 +935,6 @@ x <- 1:3
 names(x)
 
 names(x) <- c("foo", "bar", "norf")
-x
-```
-</font>
-
-<font size = "5px">
-```{r collapse = T}
-#List
-x <- list(a = 1, b = 2)
 x
 ```
 </font>

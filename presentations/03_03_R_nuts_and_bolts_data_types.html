@@ -869,54 +869,44 @@ hljs.initHighlightingOnLoad();
 <li>Data frames</li>
 </ul>
 
-<p>The <code>mode</code> and <code>typeof</code> functions can be used to understand the internal basic type of an R object.</p>
+<p>The <code>mode</code> and <code>typeof</code> functions can be used to</p>
+
+<ul>
+<li>understand the internal basic type of an R object.</li>
+</ul>
 
 </div>
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Vectors: the R workhorse</h3>
-<div class="column column1 slideContent" >
-<p><br/>
-<strong>Vector</strong> is the fundamental data type in R.</p>
+<div class="slideContent" >
+<ul>
+<li><strong>Vector</strong>s are the fundamental data type in R.
 
 <ul>
-<li><strong>Scalar</strong>s do not really exist in R,
-
-<ul>
-<li>actually a scalar is a vector of 1 element (a special vector).</li>
-</ul></li>
-<li>  A vector can <strong>only contain objects of the same basic type</strong>,
-
-<ul>
-<li>in other words, elements of a vector are all of the same type.</li>
-</ul></li>
-<li>The <strong>size of a vector</strong> is <strong>determined at its creation</strong>,
-
-<ul>
-<li>if you wish to add or delete elements,
-
-<ul>
-<li>you&#39;ll need to reassign the vector.</li>
-</ul></li>
+<li><strong>Scalar</strong>s do not really exist in R,</li>
 </ul></li>
 </ul>
 
-
-</div>
-
-<div class="column column2 slideContent" >
-
-
 <p><font size = "5px"></p>
 
-<pre><code class="r"># Scalar -&gt; vector of 1 element
+<pre><code class="r"># A scalar is a vector of 1 element
 x &lt;- 8
 x
 [1] 8
 </code></pre>
 
 <p></font></p>
+
+<ul>
+<li><p>A vector can <strong>only contain objects of the same basic type</strong>,</p></li>
+<li><p>The <strong>size of a vector</strong> is <strong>determined at its creation</strong>,</p>
+
+<ul>
+<li>if you wish to add or delete elements, then you&#39;ll need to reassign the vector.</li>
+</ul></li>
+</ul>
 
 <p><font size = "5px"></p>
 
@@ -936,52 +926,61 @@ x
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Vectors: How to create vectors</h3>
-<div class="column column1 slideContent" >
-<p><br/>
-The <code>c()</code> (concatenate) function can be used to create vectors.</p>
+<div class="slideContent" >
+<ul>
+<li>The <code>c()</code> (concatenate) function can be used to create vectors.</li>
+</ul>
 
 <p><font size = "5px"></p>
 
 <pre><code class="r">x &lt;- c(0.5, 0.6)       ## numeric vector
+typeof(x)
+[1] &quot;double&quot;
+
 x &lt;- c(1L, 2L)         ## integer vector
+typeof(x)
+[1] &quot;integer&quot;
 
 x &lt;- c(TRUE, FALSE)    ## logical vector
-x &lt;- c(T, F)           ## logical vector
+typeof(x)
+[1] &quot;logical&quot;
 
 x &lt;- c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)  ## character vector
-
-x &lt;- c(1+0i, 2+4i)     ## complex vector
+typeof(x)
+[1] &quot;character&quot;
 </code></pre>
 
 <p></font></p>
 
-<p>The <code>:</code> operator can be used to create <code>integer</code> vectors.</p>
+<ul>
+<li>The <code>:</code> operator can be used to create <code>integer</code> vectors.</li>
+</ul>
 
 <p><font size = "5px"></p>
 
 <pre><code class="r">x &lt;- 5:10
 x
 [1]  5  6  7  8  9 10
-
 typeof(x)
 [1] &quot;integer&quot;
 </code></pre>
 
 <p></font></p>
 
-
 </div>
 
-<div class="column column2 slideContent" >
-
-
-<p><br/>
-Using the <code>vector()</code> function to create an empty vector of the given <em>mode</em> and <em>length</em>.</p>
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Vectors: How to create vectors (Cont&#x27;d)</h3>
+<div class="slideContent" >
+<ul>
+<li>Using the <code>vector()</code> function to create an empty vector of the given <em>mode</em> and <em>length</em>
 
 <ul>
-<li>Logical vector elements are initialized to FALSE,</li>
+<li>logical vector elements are initialized to FALSE,</li>
 <li>numeric vector elements to 0,</li>
-<li>character vector elements to &ldquo;&rdquo;&hellip;</li>
+<li>character vector elements to &ldquo;&rdquo;</li>
+</ul></li>
 </ul>
 
 <p><font size = "5px"></p>
@@ -990,11 +989,8 @@ Using the <code>vector()</code> function to create an empty vector of the given 
 x
  [1] 0 0 0 0 0 0 0 0 0 0
 
-mode(x)
-[1] &quot;numeric&quot;
-
-length(x)
-[1] 10
+typeof(x)
+[1] &quot;double&quot;
 </code></pre>
 
 <p></font></p>
@@ -1082,9 +1078,8 @@ y
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Vectors: Explicit Coercion</h3>
-<div class="column column1 slideContent" >
-<p><br/>
-Objects can be explicitly coerced from one class to another using the <code>as.*</code> functions, if available.</p>
+<div class="slideContent" >
+<p>Objects can be explicitly coerced from one class to another using the <code>as.*</code> functions, if available.</p>
 
 <p><font size = "5px"></p>
 
@@ -1109,12 +1104,6 @@ as.character(x)
 
 <p></font></p>
 
-
-</div>
-
-<div class="column column2 slideContent" >
-
-
 <p>Nonsensical coercion results in <code>NA</code>s.</p>
 
 <p><font size = "5px"></p>
@@ -1132,17 +1121,8 @@ Warning: NAs introduced by coercion
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Vectors: Vectorized Operations</h3>
-<div class="column column1 slideContent" >
-<p><br/>
-The operation/ function applied to a vector is <strong>actually individually applied to each element</strong> of the vectors (<strong>default behaviour</strong>).</p>
-
-<p>Many operations in R are <strong>vectorized</strong> making code more efficient, concise and easier to read (but <em>challenging to write</em>). Examples of <strong>vectorized</strong> operations/ functions are the <code>+</code>, <code>*</code> and <code>&gt;</code> operators (this applies to many other built-in R functions).</p>
-
-
-</div>
-
-<div class="column column2 slideContent" >
-
+<div class="slideContent" >
+<p>The operation/ function applied to a vector is <strong>actually individually applied to each element</strong> of the vectors (<strong>default behaviour</strong>). Many operations in R are <strong>vectorized</strong> making code more efficient, concise and easier to read (but <em>challenging to write</em>). See examples below&hellip;</p>
 
 <p><font size = "5px"></p>
 
@@ -1184,15 +1164,8 @@ x &gt; 2
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Vectors: Recycling</h3>
-<div class="column column1 slideContent" >
-<p><br/>
-When applying an operation to two vectors that requires them to be the same length, R automatically <strong>recycles</strong> the shortest one. It repeats, the shorter one, until it is long enough to match the longer one (a warning could be generated in the process).</p>
-
-
-</div>
-
-<div class="column column2 slideContent" >
-
+<div class="slideContent" >
+<p>When applying an operation to two vectors that requires them to be the same length, R automatically <strong>recycles</strong> the shortest one. It repeats, the shorter one, until it is long enough to match the longer one (a warning could be generated in the process). See examples below&hellip;</p>
 
 <p><font size = "5px"></p>
 
@@ -1312,7 +1285,7 @@ identical(x,y)
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Hands-On (10 minutes)</h3>
-<div class="column column1 slideContent" >
+<div class="slideContent" >
 <p><br/>
 <font size = "5px"></p>
 
@@ -1345,12 +1318,12 @@ identical(x,y)
 
 <p></font></p>
 
-
 </div>
 
-<div class="column column2 slideContent" >
-
-
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Hands-On (Cont&#x27;d)</h3>
+<div class="slideContent" >
 <p><font size = "5px"></p>
 
 <pre><code class="r"># -----------------------------
@@ -1434,13 +1407,12 @@ $salary
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Lists: Subsetting</h3>
-<div class="column column1 slideContent" >
-<p><br/>
-<font size = "5px"></p>
+<div class="slideContent" >
+<p><strong>Select one or more elements in the list&hellip;</strong></p>
 
-<pre><code>Select one or more elements (list)
+<p><font size = "5px"></p>
 
-the_list[the_references] -&gt; return elements (list)
+<pre><code>the_list[the_references] -&gt; return elements (as a list)
 
 the_references: the indexes/ the tag of the elements
     we are interested in e.g. 1, c(1,5,..),...
@@ -1475,17 +1447,17 @@ $b
 
 <p></font></p>
 
-
 </div>
 
-<div class="column column2 slideContent" >
-
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Lists: Subsetting (Cont&#x27;d)</h3>
+<div class="slideContent" >
+<p><strong>Select a single element in the list&hellip;</strong></p>
 
 <p><font size = "5px"></p>
 
-<pre><code>Select a single element
-
-the_list[[the_reference]] / thelist$tag -&gt; return element
+<pre><code>the_list[[the_reference]] / thelist$tag -&gt; return the element
 
 the_reference/ tag: the index/ the tag of the element
     we are interested in e.g. 1, name,...
@@ -1515,11 +1487,8 @@ z$c
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
-<h3>Lists: Adding and Deleting elements to&#x2F; from a list</h3>
-<div class="column column1 slideContent" >
-<p><br/>
-Adding Elements to a list</p>
-
+<h3>Lists: Adding elements to a list</h3>
+<div class="slideContent" >
 <p><font size = "5px"></p>
 
 <pre><code class="r">z &lt;- list(a = &quot;abc&quot;)
@@ -1551,20 +1520,38 @@ $b
 
 <p></font></p>
 
-
 </div>
 
-<div class="column column2 slideContent" >
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Lists: Deleting elements from a list</h3>
+<div class="slideContent" >
+<p><font size = "5px"></p>
 
+<pre><code class="r"># Deleting elements from a list using tags
+z &lt;- list(a = &quot;abc&quot;, b = TRUE, c = 10)
+z
+$a
+[1] &quot;abc&quot;
 
-<p><br/>
-Deleting Elements from a list</p>
+$b
+[1] TRUE
+
+$c
+[1] 10
+
+z[c(1,2)] &lt;- NULL
+z
+$c
+[1] 10
+</code></pre>
+
+<p></font></p>
 
 <p><font size = "5px"></p>
 
-<pre><code class="r"># Deleting an element to a list using tags
+<pre><code class="r"># Deleting elements from a list using tags
 # Same can be done using index notation [[i]]
-# Set the element to NULL
 z &lt;- list(a = &quot;abc&quot;, b = TRUE)
 z
 $a
@@ -1614,11 +1601,10 @@ length(z)
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Hands-On (5 minutes)</h3>
-<div class="column column1 slideContent" >
-<p><br/>
-<font size = "5px"></p>
+<div class="slideContent" >
+<p><font size = "5px"></p>
 
-<pre><code class="r"># -----------------------------------------------
+<pre><code class="r"># --------------------------------
 p &lt;- c(2,7,8)
 q &lt;- c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;)
 # Create a list with element p &amp; q
@@ -1628,20 +1614,8 @@ q &lt;- c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;)
 # Retrieve the 2nd element in the list
 # as a list
 # and as its original data type
-# -----------------------------------------------
-</code></pre>
 
-<p></font></p>
-
-
-</div>
-
-<div class="column column2 slideContent" >
-
-
-<p><font size = "5px"></p>
-
-<pre><code class="r"># -----------------------------------------------
+# --------------------------------
 age &lt;- c(3, 34, 55, 1, 11, 18, 12)
 gender &lt;- c(&quot;Female&quot;, &quot;Male&quot;, &quot;Female&quot;, &quot;Male&quot;,
             &quot;Female&quot;, &quot;Female&quot;, &quot;Male&quot;)
@@ -1656,7 +1630,7 @@ gender &lt;- c(&quot;Female&quot;, &quot;Male&quot;, &quot;Female&quot;, &quot;M
 
 # Remove element &quot;is_child&quot; from the list
 # Print &quot;passengers&quot;
-# -----------------------------------------------
+# --------------------------------
 </code></pre>
 
 <p></font></p>
@@ -1666,11 +1640,12 @@ gender &lt;- c(&quot;Female&quot;, &quot;Male&quot;, &quot;Female&quot;, &quot;M
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Factors</h3>
-<div class="column column1 slideContent" >
-<p><br/>
-<strong>Factors</strong> are used to represent <strong>categorical data</strong>. One can think of a factor as an integer vector where each integer has a <em>label</em>.</p>
+<div class="slideContent" >
+<p><strong>Factors</strong> are used to represent <strong>categorical data</strong>. One can think of a factor as an integer vector where each integer has a <em>label</em>.</p>
 
-<p>Factors can be <strong>unordered</strong> or <strong>ordered</strong>.</p>
+<ul>
+<li>Factors can be <strong>unordered</strong> or <strong>ordered</strong>.</li>
+</ul>
 
 <p>Using factors with labels is <em>better</em> than using integers because</p>
 
@@ -1681,12 +1656,6 @@ gender &lt;- c(&quot;Female&quot;, &quot;Male&quot;, &quot;Female&quot;, &quot;M
 <li>having a variable that has values “Male” and “Female” is better than a variable that has values 1 and 2.</li>
 </ul></li>
 </ul>
-
-
-</div>
-
-<div class="column column2 slideContent" >
-
 
 <p><font size = "5px"></p>
 
@@ -1732,9 +1701,8 @@ Levels: yes no
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Matrices</h3>
-<div class="column column1 slideContent" >
-<p><br/>
-Matrices are vectors with a <em>dimension</em> attribute. The dimension attribute is itself an integer vector of length 2 (nrow, ncol).</p>
+<div class="slideContent" >
+<p>Matrices are vectors with a <em>dimension</em> attribute. The dimension attribute is itself an integer vector of length 2 (nrow, ncol).</p>
 
 <p><font size = "5px"></p>
 
@@ -1768,12 +1736,12 @@ $dim
 
 <p></font></p>
 
-
 </div>
 
-<div class="column column2 slideContent" >
-
-
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Matrices (Cont&#x27;d)</h3>
+<div class="slideContent" >
 <p>Matrices (by default) are constructed <em>column-wise</em>.</p>
 
 <p><font size = "5px"></p>
@@ -1910,27 +1878,24 @@ x[&quot;1_row&quot;,]
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Data Frames</h3>
-<div class="column column1 slideContent" >
-<p><br/>
-<strong>Data frames</strong> are used to store <strong>tabular data</strong>. A data frame is <strong>a special type of list</strong> where</p>
+<div class="slideContent" >
+<p><strong>Data frames</strong> are used to store <strong>tabular data</strong>. A data frame is <strong>a special type of list</strong> where</p>
 
 <ul>
 <li>each element of the list can be thought of as a <strong>column</strong></li>
 <li>every element of the list has to have the <strong>same length</strong> .</li>
 </ul>
 
-<p>Unlike matrices, <strong>data frames</strong> can store <strong>different classes of objects in each column</strong> (just like lists).</p>
+<p>Unlike matrices and like list, <strong>data frames</strong> can store <strong>different classes of objects in each column</strong>.</p>
 
-<p><strong>Data frames</strong> also have a special attribute called <code>row.names</code>.</p>
-
-<p><strong>Data frames</strong> are usually created by calling <code>read.table()</code> or <code>read.csv()</code>.</p>
-
+<p><strong>Data frames</strong> are usually created by reading some tabular data into R e.g. using <code>read.table()</code> or <code>read.csv()</code>.</p>
 
 </div>
 
-<div class="column column2 slideContent" >
-
-
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Data Frames (Cont&#x27;d)</h3>
+<div class="slideContent" >
 <p><font size = "5px"></p>
 
 <pre><code class="r">x &lt;- data.frame(id = c(1001, 1002, 1003),
@@ -1967,9 +1932,8 @@ obs_3 1003   FALSE
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Data Frames: Subsetting</h3>
-<div class="column column1 slideContent" >
-<p><br/>
-<font size = "5px"></p>
+<div class="slideContent" >
+<p><font size = "5px"></p>
 
 <pre><code class="r">patient &lt;- c(&quot;pat1&quot;, &quot;pat2&quot;, &quot;pat3&quot;, &quot;pat4&quot;)
 age &lt;- c(10, 35, 60, 20)
@@ -1978,7 +1942,6 @@ exam_result &lt;- c(1, 0, 0, 1)
 
 df &lt;- data.frame(patient = patient, age = age,
                  gender = gender, exam_result = exam_result)
-
 df
   patient age gender exam_result
 1    pat1  10      M           1
@@ -1988,12 +1951,6 @@ df
 </code></pre>
 
 <p></font></p>
-
-
-</div>
-
-<div class="column column2 slideContent" >
-
 
 <p><font size = "5px"></p>
 
@@ -2069,10 +2026,9 @@ swirl()
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
-<h3>NULL &amp; Missing Values</h3>
-<div class="column column1 slideContent" style="width: 38%;" >
-<p><br/>
-<code>NULL</code> is actually used to state that sth is <strong>nonexistent</strong>.</p>
+<h3>NULL</h3>
+<div class="slideContent" >
+<p><code>NULL</code> is actually used to state that sth is <strong>nonexistent</strong>.</p>
 
 <ul>
 <li>One use of <code>NULL</code> is to build up vectors (incrementally) in loops.</li>
@@ -2102,12 +2058,12 @@ is.null(z)
 
 <p></font></p>
 
-
 </div>
 
-<div class="column column2 slideContent" style="width: 58%;" >
-
-
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Missing Values</h3>
+<div class="slideContent" >
 <p><strong>Missing values</strong> are denoted by <code>NA</code> (NotAvailable) or <code>NaN</code> (NotANumber).</p>
 
 <ul>
@@ -2155,26 +2111,25 @@ swirl()
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Attributes</h3>
-<div class="column column1 slideContent" >
-<p><br/>
-R objects can have attributes</p>
+<div class="slideContent" >
+<p>R objects can have attributes</p>
 
 <ul>
 <li><p>names, dimnames</p></li>
+<li><p>length</p></li>
 <li><p>dimensions (e.g. matrices, arrays)</p></li>
 <li><p>class</p></li>
-<li><p>length</p></li>
 <li><p>other user-defined attributes/metadata</p></li>
 </ul>
 
 <p>Attributes of an object can be accessed using the <code>attributes()</code> function.</p>
 
-
 </div>
 
-<div class="column column2 slideContent" >
-
-
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Attributes (Cont&#x27;d)</h3>
+<div class="slideContent" >
 <p><font size = "5px"></p>
 
 <pre><code class="r"># Vectors can have element names
@@ -2186,20 +2141,6 @@ names(x) &lt;- c(&quot;foo&quot;, &quot;bar&quot;, &quot;norf&quot;)
 x
  foo  bar norf 
    1    2    3 
-</code></pre>
-
-<p></font></p>
-
-<p><font size = "5px"></p>
-
-<pre><code class="r">#List
-x &lt;- list(a = 1, b = 2)
-x
-$a
-[1] 1
-
-$b
-[1] 2
 </code></pre>
 
 <p></font></p>
