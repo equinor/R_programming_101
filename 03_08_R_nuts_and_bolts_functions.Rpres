@@ -9,7 +9,7 @@ font-family: 'Risque'
 
 Writing R functions
 ========================================================
-<br/>
+
 If we find ourselves running the same code over and over, it is probably a good idea to turn the code into a __function__. There are several reason for doing it, these reasons include
 - __maintainability__ and
 - __code-reuse__.
@@ -30,8 +30,9 @@ f <- function(<arguments>){
 ```
 </font>
 
-***
-<br/>
+Writing R functions (Cont'd)
+========================================================
+
 - Being functions R objects
     - functions can be passed as arguments to other functions
     - functions can be nested, possible to define a function within a function
@@ -54,7 +55,6 @@ hello.you(firstname = "John", surname = "Doe")
 
 Function Arguments
 ========================================================
-<br/>
 Functions can have named arguments which could have _default values_.
 
 - __Formal arguments__ are the argument included in the function definition
@@ -62,8 +62,6 @@ Functions can have named arguments which could have _default values_.
 - Not every function call in R makes use of all of the formal arguments
     - some arguments may be missing or might have default values
 
-***
-<br/>
 <font size = "5px">
 ```r
 # a,b,c,d are the formal arguments of the function f
@@ -82,7 +80,7 @@ f <- function(a, b = 1, c = 2, d = NULL) {
 
 Argument Matching
 ========================================================
-<br/>
+
 R functions arguments can be matched __positionally__ or __by name__.
 
 <font size = "5px">
@@ -106,8 +104,9 @@ f(arg2 = 2, 1,3)
 ```
 </font>
 
-***
-<br/>
+Argument Matching (Cont'd)
+========================================================
+
 It is possible to __mix positional matching with matching by name__.
 
 When an argument is matched by name, it is “taken out” of the argument list and the remaining unnamed arguments are matched in the order that they are listed in the function definition.
@@ -131,11 +130,9 @@ __Not recommended__ messing around with the order of the arguments too much, it 
 
 Argument Evaluation: Lazy Evaluation
 ========================================================
-<br/>
+
 Arguments to functions are evaluated __lazily__, only if needed.
 
-***
-<br/>
 This function never actually uses the argument `b`, so calling `f(2)` will not produce an error because the 2 gets positionally matched to `a`.
 
 <font size = "5px">

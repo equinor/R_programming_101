@@ -794,9 +794,8 @@ hljs.initHighlightingOnLoad();
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Writing R functions</h3>
-<div class="column column1 slideContent" >
-<p><br/>
-If we find ourselves running the same code over and over, it is probably a good idea to turn the code into a <strong>function</strong>. There are several reason for doing it, these reasons include</p>
+<div class="slideContent" >
+<p>If we find ourselves running the same code over and over, it is probably a good idea to turn the code into a <strong>function</strong>. There are several reason for doing it, these reasons include</p>
 
 <ul>
 <li><strong>maintainability</strong> and</li>
@@ -819,14 +818,12 @@ f &lt;- function(&lt;arguments&gt;){
 
 <p></font></p>
 
-
 </div>
 
-<div class="column column2 slideContent" >
-
-
-<p><br/></p>
-
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Writing R functions (Cont&#x27;d)</h3>
+<div class="slideContent" >
 <ul>
 <li>Being functions R objects
 
@@ -860,9 +857,8 @@ hello.you(firstname = &quot;John&quot;, surname = &quot;Doe&quot;)
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Function Arguments</h3>
-<div class="column column1 slideContent" >
-<p><br/>
-Functions can have named arguments which could have <em>default values</em>.</p>
+<div class="slideContent" >
+<p>Functions can have named arguments which could have <em>default values</em>.</p>
 
 <ul>
 <li><strong>Formal arguments</strong> are the argument included in the function definition
@@ -877,14 +873,7 @@ Functions can have named arguments which could have <em>default values</em>.</p>
 </ul></li>
 </ul>
 
-
-</div>
-
-<div class="column column2 slideContent" >
-
-
-<p><br/>
-<font size = "5px"></p>
+<p><font size = "5px"></p>
 
 <pre><code class="r"># a,b,c,d are the formal arguments of the function f
 # a,b,c,d are named argument
@@ -905,9 +894,8 @@ f &lt;- function(a, b = 1, c = 2, d = NULL) {
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Argument Matching</h3>
-<div class="column column1 slideContent" >
-<p><br/>
-R functions arguments can be matched <strong>positionally</strong> or <strong>by name</strong>.</p>
+<div class="slideContent" >
+<p>R functions arguments can be matched <strong>positionally</strong> or <strong>by name</strong>.</p>
 
 <p><font size = "5px"></p>
 
@@ -936,14 +924,13 @@ f(arg2 = 2, 1,3)
 
 <p></font></p>
 
-
 </div>
 
-<div class="column column2 slideContent" >
-
-
-<p><br/>
-It is possible to <strong>mix positional matching with matching by name</strong>.</p>
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Argument Matching (Cont&#x27;d)</h3>
+<div class="slideContent" >
+<p>It is possible to <strong>mix positional matching with matching by name</strong>.</p>
 
 <p>When an argument is matched by name, it is “taken out” of the argument list and the remaining unnamed arguments are matched in the order that they are listed in the function definition.</p>
 
@@ -972,18 +959,10 @@ f(arg2 = 2, 1,3)
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Argument Evaluation: Lazy Evaluation</h3>
-<div class="column column1 slideContent" >
-<p><br/>
-Arguments to functions are evaluated <strong>lazily</strong>, only if needed.</p>
+<div class="slideContent" >
+<p>Arguments to functions are evaluated <strong>lazily</strong>, only if needed.</p>
 
-
-</div>
-
-<div class="column column2 slideContent" >
-
-
-<p><br/>
-This function never actually uses the argument <code>b</code>, so calling <code>f(2)</code> will not produce an error because the 2 gets positionally matched to <code>a</code>.</p>
+<p>This function never actually uses the argument <code>b</code>, so calling <code>f(2)</code> will not produce an error because the 2 gets positionally matched to <code>a</code>.</p>
 
 <p><font size = "5px"></p>
 
