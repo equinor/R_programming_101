@@ -67,6 +67,25 @@ swirl()
 
 More information on how to install swirl interactive courses can be found [here](https://github.com/swirldev/swirl_courses).
 
+# Presentation Handouts
+
+__Note!__ Optimized for Google Chrome.
+
+[Agenda](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/00_agenda.html#/)  
+[Brief History of R](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/01_historyR.html)  
+[R Ecosystem](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/02_the_R_ecosystem.html)  
+
+__Nuts & Bolts__  
+[Getting Started](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_01_R_nuts_and_bolts_getting_started.html)  
+[Workspace](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_02_R_nuts_and_bolts_workspace.html)  
+[Data Types](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_03_R_nuts_and_bolts_data_types.html)  
+[Basic Operations](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_04_R_nuts_and_bolts_basic_operations.html)  
+[Reading Data](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_05_R_nuts_and_bolts_reading.html)  
+[Plotting](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_06_R_nuts_and_bolts_plotting.html)  
+[Control Structures](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_07_R_nuts_and_bolts_control_structures.html)  
+[Writing Functions](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_08_R_nuts_and_bolts_functions.html)  
+[Scoping](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_09_R_nuts_and_bolts_scoping.html)  
+
 # References
 
 [1] "[R Programming](https://www.coursera.org/learn/r-programming)" module in the "Data Science Specialization" Coursera  
