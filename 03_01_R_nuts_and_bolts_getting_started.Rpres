@@ -55,7 +55,7 @@ j
 Some Basic Information (Cont'd)
 ========================================================
 
-__Complete expressions__, the __grammar of the language__ determines whether an expression is complete or not.
+- __Complete expressions__, the __grammar of the language__ determines whether an expression is complete or not.
 - When a __complete expression__ is entered at the prompt, it is evaluated/ executed.
 
 <font size = "5px">
@@ -71,7 +71,7 @@ x <-
 ```
 </font>
 
-__Printing__, auto-printing vs. explicit printing
+- __Printing__, auto-printing vs. explicit printing
 
 <font size = "5px">
 ```{r collapse = T}
