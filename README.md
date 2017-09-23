@@ -73,7 +73,7 @@ __Note!__ Optimized for Google Chrome.
 
 [Agenda](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/00_agenda.html#/)  
 [Introducing R](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/01_introducing_R.html)  
-[R Ecosystem](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/02_the_R_ecosystem.html)  
+[The R Ecosystem](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/02_the_R_ecosystem.html)  
 
 __Nuts & Bolts__  
 [Getting Started](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_01_R_nuts_and_bolts_getting_started.html)  
