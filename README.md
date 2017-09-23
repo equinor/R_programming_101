@@ -72,7 +72,7 @@ More information on how to install swirl interactive courses can be found [here]
 __Note!__ Optimized for Google Chrome.
 
 [Agenda](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/00_agenda.html#/)  
-[Brief History of R](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/01_historyR.html)  
+[Introducing R](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/01_introducing_R.html)  
 [R Ecosystem](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/02_the_R_ecosystem.html)  
 
 __Nuts & Bolts__  
