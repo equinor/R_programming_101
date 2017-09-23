@@ -808,9 +808,8 @@ hljs.initHighlightingOnLoad();
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Subsetting (Recap) - Cont&#x27;d</h3>
-<div class="column column1 slideContent" >
-<p><br/>
-<strong>Subsetting a Vector</strong></p>
+<div class="slideContent" >
+<p><strong>Subsetting a Vector</strong></p>
 
 <p><font size = "5px"></p>
 
@@ -840,14 +839,13 @@ x[u]
 
 <p></font></p>
 
-
 </div>
 
-<div class="column column2 slideContent" >
-
-
-<p><br/>
-<strong>Subsetting a Matrix</strong></p>
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Subsetting (Recap) - Cont&#x27;d</h3>
+<div class="slideContent" >
+<p><strong>Subsetting a Matrix</strong></p>
 
 <p>By default, when elements of a matrix are retrieved a vector is returned rather than a matrix. This behavior can be turned off by setting <code>drop = FALSE</code>.</p>
 
@@ -888,23 +886,19 @@ x[, 2]
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Subsetting (Recap) - Cont&#x27;d</h3>
-<div class="column column1 slideContent" >
-<p><br/>
-<strong>Subsetting a List</strong></p>
+<div class="slideContent" >
+<p><strong>Subsetting a List</strong></p>
 
 <p><font size = "5px"></p>
 
 <pre><code class="r">x &lt;- list(foo = 1:4, bar = 0.6, baz = &quot;hello&quot;)
 
-x[1] # x[&quot;bar&quot;]
+x[1] # x[&quot;foo&quot;]
 $foo
 [1] 1 2 3 4
 
-x[[1]] # x[[&quot;bar&quot;]]
+x[[1]] # x[[&quot;foo&quot;]] # x$foo
 [1] 1 2 3 4
-
-x$bar
-[1] 0.6
 
 x[c(1, 3)]
 $foo
@@ -916,7 +910,7 @@ $baz
 
 <p></font></p>
 
-<p>The <code>[[</code> operator can be used with <em>computed</em> indices; <code>$</code> can only be used with literal names.</p>
+<p>The <code>[[</code> operator can be used with <em>computed</em> indices, while <code>$</code> can only be used with literal names.</p>
 
 <p><font size = "5px"></p>
 
@@ -931,30 +925,14 @@ NULL
 
 <p></font></p>
 
+<p>Partial matching of names is allowed with <code>[[</code> and <code>$</code>.</p>
 
 </div>
 
-<div class="column column2 slideContent" >
-
-
-<p><br/>
-Partial matching of names is allowed with <code>[[</code> and <code>$</code>.</p>
-
-<p><font size = "5px"></p>
-
-<pre><code class="r">x &lt;- list(aardvark = 1:5)
-x$a
-[1] 1 2 3 4 5
-
-x[[&quot;a&quot;]]
-NULL
-
-x[[&quot;a&quot;, exact = FALSE]]
-[1] 1 2 3 4 5
-</code></pre>
-
-<p></font></p>
-
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Subsetting (Recap) - Cont&#x27;d</h3>
+<div class="slideContent" >
 <p><strong>Subsetting a Data Frame</strong></p>
 
 <p><font size = "5px"></p>
@@ -995,9 +973,8 @@ swirl()
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Removing NAs</h3>
-<div class="column column1 slideContent" >
-<p><br/>
-A common task is to remove missing values (<code>NA</code>s).</p>
+<div class="slideContent" >
+<p>A common task is to remove missing values (<code>NA</code>s).</p>
 
 <p><font size = "5px"></p>
 
@@ -1008,12 +985,6 @@ x[!bad]
 </code></pre>
 
 <p></font></p>
-
-
-</div>
-
-<div class="column column2 slideContent" >
-
 
 <p><font size = "5px"></p>
 
@@ -1058,11 +1029,8 @@ swirl()
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
-<h3>Built-in functions</h3>
-<div class="column column1 slideContent" >
-<p><br/>
-<strong>Numeric functions</strong>:</p>
-
+<h3>Built-in functions: Numeric functions</h3>
+<div class="slideContent" >
 <ul>
 <li><code>abs(x)</code>, the absolute value</li>
 <li><code>sqrt(x)</code>, the square root</li>
@@ -1073,14 +1041,12 @@ swirl()
 <li>&hellip;</li>
 </ul>
 
-
 </div>
 
-<div class="column column2 slideContent" >
-
-
-<p><strong>Character functions</strong>:</p>
-
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Built-in functions: Character functions</h3>
+<div class="slideContent" >
 <ul>
 <li><code>paste(..., sep = &quot;&quot;)</code>, concatenate strings with a specific separator
 
@@ -1123,10 +1089,8 @@ grep(&quot;a&quot;, c(&quot;A&quot;, &quot;a&quot;, &quot;b&quot;, &quot;a&quot;
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
-<h3>Built-in functions (Cont&#x27;d)</h3>
+<h3>Built-in functions: Statistical functions</h3>
 <div class="slideContent" >
-<p><strong>Statistical functions</strong>:</p>
-
 <ul>
 <li><code>rnorm()</code>, the normal distribution</li>
 <li><code>dunif()</code>, the uniform distribution</li>
@@ -1144,9 +1108,10 @@ grep(&quot;a&quot;, c(&quot;A&quot;, &quot;a&quot;, &quot;b&quot;, &quot;a&quot;
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>`str` and `summary` functions</h3>
-<div class="column column1 slideContent" >
-<p><br/>
-The <code>str</code> function displays the internal structure of an R object, mostly used as a diagnostic function.</p>
+<div class="slideContent" >
+<ul>
+<li>The <code>str</code> function displays the internal structure of an R object, mostly used as a diagnostic function.</li>
+</ul>
 
 <p><font size = "5px"></p>
 
@@ -1167,13 +1132,9 @@ The <code>str</code> function displays the internal structure of an R object, mo
 
 <p></font></p>
 
-
-</div>
-
-<div class="column column2 slideContent" >
-
-
-<p>The <code>summary</code> function is a generic function used to produce summaries/ basic statistics for the provided R object.</p>
+<ul>
+<li>The <code>summary</code> function is a generic function used to produce summaries/ basic statistics for the provided R object.</li>
+</ul>
 
 <p><font size = "5px"></p>
 

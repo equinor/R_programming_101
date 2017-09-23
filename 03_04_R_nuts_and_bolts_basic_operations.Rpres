@@ -20,7 +20,6 @@ There are different operators that can be used to extract subsets of R objects.
 
 Subsetting (Recap) - Cont'd
 ========================================================
-<br/>
 __Subsetting a Vector__
 
 <font size = "5px">
@@ -44,8 +43,9 @@ x[u]
 ```
 </font>
 
-***
-<br/>
+Subsetting (Recap) - Cont'd
+========================================================
+
 __Subsetting a Matrix__
 
 By default, when elements of a matrix are retrieved a vector is returned rather than a matrix. This behavior can be turned off by setting `drop = FALSE`.
@@ -76,24 +76,21 @@ x[, 2]
 
 Subsetting (Recap) - Cont'd
 ========================================================
-<br/>
 __Subsetting a List__
 
 <font size = "5px">
 ```{r collapse = T}
 x <- list(foo = 1:4, bar = 0.6, baz = "hello")
 
-x[1] # x["bar"]
+x[1] # x["foo"]
 
-x[[1]] # x[["bar"]]
-
-x$bar
+x[[1]] # x[["foo"]] # x$foo
 
 x[c(1, 3)]
 ```
 </font>
 
-The `[[` operator can be used with _computed_ indices; `$` can only be used with literal names.
+The `[[` operator can be used with _computed_ indices, while `$` can only be used with literal names.
 
 <font size = "5px">
 ```{r collapse = T}
@@ -105,21 +102,10 @@ x$name     ## element ‘name’ doesn’t exist!
 ```
 </font>
 
-***
-<br/>
 Partial matching of names is allowed with `[[` and `$`.
 
-<font size = "5px">
-```{r collapse = T}
-x <- list(aardvark = 1:5)
-x$a
-
-x[["a"]]
-
-x[["a", exact = FALSE]]
-```
-</font>
-
+Subsetting (Recap) - Cont'd
+========================================================
 __Subsetting a Data Frame__
 
 <font size = "5px">
@@ -151,7 +137,7 @@ swirl()
 
 Removing NAs
 ========================================================
-<br/>
+
 A common task is to remove missing values (`NA`s).
 
 <font size = "5px">
@@ -162,7 +148,6 @@ x[!bad]
 ```
 </font>
 
-***
 
 <font size = "5px">
 ```{r collapse = T}
@@ -186,10 +171,8 @@ swirl()
 # Select the "Missing Values" entry [5]
 ```
 
-Built-in functions
+Built-in functions: Numeric functions
 ========================================================
-<br/>
-__Numeric functions__:
 
 - `abs(x)`, the absolute value
 - `sqrt(x)`, the square root
@@ -199,9 +182,8 @@ __Numeric functions__:
 - `round(x, digits = n)`, round(3.475, 2) is 3.48
 - ...
 
-***
-
-__Character functions__:
+Built-in functions: Character functions
+========================================================
 
 - `paste(..., sep = "")`, concatenate strings with a specific separator
     - (see `?paste` for more info)
@@ -225,10 +207,8 @@ grep("a", c("A", "a", "b", "a", "C"), ignore.case = TRUE)
 ```
 </font>
 
-Built-in functions (Cont'd)
+Built-in functions: Statistical functions
 ========================================================
-
-__Statistical functions__:
 
 - `rnorm()`, the normal distribution
 - `dunif()`, the uniform distribution
@@ -242,8 +222,8 @@ From "R in Action": http://www.statmethods.net/management/functions.html
 
 `str` and `summary` functions
 ========================================================
-<br/>
-The `str` function displays the internal structure of an R object, mostly used as a diagnostic function.
+
+- The `str` function displays the internal structure of an R object, mostly used as a diagnostic function.
 
 <font size = "5px">
 ```{r collapse = TRUE}
@@ -251,9 +231,7 @@ str(mtcars)
 ```
 </font>
 
-***
-
-The `summary` function is a generic function used to produce summaries/ basic statistics for the provided R object.
+- The `summary` function is a generic function used to produce summaries/ basic statistics for the provided R object.
 
 <font size = "5px">
 ```{r collapse = TRUE}
