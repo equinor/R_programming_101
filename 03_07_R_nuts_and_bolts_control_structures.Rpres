@@ -11,9 +11,10 @@ font-family: 'Risque'
 Control structures
 ========================================================
 
-__Control structures__ allow to __control__ the __flow of execution__ of the program causing different things to happen based on test condition.
+__Control structures__ allow to __control__ the __flow of execution__ of the program
+- causing different things to happen based on test condition.
 
-Common structures are:
+Common __control structures__ are:
 
 - `if` and `else`, test a (logical) condition
 - `for`, execute a loop a certain number of times
@@ -25,7 +26,7 @@ Common structures are:
 
 `if` and `else`
 ========================================================
-<br/>
+
 <font size = "5px">
 ```r
 if(condition){
@@ -56,8 +57,9 @@ if(condition){
 ```
 </font>
 
-***
-<br/>
+`if` and `else` (Cont'd)
+========================================================
+
 <font size = "5px">
 ```{r collapse = TRUE}
 x <- 5
@@ -87,7 +89,7 @@ if(x > 3){
 
 `for`
 ========================================================
-<br/>
+
 `for` loops take an iterator variable and assign it successive values from a sequence or vector. For loops are most commonly used for iterating over the elements of an object (list, vector, etc.)
 
 <font size = "5px">
@@ -114,8 +116,9 @@ for(i in seq_len(nrow(x))) {
 ```
 </font>
 
-***
-<br/>
+`for` (Cont'd)
+========================================================
+
 Some examples of loops with same behaviours...
 
 <font size = "5px">
@@ -169,9 +172,9 @@ repeat{
 ```
 </font>
 
-`break`, `next` and `return`
+`break`
 ========================================================
-<br/>
+
 `break` is used to break the execution of a loop.
 
 <font size = "5px">
@@ -194,6 +197,9 @@ repeat{
 ```
 </font>
 
+`next` & `return`
+========================================================
+
 `next` is used to skip an iteration of a loop.
 
 <font size = "5px">
@@ -207,8 +213,6 @@ for(i in 1:10) {
 ```
 </font>
 
-***
-<br/>
 `return` signals that a function should exit and return a given value.
 
 Control structures: Warning
