@@ -84,7 +84,10 @@ __Nuts & Bolts__
 [Plotting](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_06_R_nuts_and_bolts_plotting.html)  
 [Control Structures](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_07_R_nuts_and_bolts_control_structures.html)  
 [Writing Functions](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_08_R_nuts_and_bolts_functions.html)  
-[Scoping](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_09_R_nuts_and_bolts_scoping.html)  
+[Scoping](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_09_R_nuts_and_bolts_scoping.html) 
+
+__Examples__
+[Data Exploration with the Titanic Dataset](https://github.com/Statoil/R_programming_101/blob/master/examples/titanicExploration.html)
 
 # References
 
