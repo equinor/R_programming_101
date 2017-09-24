@@ -87,7 +87,8 @@ __Nuts & Bolts__
 [Scoping](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_09_R_nuts_and_bolts_scoping.html) 
 
 __Examples__  
-[Data Exploration with the Titanic Dataset](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/examples/titanicExploration.html)
+[Data Exploration with the Titanic Dataset](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/examples/titanicExploration.html)  
+[Weather Phenomena Investigation](https://rpubs.com/pparacch/119663)  
 
 # References
 
