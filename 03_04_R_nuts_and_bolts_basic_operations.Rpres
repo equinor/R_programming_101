@@ -6,6 +6,7 @@ width: 1440
 height: 900
 font-import: http://fonts.googleapis.com/css?family=Risque
 font-family: 'Risque'
+transition: rotate
 
 Subsetting (Recap)
 ========================================================
@@ -217,8 +218,7 @@ Built-in functions: Statistical functions
 - and much more ...
 
 __A more comprehensive list of built-in functions__
-
-From "R in Action": http://www.statmethods.net/management/functions.html
+- From "R in Action": http://www.statmethods.net/management/functions.html
 
 `str` and `summary` functions
 ========================================================
