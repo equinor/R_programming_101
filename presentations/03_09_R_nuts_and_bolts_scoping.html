@@ -784,7 +784,7 @@ hljs.initHighlightingOnLoad();
   <div class="reveal">
   <div class="slides">
 
-<section data-state="section" data-transition="linear" data-transition-speed="default">
+<section data-state="section" data-transition="zoom" data-transition-speed="default">
 <h1>R Nuts &amp; Bolts: Scoping rules</h1><p>Pier Lorenzo Paracchini<br/>20.09.2017</p>
 
 <div class="slideContent" >
@@ -792,7 +792,7 @@ hljs.initHighlightingOnLoad();
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="zoom" data-transition-speed="default">
 <h3>A Diversion on Binding Values to Symbol</h3>
 <div class="slideContent" >
 <p>How does R know which value to assign to which symbol? When I type</p>
@@ -816,14 +816,14 @@ function(x) { x * x }
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="zoom" data-transition-speed="default">
 <h3>A Diversion on Binding Values to Symbol (Cont&#x27;d)</h3>
 <div class="slideContent" >
 <p>When R tries to bind a value to a symbol, it searches through a series of <code>environments</code> to find the appropriate value. When you are working on the command line and need to retrieve the value of an R object, the order is roughly</p>
 
 <ol>
 <li>Search the <strong>global environment</strong> for a symbol name matching the one requested.</li>
-<li>Search the <strong>namespaces</strong> of each of the packages on the search list</li>
+<li>Search each of the packages on the search list</li>
 </ol>
 
 <p>The search list can be found by using the <code>search</code> function.</p>
@@ -842,39 +842,53 @@ function(x) { x * x }
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="zoom" data-transition-speed="default">
 <h3>Binding Values to Symbol</h3>
 <div class="slideContent" >
 <ul>
 <li>The <strong>global environment</strong> or the user’s workspace is always the first element of the search list and the <em>base</em> package is always the last.</li>
-<li>The order of the packages on the search list matters!</li>
-<li>User’s can configure which packages get loaded on startup so you cannot assume that there will be a set list of packages available.</li>
-<li>When a user loads a package with <code>library</code> the namespace of that package gets put in position 2 of the search list (by default) and everything else gets shifted down the list.</li>
-<li>Note that R has separate namespaces for functions and non-functions so it’s possible to have an object named c and a function named c.</li>
+<li>The order of the packages on the search list matters!
+
+<ul>
+<li>When a user loads a package with <code>library</code> the namespace of that package gets put in position 2 of the search list (by default) and everything else gets shifted down the list.
+
+<ul>
+<li><strong>name masking</strong></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p><strong>Note!</strong> R has separate namespaces for functions and non-functions so</p>
+
+<ul>
+<li>it’s possible to have an object named c and a function named c.</li>
 </ul>
 
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="zoom" data-transition-speed="default">
 <h3>Scoping Rules</h3>
 <div class="slideContent" >
 <p>The scoping rules for R are the main feature that make it different from the original S language.</p>
 
 <ul>
 <li>The scoping rules determine how a value is associated with a free variable in a function</li>
-<li>R uses <em>lexical scoping</em> or <em>static scoping</em>. A common alternative is <em>dynamic scoping</em>.</li>
-<li>Related to the scoping rules is how R uses the search <em>list</em> to bind a value to a symbol</li>
-<li>Lexical scoping turns out to be particularly useful for simplifying statistical computations</li>
+<li>R uses <em>lexical scoping</em> or <em>static scoping</em>.
+
+<ul>
+<li>A common alternative is <em>dynamic scoping</em>.</li>
+</ul></li>
+<li>Related to the scoping rules is how R uses the <strong>search list</strong> to bind a value to a symbol</li>
 </ul>
 
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="zoom" data-transition-speed="default">
 <h3>Lexical Scoping</h3>
 <div class="slideContent" >
-<p>Consider the following function. This function has 2 formal arguments <code>x</code> and <code>y</code>. In the body of the function there is another symbol <code>z</code>. In this case <code>z</code> is called a <em>free variable</em>.</p>
+<p>Consider the following function:</p>
 
 <p><font size="5px"></p>
 
@@ -885,27 +899,30 @@ function(x) { x * x }
 
 <p></font></p>
 
-<p>The <em>scoping rules of a language</em> determine how values are assigned to free variables. Free variables are not formal arguments and are not local variables (assigned insided the function body).</p>
-
-</div>
-
-</section>
-<section data-transition="linear" data-transition-speed="default">
-<h3>Lexical Scoping</h3>
-<div class="slideContent" >
-<p>Lexical scoping in R means that</p>
+<p>This function has 2 formal arguments <code>x</code> and <code>y</code> and in the body of the function there is another symbol <code>z</code> (<code>z</code> is called a <em>free variable</em>). <strong>Free variables</strong> are <strong>not formal arguments</strong> and are <strong>not local variables</strong>.</p>
 
 <blockquote>
 <p>the values of <strong>free variables</strong> are searched for in the environment in which the function was defined.</p>
 </blockquote>
 
-<p>What is an environment?</p>
+</div>
+
+</section>
+<section data-transition="zoom" data-transition-speed="default">
+<h3>Lexical Scoping (Cont&#x27;d)</h3>
+<div class="slideContent" >
+<p>What is an <strong>environment</strong>?</p>
 
 <ul>
-<li>An <em>environment</em> is a collection of (symbol, value) pairs, i.e. <code>x</code> is a symbol and <code>3.14</code> might be its value.</li>
-<li>Every environment has a parent environment; it is possible for an environment to have multiple “children”
+<li>An <em>environment</em> is a collection of (symbol, value) pairs,
 
 <ul>
+<li>i.e. <code>x</code> is a symbol and <code>3.14</code> might be its value.</li>
+</ul></li>
+<li>Every environment has a parent environment;
+
+<ul>
+<li>it is possible for an environment to have multiple “children”</li>
 <li>the only environment without a parent is the <strong>empty environment</strong></li>
 </ul></li>
 <li>A function + an environment = a <strong>closure</strong> or <strong>function closure</strong>.</li>
@@ -914,8 +931,8 @@ function(x) { x * x }
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
-<h3>Lexical Scoping</h3>
+<section data-transition="zoom" data-transition-speed="default">
+<h3>Lexical Scoping (Cont&#x27;d)</h3>
 <div class="slideContent" >
 <p>Searching for the value for a free variable:</p>
 
@@ -928,8 +945,8 @@ function(x) { x * x }
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
-<h3>Lexical Scoping</h3>
+<section data-transition="zoom" data-transition-speed="default">
+<h3>Lexical Scoping (Cont&#x27;d)</h3>
 <div class="slideContent" >
 <p>Why does all this matter?</p>
 
@@ -949,7 +966,7 @@ function(x) { x * x }
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="zoom" data-transition-speed="default">
 <h3>Lexical Scoping: Example</h3>
 <div class="slideContent" >
 <p><font size="5px"></p>
@@ -978,7 +995,7 @@ ls(environment())
 
 # The environment connected with square function
 environment(square)
-&lt;environment: 0x7fe22aa53ca0&gt;
+&lt;environment: 0x000000000a24dd28&gt;
 ls(environment(square))
 [1] &quot;n&quot;   &quot;pow&quot;
 get(&quot;n&quot;, environment(square))
@@ -986,7 +1003,7 @@ get(&quot;n&quot;, environment(square))
 
 # The environment connected with cube function
 environment(cube)
-&lt;environment: 0x7fe22a9eae60&gt;
+&lt;environment: 0x000000000a1e7108&gt;
 ls(environment(cube))
 [1] &quot;n&quot;   &quot;pow&quot;
 get(&quot;n&quot;, environment(cube))
@@ -998,7 +1015,7 @@ get(&quot;n&quot;, environment(cube))
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="zoom" data-transition-speed="default">
 <h3>Lexical vs. Dynamic Scoping</h3>
 <div class="slideContent" >
 <p><font size="5px"></p>
@@ -1082,7 +1099,7 @@ function commandsForSlide(indexh) {
       rollingLinks: false,
       
       theme: 'simple', 
-      transition: 'linear',
+      transition: 'zoom',
       transitionSpeed: 'default',
       rtl: false,
       width: 1440,

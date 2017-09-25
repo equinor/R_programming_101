@@ -6,6 +6,7 @@ width: 1440
 height: 900
 font-import: http://fonts.googleapis.com/css?family=Risque
 font-family: 'Risque'
+transition: zoom
 
 A Diversion on Binding Values to Symbol
 ========================================================
@@ -30,7 +31,7 @@ A Diversion on Binding Values to Symbol (Cont'd)
 When R tries to bind a value to a symbol, it searches through a series of `environments` to find the appropriate value. When you are working on the command line and need to retrieve the value of an R object, the order is roughly
 
 1. Search the __global environment__ for a symbol name matching the one requested.
-2. Search the __namespaces__ of each of the packages on the search list
+2. Search each of the packages on the search list
 
 The search list can be found by using the `search` function.
 
@@ -45,9 +46,11 @@ Binding Values to Symbol
 
 - The __global environment__ or the user’s workspace is always the first element of the search list and the *base* package is always the last.
 - The order of the packages on the search list matters!
-- User’s can configure which packages get loaded on startup so you cannot assume that there will be a set list of packages available.
-- When a user loads a package with `library` the namespace of that package gets put in position 2 of the search list (by default) and everything else gets shifted down the list.
-- Note that R has separate namespaces for functions and non-functions so it’s possible to have an object named c and a function named c.
+    - When a user loads a package with `library` the namespace of that package gets put in position 2 of the search list (by default) and everything else gets shifted down the list.
+        - __name masking__
+
+__Note!__ R has separate namespaces for functions and non-functions so
+- it’s possible to have an object named c and a function named c.
 
 Scoping Rules
 ========================================================
@@ -55,14 +58,14 @@ Scoping Rules
 The scoping rules for R are the main feature that make it different from the original S language.
 
 - The scoping rules determine how a value is associated with a free variable in a function
-- R uses _lexical scoping_ or _static scoping_. A common alternative is _dynamic scoping_.
-- Related to the scoping rules is how R uses the search _list_ to bind a value to a symbol
-- Lexical scoping turns out to be particularly useful for simplifying statistical computations
+- R uses _lexical scoping_ or _static scoping_.
+    - A common alternative is _dynamic scoping_.
+- Related to the scoping rules is how R uses the __search list__ to bind a value to a symbol
 
 Lexical Scoping
 ========================================================
 
-Consider the following function. This function has 2 formal arguments `x` and `y`. In the body of the function there is another symbol `z`. In this case `z` is called a _free variable_.
+Consider the following function:
 
 <font size="5px">
 ```r
@@ -72,23 +75,23 @@ f <- function(x, y) {
 ```
 </font>
 
-The _scoping rules of a language_ determine how values are assigned to free variables. Free variables are not formal arguments and are not local variables (assigned insided the function body).
-
-Lexical Scoping
-========================================================
-
-Lexical scoping in R means that
+This function has 2 formal arguments `x` and `y` and in the body of the function there is another symbol `z` (`z` is called a _free variable_). __Free variables__ are __not formal arguments__ and are __not local variables__.
 
 >the values of __free variables__ are searched for in the environment in which the function was defined.
 
-What is an environment?
+Lexical Scoping (Cont'd)
+========================================================
 
-- An _environment_ is a collection of (symbol, value) pairs, i.e. `x` is a symbol and `3.14` might be its value.
-- Every environment has a parent environment; it is possible for an environment to have multiple “children”
+What is an __environment__?
+
+- An _environment_ is a collection of (symbol, value) pairs,
+    - i.e. `x` is a symbol and `3.14` might be its value.
+- Every environment has a parent environment;
+    - it is possible for an environment to have multiple “children”
     - the only environment without a parent is the __empty environment__
 - A function + an environment = a __closure__ or __function closure__.
 
-Lexical Scoping
+Lexical Scoping (Cont'd)
 ========================================================
 
 Searching for the value for a free variable:
@@ -97,7 +100,7 @@ Searching for the value for a free variable:
 - The search continues down the sequence of parent environments until we hit the _top-level environment_; this usually the global environment (workspace) or the namespace of a package.
 - After the top-level environment, the search continues down the search list until we hit the _empty environment_. If a value for a given symbol cannot be found once the empty environment is arrived at, then an error is thrown.
 
-Lexical Scoping
+Lexical Scoping (Cont'd)
 ========================================================
 Why does all this matter?
 
