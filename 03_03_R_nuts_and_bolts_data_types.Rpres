@@ -6,6 +6,7 @@ width: 1440
 height: 900
 font-import: http://fonts.googleapis.com/css?family=Risque
 font-family: 'Risque'
+transition: zoom
 
 Basic Types
 ========================================================
@@ -257,7 +258,9 @@ sqrt(1:6)
 Vectors: Recycling
 ========================================================
 
-When applying an operation to two vectors that requires them to be the same length, R automatically __recycles__ the shortest one. It repeats, the shorter one, until it is long enough to match the longer one (a warning could be generated in the process). See examples below...
+When applying an operation to two vectors that __requires them to be the same length__, R automatically __recycles__ the shortest one
+- repeat, the shorter one, until it is long enough to match the longer one
+- a warning could be generated in the process.
 
 <font size = "5px">
 ```{r collapse = T}
