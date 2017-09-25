@@ -6,6 +6,7 @@ width: 1440
 height: 900
 font-import: http://fonts.googleapis.com/css?family=Risque
 font-family: 'Risque'
+transition: zoom
 
 What is R?
 ========================================================
@@ -13,7 +14,7 @@ What is R?
 - An open source programming language mainly used for
     - __statistics__ and __data science__.
 
-- A descendant of S <- __a dialect of S__
+- A descendant of S (Bell Labs, 1976), __a dialect of S__
     - written primarily in C, fortran and R.
 
 - Created at the University of Auckland (New Zealand)
@@ -21,21 +22,10 @@ What is R?
     - an initial version (0.16) released in 1995 and
     - first stable version (1.0) for production use in 2000.
 
-- Currently developed by the __R Development Core Team__ (__GNU General Public License__)
+- Currently developed by
+    - the __R Development Core Team__
+    - under the __GNU General Public License__
 
-What is S?
-========================================================
-
-- A language that was developed in 1976 at Bell Labs (John Chambers and others)
-    - an internal statistical analysis environment (implemented as Fortran libraries)
-        - used _"to turn ideas into software, quickly and faithfully"_.
-
-    - Version 3 (released 1988) -> rewritten in C and began to resemble what we have today.
-
-    - Version 4 (released in 1998) -> the version in use today.
-        - The fundamentals of the S language itself has not changed dramatically since 1998.
-
-    - TIBCO (since 2008) is the current owner of the S language and its exclusive developer.
 
 R Philosophy (inherited from the S language)
 ========================================================
@@ -53,14 +43,14 @@ http://www.stat.bell-labs.com/S/history.html
 Why R?
 ========================================================
 
-- __Open source__ programming language & environment for
+- __Open source__ _programming language_ & _environment_ for
     - __statistical computing/ data science__.
 
 - Run on almost any standard computing platform/OS (even on the PlayStation 3).
 
 - Quite active development with frequent releases (annual + bugfix releases).
 
-- Quite __lean__ -> functionality is divided into __modular packages__.
+- Quite __lean__, functionality is divided into __modular packages__.
 
 Why R? (Cont'd)
 ========================================================
@@ -68,7 +58,9 @@ Why R? (Cont'd)
 - Great for __interactive work__, and a __powerful programming language__ for developing new tools.
     - shifting from _user_ to _programmer_
 
-- Has a massive set of packages for __statistical modelling/ data science__, __visualisation__, and __data wrangling__.
+- Has a massive set of packages for
+    - __statistical modelling/ data science__,
+    - __visualisation__, and __data wrangling__.
 
 - A __very active and vibrant user community__ (Stack Overflow, R-help mailing list, ...)
     - academic world and governments
@@ -91,6 +83,7 @@ It is free, as __free software.__ Being free allows the following _freedoms_:
 
 https://www.r-project.org/Licenses/, http://www.fsf.org
 
+
 Which are the drawbacks of R?
 ========================================================
 
@@ -103,6 +96,7 @@ Which are the drawbacks of R?
         - _Or you need to pay someone to do it_
 
 - Much of the R code you'll see in the wild is __written in haste__ to solve a pressing problem
+    - you need to be careful (esp. with GitHub repos)
     - but __things are changing__, more and more software developers are joining and...
         - unit testing (`testthat` package),
         - continuous building/ integration/ deployment ([travis CI](https://travis-ci.org/))

@@ -784,7 +784,7 @@ hljs.initHighlightingOnLoad();
   <div class="reveal">
   <div class="slides">
 
-<section data-state="section" data-transition="linear" data-transition-speed="default">
+<section data-state="section" data-transition="zoom" data-transition-speed="default">
 <h1>Introducing R</h1><p>Pier Lorenzo Paracchini<br/>20.09.2017</p>
 
 <div class="slideContent" >
@@ -792,7 +792,7 @@ hljs.initHighlightingOnLoad();
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="zoom" data-transition-speed="default">
 <h3>What is R?</h3>
 <div class="slideContent" >
 <ul>
@@ -801,7 +801,7 @@ hljs.initHighlightingOnLoad();
 <ul>
 <li><strong>statistics</strong> and <strong>data science</strong>.</li>
 </ul></li>
-<li><p>A descendant of S &lt;- <strong>a dialect of S</strong></p>
+<li><p>A descendant of S (Bell Labs, 1976), <strong>a dialect of S</strong></p>
 
 <ul>
 <li>written primarily in C, fortran and R.</li>
@@ -813,38 +813,18 @@ hljs.initHighlightingOnLoad();
 <li>an initial version (0.16) released in 1995 and</li>
 <li>first stable version (1.0) for production use in 2000.</li>
 </ul></li>
-<li><p>Currently developed by the <strong>R Development Core Team</strong> (<strong>GNU General Public License</strong>)</p></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="linear" data-transition-speed="default">
-<h3>What is S?</h3>
-<div class="slideContent" >
-<ul>
-<li><p>A language that was developed in 1976 at Bell Labs (John Chambers and others)</p>
+<li><p>Currently developed by</p>
 
 <ul>
-<li>an internal statistical analysis environment (implemented as Fortran libraries)
-
-<ul>
-<li>used <em>&ldquo;to turn ideas into software, quickly and faithfully&rdquo;</em>.</li>
-</ul></li>
-<li>Version 3 (released 1988) -&gt; rewritten in C and began to resemble what we have today.</li>
-<li>Version 4 (released in 1998) -&gt; the version in use today.
-
-<ul>
-<li>The fundamentals of the S language itself has not changed dramatically since 1998.</li>
-</ul></li>
-<li>TIBCO (since 2008) is the current owner of the S language and its exclusive developer.</li>
+<li>the <strong>R Development Core Team</strong></li>
+<li>under the <strong>GNU General Public License</strong></li>
 </ul></li>
 </ul>
 
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="zoom" data-transition-speed="default">
 <h3>R Philosophy (inherited from the S language)</h3>
 <div class="slideContent" >
 <p>In &ldquo;Stages in the Evolution of S&rdquo;, John Chambers writes:</p>
@@ -862,24 +842,24 @@ language and system aspects would become more important.&rdquo;</p>
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="zoom" data-transition-speed="default">
 <h3>Why R?</h3>
 <div class="slideContent" >
 <ul>
-<li><p><strong>Open source</strong> programming language &amp; environment for</p>
+<li><p><strong>Open source</strong> <em>programming language</em> &amp; <em>environment</em> for</p>
 
 <ul>
 <li><strong>statistical computing/ data science</strong>.</li>
 </ul></li>
 <li><p>Run on almost any standard computing platform/OS (even on the PlayStation 3).</p></li>
 <li><p>Quite active development with frequent releases (annual + bugfix releases).</p></li>
-<li><p>Quite <strong>lean</strong> -&gt; functionality is divided into <strong>modular packages</strong>.</p></li>
+<li><p>Quite <strong>lean</strong>, functionality is divided into <strong>modular packages</strong>.</p></li>
 </ul>
 
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="zoom" data-transition-speed="default">
 <h3>Why R? (Cont&#x27;d)</h3>
 <div class="slideContent" >
 <ul>
@@ -888,7 +868,12 @@ language and system aspects would become more important.&rdquo;</p>
 <ul>
 <li>shifting from <em>user</em> to <em>programmer</em></li>
 </ul></li>
-<li><p>Has a massive set of packages for <strong>statistical modelling/ data science</strong>, <strong>visualisation</strong>, and <strong>data wrangling</strong>.</p></li>
+<li><p>Has a massive set of packages for</p>
+
+<ul>
+<li><strong>statistical modelling/ data science</strong>,</li>
+<li><strong>visualisation</strong>, and <strong>data wrangling</strong>.</li>
+</ul></li>
 <li><p>A <strong>very active and vibrant user community</strong> (Stack Overflow, R-help mailing list, &hellip;)</p>
 
 <ul>
@@ -901,7 +886,7 @@ language and system aspects would become more important.&rdquo;</p>
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="zoom" data-transition-speed="default">
 <h3>Why R? (Cont&#x27;d)</h3>
 <div class="slideContent" >
 <p>It is free, as <strong>free software.</strong> Being free allows the following <em>freedoms</em>:</p>
@@ -918,7 +903,7 @@ language and system aspects would become more important.&rdquo;</p>
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="zoom" data-transition-speed="default">
 <h3>Which are the drawbacks of R?</h3>
 <div class="slideContent" >
 <ul>
@@ -940,6 +925,7 @@ language and system aspects would become more important.&rdquo;</p>
 <li><p>Much of the R code you&#39;ll see in the wild is <strong>written in haste</strong> to solve a pressing problem</p>
 
 <ul>
+<li>you need to be careful (esp. with GitHub repos)</li>
 <li>but <strong>things are changing</strong>, more and more software developers are joining and&hellip;
 
 <ul>
@@ -952,7 +938,7 @@ language and system aspects would become more important.&rdquo;</p>
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="zoom" data-transition-speed="default">
 <h3>Which are the drawbacks of R? (Cont&#x27;d)</h3>
 <div class="slideContent" >
 <ul>
@@ -1023,7 +1009,7 @@ function commandsForSlide(indexh) {
       rollingLinks: false,
       
       theme: 'simple', 
-      transition: 'linear',
+      transition: 'zoom',
       transitionSpeed: 'default',
       rtl: false,
       width: 1440,
