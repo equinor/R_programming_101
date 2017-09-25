@@ -6,11 +6,12 @@ width: 1440
 height: 900
 font-import: http://fonts.googleapis.com/css?family=Risque
 font-family: 'Risque'
+transition: zoom
 
 Plotting Systems in R
 ========================================================
 
-Graphics and plotting are used for primarily two reasons: explratory data analysis (EDA) and presenting results.
+Graphics and plotting are used for primarily two reasons: exploratory data analysis (EDA) and presenting results.
 
 R provides excellent graphing capabilities through different plotting systems
 
@@ -20,15 +21,18 @@ R provides excellent graphing capabilities through different plotting systems
 
 - __ggplot2__, an implementation of the '[grammar of graphic](http://ggplot2.org/resources/2007-vanderbilt.pdf)' (`ggplot2` package - non base R)
 
-- others like __Lattice Graphics__...
+- others like __Lattice Graphics__, __HTML widgets__...
 
 Base Plotting System: The R Graphics Package
 ========================================================
 
-The __process__:
-- Start with blank canvas and build up from there
+The __plotting process__:
+
+- Start with blank canvas, then
 - Add a plot function (or similar)
-- Use annotation functions to add/modify what's on the canvas (`text`, `lines`, `points`, `axis`)
+- Use __1..*__ __annotation functions__ to
+    - add/modify what's on the canvas
+        - e.g. `text`, `lines`, `points`, `axis`
 
 Some characteristics...
 
@@ -102,7 +106,6 @@ with(mtcars,{
      xlab = "Weight (1000 lbs)", ylab = "Miles/(US) gallon")
     plot(x = mtcars$hp, y = mtcars$mpg,  main = "Mpg vs. Gross horsepower",
      xlab = "Gross horsepower", ylab = "Miles/(US) gallon")
-    mtext("Fuel Consumption Tests", outer = TRUE)
 })
 ```
 </font>
