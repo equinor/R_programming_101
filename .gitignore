@@ -1,9 +1,22 @@
 # Ignore everything
-*
+#*
 
 #Except Rpres
-!*.Rpres
-!presentations/*
+#!*.Rpres
+#!presentations/*
 
-!examples/*
+#!examples/*
+
+.Rproj.user
+.RData
+.Rhistory
+
+*.html
+!README.html
+
+*.md
+!README.md
+
+03_06_R_nuts_and_bolts_plotting-figure/*
+
 examples/.DS_Store
