@@ -6,6 +6,7 @@ width: 1440
 height: 900
 font-import: http://fonts.googleapis.com/css?family=Risque
 font-family: 'Risque'
+transition: rotate
 
 Who Am I?
 ========================================================
@@ -19,14 +20,15 @@ __Pier Lorenzo Paracchini__
 - __software "generalist"__ with a __passion__ for
     - __people__, __technology__ and __data__
 - Currently working on data science related tasks (since 2015)
-- [My Blog](https://pparacch.github.io/) about learnings/ experiments
+- __[My Blog](https://pparacch.github.io/)__ about learnings/ experiments
 
 Some Credits
 ========================================================
 
 The following course is based/ inspired on the content of
 
-- "[R Programming](https://www.coursera.org/learn/r-programming)" module - "Data Science Specialization" by Johns Hopkins University, Coursera
+- "[R Programming](https://www.coursera.org/learn/r-programming)" module in the  "Data Science Specialization"
+    - by Johns Hopkins University, Coursera
 - "[The Art of R Programming](http://shop.oreilly.com/product/9781593273842.do)" by Norman Matloff
 - "[R for Everyone](https://www.goodreads.com/book/show/20306869-r-for-everyone)" by Jared P. Lander
 
@@ -40,7 +42,7 @@ Agenda
     - Why R? And Why not?
 - __The R Ecosystem__ (10 min)
 - __R Nuts & Bolts__
-    - Getting Started (15/20 min)
+    - Getting Started (15 min)
     - Workspace & the Working Directory (20 min)
     - Data Types (60 min)
     - Basic Operations (20 min)
@@ -53,9 +55,9 @@ Agenda (Cont'd)
 <img src="imgs/Rlogo.png" alt="R Logo" style="float:right;width:600px;">
 
 - __R Nuts & Bolts__ (Optional)
-    - _Control structures_
-    - _Writing R functions_
-    - _Scoping rules_
-- __Examples__
+    - _Control structures_ (10 min)
+    - _Writing R functions_ (10 min)
+    - _Scoping rules_ (15 min)
+- __Examples: EDA__
     - The Titanic Case
     - Weather Phenomena Investigation
