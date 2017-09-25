@@ -6,6 +6,7 @@ width: 1440
 height: 900
 font-import: http://fonts.googleapis.com/css?family=Risque
 font-family: 'Risque'
+transition: concave
 
 
 How to get data into a R session
@@ -18,7 +19,8 @@ Tthere are numerous ways to get data into R
 
 - other external packages, use `data()` function
     - list datasets part of the `dplyr` package: `try(data(package = "dplyr"))`
-    - list all of the available datasets for all installed packages: `data(package = .packages(all.available = TRUE))`
+    - list all of the available datasets for all installed packages:
+        - `data(package = .packages(all.available = TRUE))`
 
 - reading external files (e.g. csv, tsv, excel, xml, json and more)
 
