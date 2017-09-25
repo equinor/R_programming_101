@@ -6,6 +6,7 @@ width: 1440
 height: 900
 font-import: http://fonts.googleapis.com/css?family=Risque
 font-family: 'Risque'
+transition: rotate
 
 How To Run R
 ========================================================
@@ -33,10 +34,10 @@ Some Basic Information
 ```
 </font>
 
-__Variables__: R does __not require variable types to be declared__.
-- A variable can take on any available data type (at any point)
-- Variable assignment is performed using the assignment operator `<-` or `assign` function.
-    - the `=` operator is discouraged cause does not work in special situation (historical reason).
+- __Variables__: R does __not require variable types to be declared__.
+    - A variable can take on any available data type (at any point)
+    - Variable assignment is performed using the assignment operator `<-` or `assign` function.
+    - the `=` operator is discouraged (historical reason).
 
 <font size = "5px">
 ```{r collapse = T}
@@ -97,8 +98,8 @@ x - y
 x * y
 x / y
 x ^ y
-x %% y
-x %/% y
+x %% y # mod
+x %/% y # integer division
 ```
 </font>
 

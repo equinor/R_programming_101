@@ -784,7 +784,7 @@ hljs.initHighlightingOnLoad();
   <div class="reveal">
   <div class="slides">
 
-<section data-state="section" data-transition="linear" data-transition-speed="default">
+<section data-state="section" data-transition="default" data-transition-speed="default">
 <h1>R Nuts and Bolts: Getting Started</h1><p>Pier Lorenzo Paracchini<br/>20.09.2017</p>
 
 <div class="slideContent" >
@@ -792,7 +792,7 @@ hljs.initHighlightingOnLoad();
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="default" data-transition-speed="default">
 <h3>How To Run R</h3>
 <div class="slideContent" >
 <p>R actually can operate in two modes:</p>
@@ -819,7 +819,7 @@ hljs.initHighlightingOnLoad();
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="default" data-transition-speed="default">
 <h3>Some Basic Information</h3>
 <div class="slideContent" >
 <ul>
@@ -833,14 +833,13 @@ hljs.initHighlightingOnLoad();
 
 <p></font></p>
 
-<p><strong>Variables</strong>: R does <strong>not require variable types to be declared</strong>.</p>
+<ul>
+<li><strong>Variables</strong>: R does <strong>not require variable types to be declared</strong>.
 
 <ul>
 <li>A variable can take on any available data type (at any point)</li>
-<li>Variable assignment is performed using the assignment operator <code>&lt;-</code> or <code>assign</code> function.
-
-<ul>
-<li>the <code>=</code> operator is discouraged cause does not work in special situation (historical reason).</li>
+<li>Variable assignment is performed using the assignment operator <code>&lt;-</code> or <code>assign</code> function.</li>
+<li>the <code>=</code> operator is discouraged (historical reason).</li>
 </ul></li>
 </ul>
 
@@ -864,7 +863,7 @@ j
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="default" data-transition-speed="default">
 <h3>Some Basic Information (Cont&#x27;d)</h3>
 <div class="slideContent" >
 <ul>
@@ -907,7 +906,7 @@ print(x)  # explicit printing, normally used when working within function
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="default" data-transition-speed="default">
 <h3>Operators: Arithmetic operators</h3>
 <div class="slideContent" >
 <p>These unary and binary operators perform arithmetic on numeric or complex vectors (or objects which can be coerced to them).</p>
@@ -925,8 +924,8 @@ x - y
 x * y
 x / y
 x ^ y
-x %% y
-x %/% y
+x %% y # mod
+x %/% y # integer division
 </code></pre>
 
 <p></font></p>
@@ -934,7 +933,7 @@ x %/% y
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="default" data-transition-speed="default">
 <h3>Operators: Logical operators</h3>
 <div class="slideContent" >
 <p>These operators act on raw, logical and number-like vectors.</p>
@@ -960,7 +959,7 @@ isTRUE(x)
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="default" data-transition-speed="default">
 <h3>A First R Session: Hands-On</h3>
 <div class="slideContent" >
 <p><font size = "5px"></p>
@@ -998,7 +997,7 @@ isTRUE(x)
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="default" data-transition-speed="default">
 <h3>A First R Session: Hands-On (Cont&#x27;d)</h3>
 <div class="slideContent" >
 <p><font size = "5px"></p>
@@ -1029,7 +1028,7 @@ isTRUE(x)
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="default" data-transition-speed="default">
 <h3>Hands-On (Optional)</h3>
 <div class="slideContent" >
 <pre><code class="r">library(swirl)
@@ -1093,7 +1092,7 @@ function commandsForSlide(indexh) {
       rollingLinks: false,
       
       theme: 'simple', 
-      transition: 'linear',
+      transition: 'default',
       transitionSpeed: 'default',
       rtl: false,
       width: 1440,
