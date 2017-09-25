@@ -6,6 +6,7 @@ width: 1440
 height: 900
 font-import: http://fonts.googleapis.com/css?family=Risque
 font-family: 'Risque'
+transition: rotate
 
 
 Control structures
@@ -221,7 +222,9 @@ Control structures: Warning
 
 When starting to use R, people use loops whenever they need to iterate over elements of a `vector`, `list` or `data.frame`.
 
-- __Looping is not a good practice__, use __vectorization__ or __`apply`__ family of functions.
+- __Looping is not a good practice__,
+    - use __vectorization__ or
+    - `apply` family of functions (or `purrr` package).
 
 Hands-On (Optional)
 ========================================================
