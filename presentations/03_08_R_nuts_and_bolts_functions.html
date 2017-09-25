@@ -784,7 +784,7 @@ hljs.initHighlightingOnLoad();
   <div class="reveal">
   <div class="slides">
 
-<section data-state="section" data-transition="linear" data-transition-speed="default">
+<section data-state="section" data-transition="default" data-transition-speed="default">
 <h1>R Nuts &amp; Bolts: Writing R functions</h1><p>Pier Lorenzo Paracchini<br/>20.09.2017</p>
 
 <div class="slideContent" >
@@ -792,10 +792,10 @@ hljs.initHighlightingOnLoad();
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="default" data-transition-speed="default">
 <h3>Writing R functions</h3>
 <div class="slideContent" >
-<p>If we find ourselves running the same code over and over, it is probably a good idea to turn the code into a <strong>function</strong>. There are several reason for doing it, these reasons include</p>
+<p>If we find ourselves <strong>running the same code over and over</strong>, it is probably a good idea to turn the code into a <strong>function</strong>. There are several reason for doing it, these reasons include</p>
 
 <ul>
 <li><strong>maintainability</strong> and</li>
@@ -821,7 +821,7 @@ f &lt;- function(&lt;arguments&gt;){
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="default" data-transition-speed="default">
 <h3>Writing R functions (Cont&#x27;d)</h3>
 <div class="slideContent" >
 <ul>
@@ -855,7 +855,7 @@ hello.you(firstname = &quot;John&quot;, surname = &quot;Doe&quot;)
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="default" data-transition-speed="default">
 <h3>Function Arguments</h3>
 <div class="slideContent" >
 <p>Functions can have named arguments which could have <em>default values</em>.</p>
@@ -892,7 +892,7 @@ f &lt;- function(a, b = 1, c = 2, d = NULL) {
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="default" data-transition-speed="default">
 <h3>Argument Matching</h3>
 <div class="slideContent" >
 <p>R functions arguments can be matched <strong>positionally</strong> or <strong>by name</strong>.</p>
@@ -927,7 +927,7 @@ f(arg2 = 2, 1,3)
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="default" data-transition-speed="default">
 <h3>Argument Matching (Cont&#x27;d)</h3>
 <div class="slideContent" >
 <p>It is possible to <strong>mix positional matching with matching by name</strong>.</p>
@@ -952,12 +952,16 @@ f(arg2 = 2, 1,3)
 
 <p></font></p>
 
-<p><strong>Not recommended</strong> messing around with the order of the arguments too much, it can become really confusing.</p>
+<p><strong>Anyway</strong> It is <strong>not recommended</strong> messing around with the order of the arguments too much,</p>
+
+<ul>
+<li>it can become really confusing.</li>
+</ul>
 
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="default" data-transition-speed="default">
 <h3>Argument Evaluation: Lazy Evaluation</h3>
 <div class="slideContent" >
 <p>Arguments to functions are evaluated <strong>lazily</strong>, only if needed.</p>
@@ -993,7 +997,7 @@ Error in f(2): argument &quot;b&quot; is missing, with no default
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="default" data-transition-speed="default">
 <h3>The &quot;...&quot; argument</h3>
 <div class="slideContent" >
 <p>The <code>...</code> argument indicate a variable number of arguments that are usually passed on to other functions. <code>...</code> is often used</p>
@@ -1029,7 +1033,7 @@ function (..., file = &quot;&quot;, sep = &quot; &quot;, fill = FALSE,
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="default" data-transition-speed="default">
 <h3>Return Values</h3>
 <div class="slideContent" >
 <p>Functions are generally used for computing some value, so they need a <strong>mechanism to give the value back to the caller</strong>. There are two ways to implement this mechanism:</p>
@@ -1071,7 +1075,7 @@ f(2)
 </div>
 
 </section>
-<section data-transition="linear" data-transition-speed="default">
+<section data-transition="default" data-transition-speed="default">
 <h3>Hands-On (Optional)</h3>
 <div class="slideContent" >
 <pre><code class="r">library(swirl)
@@ -1135,7 +1139,7 @@ function commandsForSlide(indexh) {
       rollingLinks: false,
       
       theme: 'simple', 
-      transition: 'linear',
+      transition: 'default',
       transitionSpeed: 'default',
       rtl: false,
       width: 1440,
