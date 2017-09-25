@@ -6,36 +6,31 @@ width: 1440
 height: 900
 font-import: http://fonts.googleapis.com/css?family=Risque
 font-family: 'Risque'
+transition: concave
 
-Workspace & the Working Directory
+Basic Concepts
 ========================================================
 
 - The local Workspace
+    - aka the _Global Environment_
+- Scoping
 - The working directory
 
-Local Workspace
+Local Workspace (aka Global Environment)
 ========================================================
 
 Every time an expression is run in the R session, the local workspace may be affected e.g.
 - when assigning a variable `x <- 1` or creating a function
 - when loading a package
 
-__How to view objects/ variables created in the local workspace...__
+Use the `ls()` function to __view__ objects/ variables in the local workspace.
+
+Use the `rm()` function to __remove__ objects/ variables in the local workspace.
+
+Some __examples__...
 
 <font size = "5px">
 ```{r eval = F}
-#View all the objects in your local workspace
-ls()
-```
-</font>
-
-__How to remove objects/ variables created in the local environment...__
-
-<font size = "5px">
-```{r eval = F}
-#Remove objects from your local workspace
-rm()
-
 #example 1
 ## tmp <- 1
 ## ls()
@@ -49,10 +44,27 @@ rm()
 ```
 </font>
 
+Scoping (simplified)
+========================================================
+
+When R tries to bind a value to a symbol, it searches through a series of `environments` to find the appropriate symbol. When you are working on the command line and need to retrieve the value of an R object, the order is roughly
+
+- Search the __global environment__ for a symbol name matching the one requested.
+- Search the __each of the loaded packages__
+    - the order of the packages are loaded matters!
+
+The search list can be found by using the `search` function.
+
+<font size = "5px">
+```{r collapse = TRUE}
+search()
+```
+</font>
+
 The Working Directory
 ========================================================
 
-The __Working Directory__ is where R and the current session look for files when interaction on the local computer (IO).
+The __Working Directory__, the place where R looks for files when interaction on the local computer.
 
 __How to get the current working directory...__
 
