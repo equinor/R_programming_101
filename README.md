@@ -72,23 +72,28 @@ More information on how to install swirl interactive courses can be found [here]
 __Note!__ Optimized for Google Chrome.
 
 [Agenda](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/00_agenda.html#/)  
-[Introducing R](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/01_introducing_R.html)  
-[The R Ecosystem](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/02_the_R_ecosystem.html)  
+
+__Overview__
+
+- [Introducing R](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/01_introducing_R.html)  
+- [The R Ecosystem](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/02_the_R_ecosystem.html)  
 
 __Nuts & Bolts__  
-[Getting Started](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_01_R_nuts_and_bolts_getting_started.html)  
-[Workspace & the Working Directory](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_02_R_nuts_and_bolts_workspace.html)  
-[Data Types](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_03_R_nuts_and_bolts_data_types.html)  
-[Basic Operations](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_04_R_nuts_and_bolts_basic_operations.html)  
-[Reading Data](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_05_R_nuts_and_bolts_reading.html)  
-[Plotting](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_06_R_nuts_and_bolts_plotting.html)  
-[Control Structures](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_07_R_nuts_and_bolts_control_structures.html)  
-[Writing Functions](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_08_R_nuts_and_bolts_functions.html)  
-[Scoping](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_09_R_nuts_and_bolts_scoping.html) 
 
-__Examples__  
-[Data Exploration with the Titanic Dataset](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/examples/titanicExploration.html)  
-[Weather Phenomena Investigation](https://rpubs.com/pparacch/119663)  
+- [Getting Started](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_01_R_nuts_and_bolts_getting_started.html)  
+- [Workspace & the Working Directory](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_02_R_nuts_and_bolts_workspace.html)  
+- [Data Types](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_03_R_nuts_and_bolts_data_types.html)  
+- [Basic Operations](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_04_R_nuts_and_bolts_basic_operations.html)  
+- [Reading Data](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_05_R_nuts_and_bolts_reading.html)  
+- [Plotting](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_06_R_nuts_and_bolts_plotting.html)  
+- [Control Structures](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_07_R_nuts_and_bolts_control_structures.html)  
+- [Writing Functions](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_08_R_nuts_and_bolts_functions.html)  
+- [Scoping](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/presentations/03_09_R_nuts_and_bolts_scoping.html) 
+
+__Examples:__ Exploratory Data Analysis in R
+
+- [Data Exploration with the Titanic Dataset](http://htmlpreview.github.io/?https://github.com/Statoil/R_programming_101/blob/master/examples/titanicExploration.html)  
+- [Weather Phenomena Investigation](https://rpubs.com/pparacch/119663)  
 
 # References
 
