@@ -44,11 +44,12 @@ Packages can be found in the following repositories
 Package lifecycle
 ========================================================
 
+<img src="imgs/R_packages.png" alt="R Lifecycle" style="float:right;width:600px;">
+
 - __Install__/ __update__ a package
 - __Load__/ __unload__ a package
 - __Remove__ a package
 
-<img src="imgs/R_packages.png" alt="R Lifecycle">
 
 Package lifecycle: install a package
 ========================================================
