@@ -6,6 +6,12 @@ width: 1440
 height: 900
 font-import: http://fonts.googleapis.com/css?family=Risque
 font-family: 'Risque'
+transition: concave
+
+The R Ecosystem: an overview
+========================================================
+
+<img src="imgs/the_toolbox.png" alt="R Ecosystem">
 
 The R environment
 ========================================================
@@ -30,7 +36,7 @@ A __package__ is essentially
     - the `tidyr` package provides functionality for data tidying,
     - the `ggplot2` package provides functionality for plotting and visualization, ...
 
-Packages can be found in the following repository
+Packages can be found in the following repositories
 - Comprehensive R Archive Network ([CRAN](https://cran.r-project.org/))
 - [BioConductor](http://bioconductor.org/)
 - GitHub/ BitBucket reposotories (an example [tidyr](https://github.com/tidyverse/tidyr))
@@ -41,6 +47,8 @@ Package lifecycle
 - __Install__/ __update__ a package
 - __Load__/ __unload__ a package
 - __Remove__ a package
+
+<img src="imgs/R_packages.png" alt="R Lifecycle">
 
 Package lifecycle: install a package
 ========================================================
